@@ -10,10 +10,10 @@
 <script type="text/javascript">
 $(document).ready(function(){
 	$("#linguagem").change(function () {
-		if($("#linguagem").val() == "pt"){
+		if($("#linguagem").val() == "1"){
 			$("#entrar").val("Entrar");
 			$("#entrar").css("display", "inherit");
-		}else if($("#linguagem").val() == "us"){
+		}else if($("#linguagem").val() == "2"){
 			$("#entrar").val("Sing in");
 			$("#entrar").css("display", "inherit");
 		}else{

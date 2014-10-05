@@ -16,7 +16,7 @@
 	</div>
 	<fieldset style="border: 1px;border-color: gray;border-style: solid;width: 500px;height:300px;margin: auto;margin-top: 50px;">
 		<legend style="color:red;"> <%=bundle.getString("tela.login.titulo")%> </legend>
-		<form action="loginControler" method="post">
+		<form action="home.jsp" method="post">
 			<div style="text-align: center;margin-top: 70px;">
 				<label >
 					<%=bundle.getString("tela.login.labelUsuario")%>: <input type="text" name="usuario" /> </br>

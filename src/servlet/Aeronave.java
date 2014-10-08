@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.*;
+
 
 /**
  * Servlet implementation class Aeronave
@@ -41,6 +43,9 @@ public class Aeronave extends HttpServlet {
 		int colunas = Integer.parseInt(request.getParameter("colunas"));
 		int fileiras = Integer.parseInt(request.getParameter("fileiras"));
 		
+		AeronaveTO aeronaveTO = new AeronaveTO(codigo, nomeAeronave, tipoAeronave, fileiras, colunas);
+		
+		AeronaveDAO aeronaveDAO = new AeronaveDAO(aeronaveTO);
 		
 	
 	}

@@ -2,6 +2,9 @@ package model;
 
 public class Aeronave {
 	
-	AeronaveTO aeronave = new AeronaveTO();
+	public Aeronave(AeronaveDAO aeronaveDAO){
+		
+	}
+	
 
 }

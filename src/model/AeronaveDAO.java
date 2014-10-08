@@ -2,6 +2,8 @@ package model;
 
 public class AeronaveDAO {
 	
-	public AeronaveDAO()
+	public AeronaveDAO(AeronaveTO aeronaveTO){
+		
+	}
 
 }

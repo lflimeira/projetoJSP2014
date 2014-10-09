@@ -1,4 +1,4 @@
-package model;
+package to;
 
 public class AeronaveTO {
 	
@@ -8,12 +8,15 @@ public class AeronaveTO {
 	private int fileiras;
 	private int colunas;
 	
-	public AeronaveTO(int cod, String nomeAeronave, String tipoAeronave, int fileiras, int colunas){
-		cod = codigo;
+	public AeronaveTO(int codigo, String nomeAeronave, String tipoAeronave, int fileiras, int colunas){
+		this.codigo = codigo;
 		this.nomeAeronave = nomeAeronave;
 		this.tipoAeronave = tipoAeronave;
 		this.fileiras = fileiras;
 		this.colunas = colunas;
+	}
+	public AeronaveTO(){
+		
 	}
 
 	public int getCodigo() {

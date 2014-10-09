@@ -1,10 +1,16 @@
 package model;
 
+import to.AeronaveTO;
+
 public class Aeronave {
 	
-	public Aeronave(AeronaveDAO aeronaveDAO){
-		
+	AeronaveTO aeronaveTO = null;
+	
+	public Aeronave(AeronaveTO aeronaveTO){
 	}
 	
+	public void cadastrar(){
+		
+	}
 
 }

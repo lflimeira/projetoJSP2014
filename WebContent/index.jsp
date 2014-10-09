@@ -35,15 +35,15 @@ $(document).ready(function(){
 		<form action="idioma" method="post">
 			<div style="text-align: center;margin-top: 70px;">
 				<label >
-					Português: Escolha um idioma.</br>
-					English: Choose a language.</br>
+					Português: Escolha um idioma.<br>
+					English: Choose a language.<br>
 					<select name="linguagem" id="linguagem">
 						<option value="">---------</option>
 						<option value="1">Português</option>
 						<option value="2">English</option>
 					</select>
-					</br>
-					</br>
+					<br>
+					<br>
 					<input type="submit" id="entrar" name="Entrar" value="Entrar" style="" /> 
 				</label>
 			</div>

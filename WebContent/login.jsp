@@ -19,10 +19,10 @@
 		<form action="home.jsp" method="post">
 			<div style="text-align: center;margin-top: 70px;">
 				<label >
-					<%=bundle.getString("tela.login.labelUsuario")%>: <input type="text" name="usuario" /> </br>
-					<%=bundle.getString("tela.login.labelSenha")%>: <input type="password" name="senha" /></br>
-					</br>
-					</br>
+					<%=bundle.getString("tela.login.labelUsuario")%>: <input type="text" name="usuario" /><br>
+					<%=bundle.getString("tela.login.labelSenha")%>: <input type="password" name="senha" /><br>
+					<br>
+					<br>
 					<input type="submit" id="entrar" name="Entrar" value="<%=bundle.getString("tela.btn.entrar")%>" style="" /> 
 				</label>
 			</div>

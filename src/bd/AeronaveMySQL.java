@@ -23,6 +23,7 @@ public class AeronaveMySQL implements AeronaveDAO {
 
 			stm.setInt(1, aeronaveTO.getCodigo());
 			stm.setString(2, aeronaveTO.getNomeAeronave());
+			System.out.println(aeronaveTO.getTipoAeronave());
 			stm.setString(3, aeronaveTO.getTipoAeronave());
 			stm.setInt(4, aeronaveTO.getColunas());
 			stm.setInt(5, aeronaveTO.getFileiras());

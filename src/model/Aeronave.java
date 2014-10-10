@@ -15,7 +15,6 @@ public class Aeronave {
 	public void cadastrar() throws AeronaveException{
 		DAOFactory factory = DAOFactory.getInstance();
 		AeronaveDAO dao = factory.getAeronaveDAO();
-		System.out.println("Tudo OK no Factory");
 		dao.cadastrar(aeronaveTO);
 	}
 

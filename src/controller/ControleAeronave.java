@@ -44,15 +44,13 @@ public class ControleAeronave extends HttpServlet {
 			aeronaveTO.setColunas(Integer.parseInt(request.getParameter("colunas")));
 			
 			
-			System.out.println("Guardou tudo no TO");
+			System.out.println((String) request.getParameter("tipoAeronave"));
 			
 			Aeronave aeronave = new Aeronave(aeronaveTO);
 			
 			
 			try {
-				System.out.println("cagou antes do cadastrar");
 				aeronave.cadastrar();
-				System.out.println("cagou no cadastrar");
 			} catch (AeronaveException e) {
 				e.printStackTrace();
 			}

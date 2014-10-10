@@ -43,18 +43,24 @@ public class ControleAeronave extends HttpServlet {
 			aeronaveTO.setFileiras(Integer.parseInt(request.getParameter("fileiras")));
 			aeronaveTO.setColunas(Integer.parseInt(request.getParameter("colunas")));
 			
-			
-			System.out.println((String) request.getParameter("tipoAeronave"));
-			
+			//Iniciando os dados da TO na classe de Negócio
 			Aeronave aeronave = new Aeronave(aeronaveTO);
 			
-			
+			//Inicia processo de cadastrar
 			try {
 				aeronave.cadastrar();
 			} catch (AeronaveException e) {
 				e.printStackTrace();
 			}
 			
+			
+			//Aciona mensagem de que cadastro foi concluido
+			request.setAttribute("ret", "inc");
+				
+			//Redireciona para pagina de consulta
+			request.getRequestDispatcher("cad_aeronave.jsp").forward(request, response);
+			
+			//Fim de cadastro		
 		}
 	}
 

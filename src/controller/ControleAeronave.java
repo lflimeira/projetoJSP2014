@@ -1,12 +1,16 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import to.*;
+
+import model.Aeronave;
+import model.AeronaveException;
+import to.AeronaveTO;
 /**
  * Servlet implementation class ControleAeronave
  */
@@ -41,9 +45,12 @@ public class ControleAeronave extends HttpServlet {
 			aeronaveTO.setFileiras(Integer.parseInt(request.getParameter("fileiras")));
 			aeronaveTO.setColunas(Integer.parseInt(request.getParameter("colunas")));
 			
-			//
-			
-			
+			Aeronave aeronave = new Aeronave(aeronaveTO);
+			try {
+				aeronave.cadastrar();
+				} catch (AeronaveException e) {
+				e.printStackTrace();
+			}
 			
 		}
 	}

@@ -12,7 +12,7 @@ public class Aeronave {
 		this.aeronaveTO = aeronaveTO;
 	}
 	
-	public void cadastrar(){
+	public void cadastrar() throws AeronaveException{
 		DAOFactory factory = DAOFactory.getInstance();
 		AeronaveDAO dao = factory.getAeronaveDAO();
 		dao.cadastrar(aeronaveTO);

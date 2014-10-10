@@ -20,10 +20,7 @@ public class AcessoBanco {
 	// -----------------------------------------------------------
 
 	public Connection obtemConexao() throws SQLException{
-		return DriverManager.getConnection(
-				"jdbc:mysql://localhost/dbtutorial", //banco de dados 
-				"alunos", 							 //usuario
-				"alunos");							 //senha
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/aeroporto?user=root&password=root");
 	}
 
 }

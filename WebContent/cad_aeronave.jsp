@@ -11,7 +11,7 @@
 			<jsp:include page="header.jsp"></jsp:include>
 				<fieldset style="border: 1px;border-color: gray;border-style: solid;width: 400px;  min-height:150px;margin: auto;margin-top: 100px;">
 			<legend style="color:red;">Cadastro de Aeronave</legend>
-			<form action="#">
+			<form action="ControleAeronave" method="post">
 			
 				<table>
 					<tr>
@@ -46,8 +46,8 @@
 							<td> <input type="number" name="fileiras" min="1" max="5"></td>
 						</tr>
 					</table>
-					
-					<input type='submit' value='Cadastrar' style="margin-left: 150px; margin-top: 10px;"/>
+					<input type="hidden" name='operacao' value="cadastrar" />
+					<input type='submit'  value='Cadastrar' style="margin-left: 150px; margin-top: 10px;"/>
 					
 				</table>
 			

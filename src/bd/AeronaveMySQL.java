@@ -11,8 +11,8 @@ import model.AeronaveException;
 public class AeronaveMySQL implements AeronaveDAO {
 
 	public Long cadastrar(AeronaveTO aeronaveTO) throws AeronaveException{
-		String sql = "INSERT INTO Aeronave ("
-				+ "codigo, nomeAeronave, tipoAeronave, colunas, Fileiras) "
+		String sql = "INSERT INTO aeronave("
+				+ "codigo, nomeAeronave, tipoAeronave, colunas, fileiras)"
 				+ "VALUES (?,?,?,?,?)";
 
 		Connection conn = null;

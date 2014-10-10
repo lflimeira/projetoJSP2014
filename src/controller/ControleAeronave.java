@@ -55,7 +55,7 @@ public class ControleAeronave extends HttpServlet {
 			
 			
 			//Aciona mensagem de que cadastro foi concluido
-			request.setAttribute("ret", "inc");
+			request.setAttribute("mensagem", "sucesso");
 				
 			//Redireciona para pagina de consulta
 			request.getRequestDispatcher("cad_aeronave.jsp").forward(request, response);

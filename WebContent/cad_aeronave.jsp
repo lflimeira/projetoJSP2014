@@ -46,7 +46,6 @@
 					</table>
 					<input type="hidden" name='operacao' value="cadastrar" />
 					<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;" />
-
 				</table>
 
 			</form>
@@ -54,10 +53,10 @@
 	</div>
 	
 	<%
-		String ret	 = (String) request.getAttribute("ret");
+		String mensagem = (String) request.getAttribute("mensagem");
 		
-		ret = (ret != null ? ret : ""); 
-		if(ret.equals("inc")){
+		mensagem = (mensagem != null ? mensagem : ""); 
+		if(mensagem.equals("sucesso")){
 			out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto; width: 350px; height: 30px; text-align: center;  border-radius: 10px;'>"
 						+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
 						+"Cadastro de Aeronave realizado com Sucesso"

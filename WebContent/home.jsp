@@ -14,13 +14,13 @@
 			<legend style="color:red;"> Bem vindo ao Sistema de Passagens A&eacute;reas</legend>
 			<div style="text-align: center;margin-top: 70px;">
 					<img alt="< nome usuario / vem do BD >" src="images/padrao.jpg" style="max-width: 320px;max-height: 400px;"/>
-					</br>
-					</br>
+					<br>
+					<br>
 					<div style="width: 320px;text-align: left;margin: auto;">
-						Nome: < nome usuario / vem do BD > </br>
-						Tipo de Usuario: < Tipo usuario / vem do BD > </br>
-						Login: < Tipo usuario / vem do BD > </br>
-						</br>
+						Nome: ( nome usuario / vem do BD ) <br>
+						Tipo de Usuario: ( Tipo usuario / vem do BD ) <br>
+						Login: ( Tipo usuario / vem do BD ) <br>
+						<br>
 					</div>
 			</div>
 		</fieldset>

@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" />
 <![endif]-->
 <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>	
-<script type="text/javascript" language="javascript" src="js/jquery.dropdownPlain.js"></script>
+<script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>
 
 <div class="menu_sistema" style="margin-left: 176px;">
 	        <ul class="dropdown">

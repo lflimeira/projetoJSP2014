@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Aeronave;
 import model.AeronaveException;
 import to.AeronaveTO;
-/**
- * Servlet implementation class ControleAeronave
- */
+
 @WebServlet("/ControleAeronave")
 public class ControleAeronave extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -45,10 +43,17 @@ public class ControleAeronave extends HttpServlet {
 			aeronaveTO.setFileiras(Integer.parseInt(request.getParameter("fileiras")));
 			aeronaveTO.setColunas(Integer.parseInt(request.getParameter("colunas")));
 			
+			
+			System.out.println("Guardou tudo no TO");
+			
 			Aeronave aeronave = new Aeronave(aeronaveTO);
+			
+			
 			try {
+				System.out.println("cagou antes do cadastrar");
 				aeronave.cadastrar();
-				} catch (AeronaveException e) {
+				System.out.println("cagou no cadastrar");
+			} catch (AeronaveException e) {
 				e.printStackTrace();
 			}
 			

@@ -6,9 +6,6 @@ import java.sql.SQLException;
 
 public class AcessoBanco {
 
-	// -----------------------------------------------------------
-	// Carrega driver JDBC
-	//
 	static {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -17,10 +14,9 @@ public class AcessoBanco {
 		}
 	}
 
-	// -----------------------------------------------------------
-
 	public Connection obtemConexao() throws SQLException{
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/aeroporto?user=root&password=root");
+		return DriverManager.getConnection("jdbc:mysql://localhost/aeroporto","root", "");
 	}
 
 }
+

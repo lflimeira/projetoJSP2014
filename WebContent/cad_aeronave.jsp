@@ -44,8 +44,8 @@
 							<td><input type="number" name="fileiras" min="1" max="5"></td>
 						</tr>
 					</table>
-					<input type="hidden" name='operacao' value="cadastrar" />
-					<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;" />
+					<input type="hidden" name='operacao' value="cadastrar" >
+					<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;" >
 				</table>
 
 			</form>

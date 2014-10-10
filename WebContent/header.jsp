@@ -20,7 +20,7 @@
 	        	</li>
 	        	<li><a href="#">Aeronave</a>
 	        		<ul class="sub_menu">
-	        			 <li><a href="#">Cadastrar</a></li>
+	        			 <li><a href="cad_aeronave.jsp">Cadastrar</a></li>
 	        			 <li><a href="#">Alterar/Excluir</a></li>
 	        		</ul>
 	        	</li>

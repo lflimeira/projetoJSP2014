@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.usjt.exemplo.model.Cadastro;
+import br.usjt.exemplo.model.CadastroException;
+import br.usjt.exemplo.model.CadastroTO;
 import model.Aeronave;
 import model.AeronaveException;
 import to.AeronaveTO;
@@ -61,6 +66,21 @@ public class ControleAeronave extends HttpServlet {
 			request.getRequestDispatcher("cad_aeronave.jsp").forward(request, response);
 			
 			//Fim de cadastro		
+		}
+		if (op.equals("lst")){
+			CadastroTO cadto = new CadastroTO();
+			Cadastro cad = new Cadastro(cadto);
+			List<CadastroTO> lista = new ArrayList<CadastroTO>();
+			try {
+				lista = cad.consultar();
+			} catch (CadastroException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("ret", "lst");
+			request.setAttribute("lst", lista);
+			request.getRequestDispatcher("inclui.jsp").forward(request, response);
 		}
 	}
 

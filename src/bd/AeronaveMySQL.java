@@ -51,7 +51,9 @@ public class AeronaveMySQL implements AeronaveDAO {
 
 		return null;
 	}
-	// -----------------------------------------------------------
+	
+	
+	
 	private Connection obtemConexao() throws SQLException {
 		AcessoBanco acesso = new AcessoBanco();
 		return acesso.obtemConexao();

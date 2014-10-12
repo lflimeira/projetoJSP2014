@@ -9,9 +9,10 @@
 <body>
 	<div style="margin: auto; width: 940px; height: 350px; display: table;">
 		<jsp:include page="header.jsp"></jsp:include>
+		<form action="ControleAeronave" method="post">
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
 			<legend style="color: red;">Cadastro de Aeronave</legend>
-			<form action="ControleAeronave" method="post">
+			
 
 				<table>
 					<tr>
@@ -34,8 +35,7 @@
 					</tr>
 					<table style='margin-left: 70px; margin-top: 10px; border: 1px solid black; border-radius: 10px;'>
 						<tr>
-							<td style='text-align: center;' colspan='4'>Localização de
-								Assentos</td>
+							<td style='text-align: center;' colspan='4'>Localização de Assentos</td>
 						</tr>
 						<tr>
 							<td>Colunas:</td>
@@ -45,11 +45,10 @@
 						</tr>
 					</table>
 					<input type="hidden" name='operacao' value="cadastrar" >
-					<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;" >
+					<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;">
 				</table>
-
-			</form>
 		</fieldset>
+		</form>
 	</div>
 	
 	<%

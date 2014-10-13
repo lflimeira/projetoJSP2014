@@ -74,13 +74,58 @@ public class ControleAeronave extends HttpServlet {
 			try {
 				lista = aeronave.consultar();
 			} catch (AeronaveException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
 			request.setAttribute("lista", lista);
 			request.getRequestDispatcher("consulta_aeronave.jsp").forward(request, response);
 		
+		}
+		
+		if(operacao.equals("alterar")){
+			
+			//Confere se os dados ja foram alterados
+			String subOperacao = "";
+			if(request.getParameter("subOperacao")!=null){
+				subOperacao = (String) request.getParameter("subOperacao");
+			}
+			
+			if(subOperacao.equals("alterado")){
+				
+				//Faz a consulta de novo para retornar 
+				AeronaveTO aeronaveTO = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(aeronaveTO);
+				List<AeronaveTO> lista = new ArrayList<AeronaveTO>();
+				try {
+					lista = aeronave.consultar();
+				} catch (AeronaveException e) {
+					e.printStackTrace();
+				}
+				
+				request.setAttribute("lista", lista);//Envia lista para pagina de consulta
+				request.setAttribute("mensagem", "alterado");//Liga a mensagem de alteração efetuada com sucesso
+				request.getRequestDispatcher("consulta_aeronave.jsp").forward(request, response);
+				
+			}
+			if(subOperacao.equals("form")){
+				
+				int codigo = Integer.parseInt(request.getParameter("codigo"));
+				
+				AeronaveTO aeronaveTO = null;
+				AeronaveTO a = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(a);
+				try{
+					aeronaveTO = aeronave.alterar(codigo);
+				}catch(AeronaveException e){
+					e.printStackTrace();
+				}
+				request.setAttribute("aeronaveTO", aeronaveTO);
+				request.getRequestDispatcher("alterar_aeronave.jsp").forward(request, response);
+				
+			}
+			
+				
+			
 		}
 	}
 

@@ -115,7 +115,59 @@ public class AeronaveMySQL implements AeronaveDAO {
 
 	}
 	
+	public AeronaveTO alterar(int codigo) throws AeronaveException{
+		
+		Connection con = null;
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		
+		String sql = "SELECT * FROM aeronave WHERE codigo = '" + codigo + "'";
+		
+		try {
+			con = obtemConexao();
+			stmt = con.prepareStatement(sql);
+			
+			rs = stmt.executeQuery();
+			
+			AeronaveTO aeronave = new AeronaveTO();
+			
+			//Insere dados do Banco
+			
+			aeronave.setCodigo(rs.getInt(1));
+			aeronave.setNomeAeronave(rs.getString(2));
+			aeronave.setTipoAeronave(rs.getString(3));
+			aeronave.setColunas(rs.getInt(4));
+			aeronave.setFileiras(rs.getInt(5));
+
+			return aeronave;
+			
+		} catch (SQLException e) {
+			throw new AeronaveException(e);
 	
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				}catch(SQLException sqle){
+					//
+				}
+			}
+			if (stmt != null) {
+				try {
+					stmt.close();
+				}catch(SQLException sqle){
+					//
+				}
+			}
+			if (con != null) {
+				try {
+					con.close();
+				}catch(SQLException sqle){
+					//
+				}
+			}			
+		}
+	}
 	
 	private Connection obtemConexao() throws SQLException {
 		AcessoBanco acesso = new AcessoBanco();

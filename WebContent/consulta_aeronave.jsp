@@ -51,7 +51,23 @@
 				</div> 
 			-->
 				
-				<div id="resultadoPesquisa" style='margin-top: 10px'>
+				<div id='mensagem'>
+						<%
+							String mensagem = (String) request.getAttribute("mensagem");
+							
+							mensagem = (mensagem != null ? mensagem : ""); 
+							if(mensagem.equals("alterado")){
+								out.print(	"<div style='background-color: #93DB70;margin-top:20px; margin-left:auto; margin-right: auto; width: 350px; height: 30px; text-align: center;  border-radius: 10px;'>"
+											+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
+											+"Dados da Aeronave alterados"
+											+"</p>"
+											+"</div>");
+							}						
+						%>
+				
+				</div>
+				
+				<div id="resultadoPesquisa" style='margin-top: 10px;'>
 					<%
 						//Pega o ArrayList que foi passado pelo controle
 						ArrayList<AeronaveTO> lista = (ArrayList<AeronaveTO>) request.getAttribute("lista");
@@ -98,10 +114,10 @@
 									+"\n		" + aeronaveTO.getFileiras()
 									+"\n	</td>"
 									+"\n	<td style='text-align: center;background-color: #98FB98;'>"
-									+"\n		<a href='#'><img src='imagens/editar.png' width='20px' height='20px'></a>" 
+									+"\n		<a href='ControleAeronave?operacao=alterar&codigo="+aeronaveTO.getCodigo()+"&subOperacao=form'><img src='imagens/editar.png' width='20px' height='20px'></a>" 
 									+"\n	</td>"
 									+"\n	<td style='text-align: center;background-color: #FFA07A;'>"
-									+"\n		<a href='#'><img src='imagens/excluir.png' width='20px' height='20px'></a>" 
+									+"\n		<a href='ControleAeronave?operacao=excluir&codigo="+aeronaveTO.getCodigo()+"'><img src='imagens/excluir.png' width='20px' height='20px'></a>" 
 									+"\n	</td>"
 									+"\n</tr>"									
 									);
@@ -109,6 +125,7 @@
 					
 						out.print("\n</table>");
 					%>
+					<br>
 				</div>
 			</fieldset>
 		</div>

@@ -26,5 +26,11 @@ public class Aeronave {
 		AeronaveDAO dao = factory.getAeronaveDAO();
 		return dao.consultar();
 	}
+	
+	public AeronaveTO alterar(int codigo) throws AeronaveException{
+		DAOFactory factory = DAOFactory.getInstance();
+		AeronaveDAO dao = factory.getAeronaveDAO();
+		return dao.alterar(codigo);
+	}
 
 }

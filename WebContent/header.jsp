@@ -21,7 +21,7 @@
 		<li><a href="#">Aeronave</a>
 			<ul class="sub_menu">
 				<li><a href="cad_aeronave.jsp">Cadastrar</a></li>
-				<li><a href="consulta_aeronave.jsp">Alterar/Excluir</a></li>
+				<li><a href="ControleAeronave?operacao=consultar">Alterar/Excluir</a></li>
 			</ul></li>
 		<li><a href="#">Passagem</a>
 			<ul class="sub_menu">

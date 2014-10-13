@@ -30,6 +30,7 @@ public class ControleAeronave extends HttpServlet {
 	}
 	protected void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		//Ve qual operação o usuario solicitou
 		String operacao = (String) request.getParameter("operacao"); 
 		
 		//Se vier da pagina de cadastro
@@ -63,6 +64,23 @@ public class ControleAeronave extends HttpServlet {
 			request.getRequestDispatcher("cad_aeronave.jsp").forward(request, response);
 			
 			//Fim de cadastro		
+		}
+		
+		if(operacao.equals("consultar")){
+			
+			AeronaveTO aeronaveTO = new AeronaveTO();
+			Aeronave aeronave = new Aeronave(aeronaveTO);
+			List<AeronaveTO> lista = new ArrayList<AeronaveTO>();
+			try {
+				lista = aeronave.consultar();
+			} catch (AeronaveException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("lista", lista);
+			request.getRequestDispatcher("consulta_aeronave.jsp").forward(request, response);
+		
 		}
 	}
 

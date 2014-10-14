@@ -27,10 +27,17 @@ public class Aeronave {
 		return dao.consultar();
 	}
 	
-	public AeronaveTO alterar(int codigo) throws AeronaveException{
+	public AeronaveTO consultaUnica(int codigo) throws AeronaveException{
 		DAOFactory factory = DAOFactory.getInstance();
 		AeronaveDAO dao = factory.getAeronaveDAO();
-		return dao.alterar(codigo);
+		return dao.consultaUnica(codigo);
+	}
+	
+	public void alterar(AeronaveTO aeronaveTO) throws AeronaveException{
+		DAOFactory factory = DAOFactory.getInstance();
+		AeronaveDAO dao = factory.getAeronaveDAO();
+		dao.alterar(aeronaveTO);
+		
 	}
 
 }

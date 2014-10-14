@@ -16,10 +16,11 @@
 			<legend style="color: red;">Alterar Dados da Aeronave</legend>
 			<%
 			
+				//Pega a Sessão
+				HttpSession sessao = request.getSession();
+			
 				//Pega AeronaveTO
-				if(request.getParameter("aeronaveTO")!=null){
-					AeronaveTO aeronaveTO = (AeronaveTO) request.getParameter("aeronaveTO");
-				}
+					AeronaveTO aeronaveTO = (AeronaveTO) sessao.getAttribute("aeronaveTO");
 			
 			%>
 
@@ -51,6 +52,7 @@
 						</tr>
 					</table>
 					<input type="hidden" name='operacao' value="alterar" >
+					<input type="hidden" name='subOperacao' value="alterar" >
 					<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;">
 				</table>
 		</fieldset>

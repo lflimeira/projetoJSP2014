@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Aeronave;
 import model.AeronaveException;
@@ -84,12 +85,54 @@ public class ControleAeronave extends HttpServlet {
 		
 		if(operacao.equals("alterar")){
 			
-			//Confere se os dados ja foram alterados
-			String subOperacao = "";
-			if(request.getParameter("subOperacao")!=null){
-				subOperacao = (String) request.getParameter("subOperacao");
-			}
+			//Determina todo o processo de Alteração
+			String subOperacao = request.getParameter("subOperacao");
 			
+			//Nessa condição ele efetua uma consulta trazendo a aeronave pesquisada e manda para a pagina de alteracao
+			if(subOperacao.equals("form")){
+				
+				int codigo = Integer.parseInt(request.getParameter("codigo"));
+				
+				AeronaveTO aeronaveTO = null;
+				AeronaveTO a = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(a);
+				try{
+					aeronaveTO = aeronave.consultaUnica(codigo);
+				}catch(AeronaveException e){
+					e.printStackTrace();
+				}
+				
+				HttpSession session = request.getSession();
+				session.setAttribute("aeronaveTO", aeronaveTO);
+				response.sendRedirect("alterar_aeronave.jsp");
+				
+			}
+			//Altera no Banco de Dados os valores que foi passado pelo pagina
+			if(subOperacao.equals("alterar")){
+				//Cria objeto TO de Aeronave
+				AeronaveTO aeronaveTO = new AeronaveTO();
+				
+				//Coloca todas as informações no  Objeto TO
+				aeronaveTO.setCodigo(Integer.parseInt(request.getParameter("codigo")));
+				aeronaveTO.setNomeAeronave((String) request.getParameter("nomeAeronave"));
+				aeronaveTO.setTipoAeronave((String) request.getParameter("tipoAeronave"));
+				aeronaveTO.setFileiras(Integer.parseInt(request.getParameter("fileiras")));
+				aeronaveTO.setColunas(Integer.parseInt(request.getParameter("colunas")));
+				
+				//Iniciando os dados da TO na classe de Negócio
+				Aeronave aeronave = new Aeronave(aeronaveTO);
+				
+				//Inicia processo de cadastrar
+				try {
+					aeronave.alterar(aeronaveTO);
+				} catch (AeronaveException e) {
+					e.printStackTrace();
+				}
+				
+				//Redireciona para voltar para a pagina de consulta com a mensagem de alterado
+				request.getRequestDispatcher("ControleAeronave?operacao=alterar&subOperacao=alterado").forward(request, response);
+			}
+			//Retorna a pagina de consulta com a mensagem de aeronave alterada
 			if(subOperacao.equals("alterado")){
 				
 				//Faz a consulta de novo para retornar 
@@ -107,22 +150,7 @@ public class ControleAeronave extends HttpServlet {
 				request.getRequestDispatcher("consulta_aeronave.jsp").forward(request, response);
 				
 			}
-			if(subOperacao.equals("form")){
-				
-				int codigo = Integer.parseInt(request.getParameter("codigo"));
-				
-				AeronaveTO aeronaveTO = null;
-				AeronaveTO a = new AeronaveTO();
-				Aeronave aeronave = new Aeronave(a);
-				try{
-					aeronaveTO = aeronave.alterar(codigo);
-				}catch(AeronaveException e){
-					e.printStackTrace();
-				}
-				request.setAttribute("aeronaveTO", aeronaveTO);
-				request.getRequestDispatcher("alterar_aeronave.jsp").forward(request, response);
-				
-			}
+			
 			
 				
 			

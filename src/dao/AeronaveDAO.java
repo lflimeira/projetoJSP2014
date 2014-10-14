@@ -10,6 +10,8 @@ public interface AeronaveDAO{
 	
 	public List<AeronaveTO> consultar() throws AeronaveException;
 	
-	public AeronaveTO alterar(int codigo) throws AeronaveException;
+	public AeronaveTO consultaUnica(int codigo) throws AeronaveException;
+	
+	public void alterar(AeronaveTO aeronaveTO) throws AeronaveException;
 
 }

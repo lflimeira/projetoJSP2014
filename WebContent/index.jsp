@@ -40,7 +40,7 @@ $(document).ready(function(){
 						Choose a language.<br> <select name="linguagem"
 						id="linguagem">
 							<option value="">---------</option>
-							<option value="1">Português</option>
+							<option value="1" selected="selected">Português</option>
 							<option value="2">English</option>
 					</select> <br> <br> <input type="submit" id="entrar" name="Entrar"
 						value="Entrar" style="" />

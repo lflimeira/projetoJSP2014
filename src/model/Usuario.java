@@ -1,6 +1,17 @@
 package model;
 
+import java.io.*;  
+
+import javax.crypto.*;  
+import javax.crypto.spec.*;  
+
+import bd.DAOFactory;
+import dao.UsuarioDAO;
+
+import java.security.*;  
+import java.security.cert.*; 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Usuario {
@@ -8,7 +19,7 @@ public class Usuario {
 	private String nome;
 	private String login;
 	private String senha;
-	private String nivelAcesso;
+	private int nivelAcesso;
 	private String data;
 
 	public Usuario(String login, String senha) throws Exception {
@@ -29,10 +40,12 @@ public class Usuario {
 		return senha;
 	}
 
-	public String getNivelAcesso() {
+	public int getNivelAcesso() {
 		return nivelAcesso;
 	}
-	
+	public void setNivelAcesso(int nivelAcesso) {
+		this.nivelAcesso = nivelAcesso;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -45,13 +58,25 @@ public class Usuario {
 		return data;
 	}
 
-	public void setData(String data) {
-		this.data = data;
+	public void setData() {
+		Date dataHoje = new Date();  
+		SimpleDateFormat spf = new SimpleDateFormat("dd/MM/yyyy");
+		this.data = spf.format(dataHoje);
 	}
 
-//	public boolean realizarLogin() {
-//
-//		
-//	}
+	public boolean realizarLogin() {
+		
+		DAOFactory factory = DAOFactory.getInstance();
+		UsuarioDAO userDAO = factory.getUsuarioDAO();
+		ArrayList user = userDAO.realizarLogin(login, senha);
+		
+		if(user.isEmpty()){
+			return false;
+		}else{
+			this.setNome(user.get(0) + "");
+			this.setNivelAcesso(Integer.parseInt(user.get(1) + ""));
+			return true;
+		}
+	}
 
 }

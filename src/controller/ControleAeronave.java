@@ -149,10 +149,10 @@ public class ControleAeronave extends HttpServlet {
 				request.setAttribute("mensagem", "alterado");//Liga a mensagem de alteração efetuada com sucesso
 				request.getRequestDispatcher("consulta_aeronave.jsp").forward(request, response);
 				
-			}
+			}		
 			
-			
-				
+		}
+		if(operacao.equals("excluir")){
 			
 		}
 	}

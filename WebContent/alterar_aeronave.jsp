@@ -53,7 +53,7 @@
 					</table>
 					<input type="hidden" name='operacao' value="alterar" >
 					<input type="hidden" name='subOperacao' value="alterar" >
-					<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;">
+					<input type='submit' value='Alterar' style="margin-left: 150px; margin-top: 10px;">
 				</table>
 		</fieldset>
 		</form>

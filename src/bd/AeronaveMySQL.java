@@ -123,7 +123,6 @@ public class AeronaveMySQL implements AeronaveDAO {
 		ResultSet rs = null;
 		
 		String sql = "SELECT * FROM aeronave WHERE codigo = "+codigo;
-		System.out.println(sql);
 		
 		try {
 			con = obtemConexao();
@@ -135,7 +134,6 @@ public class AeronaveMySQL implements AeronaveDAO {
 			while (rs.next()) {
 				//Insere dados do Banco
 				aeronaveTO.setCodigo(rs.getInt(1));
-				System.out.println(rs.getString(2));
 				aeronaveTO.setNomeAeronave(rs.getString(2));
 				aeronaveTO.setTipoAeronave(rs.getString(3));
 				aeronaveTO.setColunas(rs.getInt(4));

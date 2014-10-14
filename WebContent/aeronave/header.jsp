@@ -17,14 +17,14 @@
 		<li><a href="home.jsp">In&iacute;cio</a></li>
 		<li><a href="#">Vôo</a>
 			<ul class="sub_menu">
-				<li><a href="consulta_painel.jsp">Consulta para Painel</a></li>
+				<li><a href="../consulta_painel.jsp">Consulta para Painel</a></li>
 				<li><a href="#">Cadastrar</a></li>
 				<li><a href="#">Alterar/Excluir</a></li>
 			</ul></li>
 		<li><a href="#">Aeronave</a>
 			<ul class="sub_menu">
 				<li><a href="aeronave/cad_aeronave.jsp">Cadastrar</a></li>
-				<li><a href="ControleAeronave?operacao=consultar">Alterar/Excluir</a></li>
+				<li><a href="../ControleAeronave?operacao=consultar">Alterar/Excluir</a></li>
 			</ul></li>
 		<li><a href="#">Passagem</a>
 			<ul class="sub_menu">

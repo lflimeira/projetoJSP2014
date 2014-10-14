@@ -62,7 +62,7 @@ public class ControleAeronave extends HttpServlet {
 			request.setAttribute("mensagem", "sucesso");
 				
 			//Redireciona para pagina de consulta
-			request.getRequestDispatcher("cad_aeronave.jsp").forward(request, response);
+			request.getRequestDispatcher("aeronave/cad_aeronave.jsp").forward(request, response);
 			
 			//Fim de cadastro		
 		}
@@ -79,7 +79,7 @@ public class ControleAeronave extends HttpServlet {
 			}
 			
 			request.setAttribute("lista", lista);
-			request.getRequestDispatcher("consulta_aeronave.jsp").forward(request, response);
+			request.getRequestDispatcher("aeronave/consulta_aeronave.jsp").forward(request, response);
 		
 		}
 		
@@ -104,7 +104,7 @@ public class ControleAeronave extends HttpServlet {
 				
 				HttpSession session = request.getSession();
 				session.setAttribute("aeronaveTO", aeronaveTO);
-				response.sendRedirect("alterar_aeronave.jsp");
+				response.sendRedirect("aeronave/alterar_aeronave.jsp");
 				
 			}
 			//Altera no Banco de Dados os valores que foi passado pelo pagina
@@ -147,7 +147,7 @@ public class ControleAeronave extends HttpServlet {
 				
 				request.setAttribute("lista", lista);//Envia lista para pagina de consulta
 				request.setAttribute("mensagem", "alterado");//Liga a mensagem de alteração efetuada com sucesso
-				request.getRequestDispatcher("consulta_aeronave.jsp").forward(request, response);
+				request.getRequestDispatcher("aeronave/consulta_aeronave.jsp").forward(request, response);
 				
 			}		
 			
@@ -171,7 +171,7 @@ public class ControleAeronave extends HttpServlet {
 				
 				HttpSession session = request.getSession();
 				session.setAttribute("aeronaveTO", aeronaveTO);
-				response.sendRedirect("excluir_aeronave.jsp");
+				response.sendRedirect("aeronave/excluir_aeronave.jsp");
 			}
 			//Exclui Aeronave no Banco de Dados
 			if(subOperacao.equals("excluir")){
@@ -205,7 +205,7 @@ public class ControleAeronave extends HttpServlet {
 				
 				request.setAttribute("lista", lista);//Envia lista para pagina de consulta
 				request.setAttribute("mensagem", "excluido");//Liga a mensagem de exclusao efetuada com sucesso
-				request.getRequestDispatcher("consulta_aeronave.jsp").forward(request, response);
+				request.getRequestDispatcher("aeronave/consulta_aeronave.jsp").forward(request, response);
 				
 			}	
 		}

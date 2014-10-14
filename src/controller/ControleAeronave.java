@@ -153,7 +153,61 @@ public class ControleAeronave extends HttpServlet {
 			
 		}
 		if(operacao.equals("excluir")){
+			//Determina todo o processo de Alteração
+			String subOperacao = request.getParameter("subOperacao");
 			
+			//Faz uma consulta para retornar dados da Aeronave para pagina de exclusão
+			if(subOperacao.equals("form")){
+				int codigo = Integer.parseInt(request.getParameter("codigo"));
+				
+				AeronaveTO aeronaveTO = null;
+				AeronaveTO a = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(a);
+				try{
+					aeronaveTO = aeronave.consultaUnica(codigo);
+				}catch(AeronaveException e){
+					e.printStackTrace();
+				}
+				
+				HttpSession session = request.getSession();
+				session.setAttribute("aeronaveTO", aeronaveTO);
+				response.sendRedirect("excluir_aeronave.jsp");
+			}
+			//Exclui Aeronave no Banco de Dados
+			if(subOperacao.equals("excluir")){
+				//Pega o Codigo
+				int codigo = Integer.parseInt(request.getParameter("codigo"));
+				
+				AeronaveTO a = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(a);
+				
+				//Inicia processo de cadastrar
+				try {
+					aeronave.excluir(codigo);
+				} catch (AeronaveException e) {
+					e.printStackTrace();
+				}
+				
+				//Redireciona para voltar para a pagina de consulta com a mensagem de alterado
+				request.getRequestDispatcher("ControleAeronave?operacao=excluir&subOperacao=excluido").forward(request, response);
+			}
+			if(subOperacao.equals("excluido")){
+				
+				//Faz a consulta de novo para retornar 
+				AeronaveTO aeronaveTO = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(aeronaveTO);
+				List<AeronaveTO> lista = new ArrayList<AeronaveTO>();
+				try {
+					lista = aeronave.consultar();
+				} catch (AeronaveException e) {
+					e.printStackTrace();
+				}
+				
+				request.setAttribute("lista", lista);//Envia lista para pagina de consulta
+				request.setAttribute("mensagem", "excluido");//Liga a mensagem de exclusao efetuada com sucesso
+				request.getRequestDispatcher("consulta_aeronave.jsp").forward(request, response);
+				
+			}	
 		}
 	}
 

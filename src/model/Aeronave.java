@@ -39,5 +39,10 @@ public class Aeronave {
 		dao.alterar(aeronaveTO);
 		
 	}
+	public void excluir(int codigo)throws AeronaveException{
+		DAOFactory factory = DAOFactory.getInstance();
+		AeronaveDAO dao = factory.getAeronaveDAO();
+		dao.excluir(codigo);
+	}
 
 }

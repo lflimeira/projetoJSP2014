@@ -210,6 +210,38 @@ public class AeronaveMySQL implements AeronaveDAO {
 		
 	}
 	
+	public void excluir(int codigo) throws AeronaveException{
+		String sql = "DELETE FROM aeronave WHERE codigo = "+codigo;
+		Connection conn = null;
+		PreparedStatement stm = null;
+		try{
+			conn = obtemConexao();
+			
+			stm = conn.prepareStatement(sql);
+			
+			stm.executeUpdate();
+			
+		} catch (SQLException e) {
+			throw new AeronaveException(e);
+
+		} finally {
+			if (stm != null) {
+				try {
+					stm.close();
+				} catch (SQLException e) {
+					//
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					//
+				}
+			}
+		}
+	}
+
 	private Connection obtemConexao() throws SQLException {
 		AcessoBanco acesso = new AcessoBanco();
 		return acesso.obtemConexao();

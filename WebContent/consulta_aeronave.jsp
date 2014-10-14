@@ -15,7 +15,7 @@
 		<div style="margin: auto; width: 940px; height: 350px; display: table;">
 			<jsp:include page="header.jsp"></jsp:include>
 			
-			<fieldset style="border: 1px solid black; border-radius: 10px; width: 750px; min-height: 150px; margin: auto; margin-top: 100px;">
+			<fieldset style="border: 1px solid black; border-radius: 10px; width: 600px; min-height: 150px; margin: auto; margin-top: 100px;">
 				<legend style="color: red;">Consulta de Aeronaves</legend>
 			
 			<!--
@@ -124,7 +124,7 @@
 									+"\n		<a href='ControleAeronave?operacao=alterar&codigo="+aeronaveTO.getCodigo()+"&subOperacao=form'><img src='imagens/editar.png' width='20px' height='20px'></a>" 
 									+"\n	</td>"
 									+"\n	<td style='text-align: center;background-color: #FFA07A;'>"
-									+"\n		<a href='ControleAeronave?operacao=excluir&codigo="+aeronaveTO.getCodigo()+"'><img src='imagens/excluir.png' width='20px' height='20px'></a>" 
+									+"\n		<a href='ControleAeronave?operacao=excluir&subOperacao=form&codigo="+aeronaveTO.getCodigo()+"'><img src='imagens/excluir.png' width='20px' height='20px'></a>" 
 									+"\n	</td>"
 									+"\n</tr>"									
 									);

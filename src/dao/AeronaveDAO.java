@@ -14,4 +14,5 @@ public interface AeronaveDAO{
 	
 	public void alterar(AeronaveTO aeronaveTO) throws AeronaveException;
 
+	public void excluir(int codigo) throws AeronaveException;
 }

@@ -12,8 +12,8 @@
 	<div style="margin: auto; width: 940px; height: 350px; display: table;">
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControleAeronave" method="post">
-		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
-			<legend style="color: red;">Alterar Dados da Aeronave</legend>
+		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 350px; min-height: 150px; margin: auto; margin-top: 100px;">
+			<legend style="color: red;">Dados da Aeronave</legend>
 			<%
 			
 				//Pega a Sessão
@@ -26,34 +26,35 @@
 
 				<table>
 					<tr>
-						<td style='text-align: right;'>Código da Aeronave</td>
+						<td style='text-align: right;font-weight: bold;'>Código da Aeronave</td>
 						<td>:</td>
 						<td><% out.print(aeronaveTO.getCodigo()); %></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Nome da Aeronave</td>
+						<td style='text-align: right;font-weight: bold;'>Nome da Aeronave</td>
 						<td>:</td>
 						<td><% out.print(aeronaveTO.getNomeAeronave()); %></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Tipo de Aeronave</td>
+						<td style='text-align: right;font-weight: bold;'>Tipo de Aeronave</td>
 						<td>:</td>
 						<td><% out.print(aeronaveTO.getTipoAeronave()); %></td>
 					</tr>
 					<table style='margin-left: 70px; margin-top: 10px; border: 1px solid black; border-radius: 10px;'>
 						<tr>
-							<td style='text-align: center;' colspan='4'>Localização de Assentos</td>
+							<td style='text-align: center;font-weight: bold;' colspan='4'>Localização de Assentos</td>
 						</tr>
 						<tr>
-							<td>Colunas:</td>
+							<td style='font-weight: bold;'>Colunas:</td>
 							<td><% out.print(aeronaveTO.getColunas()); %></td>
-							<td>Fileiras:</td>
+							<td style='font-weight: bold;'>Fileiras:</td>
 							<td><% out.print(aeronaveTO.getFileiras());%></td>
 						</tr>
 					</table>
 					<input type="hidden" name='operacao' value="excluir" >
 					<input type="hidden" name='subOperacao' value="excluir" >
-					<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;">
+					<input type='hidden' name='codigo' value='<% out.print(aeronaveTO.getCodigo()); %>'>
+					<input type='submit' value='Excluir' style="margin-left: 150px; margin-top: 10px;">
 				</table>
 		</fieldset>
 		</form>

@@ -1,16 +1,13 @@
-<%@page import="java.net.URL"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 
-<link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
-<link rel="stylesheet" href="../css/style.css" type="text/css" media="screen, projection" />
+<link rel="stylesheet" href="css/style.css" type="text/css"
+	media="screen, projection" />
 <!--[if lte IE 7]>
     <link rel="stylesheet" type="text/css" href="css/ie.css" media="screen" />
 <![endif]-->
 <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.dropdownPlain.js"></script>
-<script type="text/javascript" src="../js/jquery-1.3.1.min.js"></script>
-<script type="text/javascript" src="../js/jquery.dropdownPlain.js"></script>
 
 <div class="menu_sistema" style="margin-left: 176px;">
 	<ul class="dropdown">
@@ -23,7 +20,7 @@
 			</ul></li>
 		<li><a href="#">Aeronave</a>
 			<ul class="sub_menu">
-				<li><a href="aeronave/cad_aeronave.jsp">Cadastrar</a></li>
+				<li><a href="cad_aeronave.jsp">Cadastrar</a></li>
 				<li><a href="ControleAeronave?operacao=consultar">Alterar/Excluir</a></li>
 			</ul></li>
 		<li><a href="#">Passagem</a>

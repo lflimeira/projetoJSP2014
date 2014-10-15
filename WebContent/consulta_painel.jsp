@@ -5,76 +5,27 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Venda de Passagens</title>
-
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-<!-- Optional theme -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css">
-
-<!-- Latest compiled and minified JavaScript -->
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-
+<script language="JavaScript" src="js/calendario.js"></script>
 </head>
-<body>
-	<div style="margin: auto; width: 940px; min-height: 500px; display: table;">
+<body onLoad="initCalendar();">
+
+	<div
+		style="margin: auto; width: 940px; min-height: 500px; display: table;">
 		<jsp:include page="header.jsp"></jsp:include>
 		<fieldset
-			style="border: 1px; border-color: gray; border-style: solid; width: 1000px; min-height: 300px; margin: auto; margin-top: 100px;">
-
-			<div class="row" align="center">
-				<div class="col-lg-12">
-					<h2>Lista de Voos</h2>
-					<table class="table table-bordered table-hover table-striped">
-						<thead>
-							<tr>
-								<th>Código</th>
-								<th>Origem</th>
-								<th>Destino</th>
-								<th>Status</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="success">
-								<td width=5%>1265</td>
-								<td>Guarulhos</td>
-								<td>Fortaleza</td>
-								<td width=5%>Confirmado</td>
-							</tr>
-							<tr class="danger">
-								<td>1265</td>
-								<td>Guarulhos</td>
-								<td>Fortaleza</td>
-								<td>Cancelado</td>
-							</tr>
-							<tr class="warning">
-								<td>1265</td>
-								<td>Guarulhos</td>
-								<td>Fortaleza</td>
-								<td>Atrasado</td>
-							</tr>
-							<tr class="warning">
-								<td>1265</td>
-								<td>Guarulhos</td>
-								<td>Fortaleza</td>
-								<td>Embarque</td>
-							</tr>
-							<tr>
-								<td>1265</td>
-								<td>Guarulhos</td>
-								<td>Fortaleza</td>
-								<td>Finalizado</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+			style="border: 1px; border-color: gray; border-style: solid; width: 940px; min-height: 300px; margin: auto; margin-top: 100px;">
+			<legend style="color: red;"> Consulta para Painel </legend>
+			<div style="text-align: center; margin-top: 70px;">
+				Código do Vôo: <input type="text" name="codigo_voo" /> Origem: <select
+					name="origem">
+					<option>------------</option>
+				</select> Destino: <select name="destino">
+					<option>------------</option>
+				</select> Data: <input onclick="showCalendar(this, this);" name="data">
+				Hora: Situação:
 			</div>
 		</fieldset>
 	</div>
+
 </body>
 </html>

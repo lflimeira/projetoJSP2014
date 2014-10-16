@@ -1,9 +1,6 @@
-package servlet;
+package controller;
 
 import java.io.IOException;
-import java.util.Locale;
-import java.util.ResourceBundle;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,20 +8,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Usuario;
 
 /**
- * Servlet implementation class Idioma
+ * Servlet implementation class Login
  */
-@WebServlet("/idioma")
-public class Idioma extends HttpServlet {
+@WebServlet("/loginControler")
+public class LoginControler extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
     /**
-     * Default constructor. 
+     * @see HttpServlet#HttpServlet()
      */
-    public Idioma() {
+    public LoginControler() {
+        super();
         // TODO Auto-generated constructor stub
-    	super();
     }
 
 	/**
@@ -38,21 +36,26 @@ public class Idioma extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		String login = request.getParameter("login");
+		String senha = request.getParameter("senha");
 		
-		int cbo_idioma = Integer.parseInt(request.getParameter("linguagem"));
-		ResourceBundle bundle = null;
-
-		if(cbo_idioma == 1){
-			bundle = ResourceBundle.getBundle("exemplo", new Locale("pt","BR"));
-		}else if(cbo_idioma == 2){
-			bundle = ResourceBundle.getBundle("exemplo",Locale.US);
+		Usuario user = null;
+		try {
+			user = new Usuario(login, senha);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
-		HttpSession session = request.getSession();
-		session.setAttribute("linguagem", bundle);
-		
-		request.getRequestDispatcher("login.jsp").forward(request, response);
+		if(user.realizarLogin()){
+			HttpSession session = request.getSession();
+			session.setAttribute("usuario",user);
+			request.setAttribute("msg", "");
+			request.getRequestDispatcher("home.jsp").forward(request, response);
+		}else{
+			request.setAttribute("msg", "Usuário ou Senha invalidos!");
+			request.getRequestDispatcher("login.jsp").forward(request, response);
+		}
+			
 		
 	}
 

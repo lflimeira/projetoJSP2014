@@ -9,6 +9,22 @@
 /*!40101 SET NAMES utf8 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Copiando estrutura do banco de dados para aeroporto
+CREATE DATABASE IF NOT EXISTS `aeroporto` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `aeroporto`;
+
+
+-- Copiando estrutura para tabela aeroporto.aeronave
+CREATE TABLE IF NOT EXISTS `aeronave` (
+  `codigo` int(4) NOT NULL,
+  `nomeAeronave` varchar(50) NOT NULL,
+  `tipoAeronave` varchar(50) NOT NULL,
+  `colunas` int(4) NOT NULL,
+  `fileiras` int(4) NOT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 -- Copiando dados para a tabela aeroporto.aeronave: ~4 rows (aproximadamente)
 /*!40000 ALTER TABLE `aeronave` DISABLE KEYS */;
 INSERT INTO `aeronave` (`codigo`, `nomeAeronave`, `tipoAeronave`, `colunas`, `fileiras`) VALUES
@@ -17,6 +33,18 @@ INSERT INTO `aeronave` (`codigo`, `nomeAeronave`, `tipoAeronave`, `colunas`, `fi
 	(3, 'Juliana', 'Luxo', 1, 1),
 	(5, 'Franciele', 'Irmã franci', 3, 4);
 /*!40000 ALTER TABLE `aeronave` ENABLE KEYS */;
+
+
+-- Copiando estrutura para tabela aeroporto.usuario
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL,
+  `nome` varchar(60) NOT NULL,
+  `login` varchar(40) NOT NULL,
+  `senha` varchar(100) NOT NULL,
+  `data` varchar(10) DEFAULT NULL,
+  `nivelAcesso` int(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela aeroporto.usuario: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;

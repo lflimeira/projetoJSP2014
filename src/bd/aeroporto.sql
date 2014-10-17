@@ -1,4 +1,4 @@
-﻿-- --------------------------------------------------------
+-- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
 -- Versão do servidor:           5.6.20 - MySQL Community Server (GPL)
 -- OS do Servidor:               Win32
@@ -49,8 +49,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Copiando dados para a tabela aeroporto.usuario: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `data`, `nivelAcesso`) VALUES
-	(1, 'Luiz Felipe', 'luiz', '202cb962ac59075b964b07152d234b70', NULL, 1),
-	(2, 'Maicon Gouveia', 'maicon', '202cb962ac59075b964b07152d234b70', NULL, 1);
+	(1, 'Luiz Felipe', 'luiz', '123', NULL, 1),
+	(2, 'Maicon Gouveia', 'maicon', '123', NULL, 1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

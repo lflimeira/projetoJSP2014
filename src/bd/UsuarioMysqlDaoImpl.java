@@ -40,7 +40,7 @@ public class UsuarioMysqlDaoImpl implements UsuarioDAO{
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			return resultadoPesquisa;
+			return resultadoPesquisa;	
 
 		} finally {
 			if (stm != null) {

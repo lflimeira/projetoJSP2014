@@ -11,8 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.Aeronave;
+import model.AeronaveException;
 import model.Voo;
 import model.VooException;
+import to.AeronaveTO;
 import to.VooTO;
 
 @WebServlet("/ControleVoo")
@@ -29,6 +32,7 @@ public class ControleVoo extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		executa(request, response);
 	}
+	
 	protected void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//Ve qual operação o usuario solicitou
@@ -37,38 +41,56 @@ public class ControleVoo extends HttpServlet {
 		//Se vier da pagina de cadastro
 		if(operacao.equals("cadastrar")){
 			
-			//Cria objeto TO de Aeronave
-			VooTO vooTO = new VooTO();
+			String subOperacao = request.getParameter("subOperacao");
 			
-			//Coloca todas as informações no  Objeto TO
-			vooTO.setCodigo(Integer.parseInt(request.getParameter("codigo")));
-			vooTO.setOrigem((String) request.getParameter("origem"));
-			vooTO.setDestino((String) request.getParameter("destino"));
-			vooTO.setData((String) request.getParameter("data"));
-			vooTO.setHora((String) request.getParameter("hora"));
-			vooTO.setSituacao(request.getParameter("status"));
-			vooTO.setEscala1(request.getParameter("escala1"));
-			vooTO.setEscala2(request.getParameter("escala2"));
-			vooTO.setAeronave(request.getParameter("aeronave"));
-			
-			//Iniciando os dados da TO na classe de Negócio
-			Voo voo = new Voo(vooTO);
-			
-			//Inicia processo de cadastrar
-			try {
-				voo.cadastrar();
-			} catch (VooException e) {
-				e.printStackTrace();
-			}
-			
-			
-			//Aciona mensagem de que cadastro foi concluido
-			request.setAttribute("mensagem", "sucesso");
+			//Para levar até o formulario de cadastro puxando as informações
+			if(subOperacao.equals("form")){
+				AeronaveTO aeronaveTO = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(aeronaveTO);
+				List<AeronaveTO> lista = new ArrayList<AeronaveTO>();
+				try {
+					lista = aeronave.consultar();
+				} catch (AeronaveException e) {
+					e.printStackTrace();
+				}
 				
-			//Redireciona para pagina de cadastro
-			request.getRequestDispatcher("voo_cadastrar.jsp").forward(request, response);
-			
-			//Fim de cadastro		
+				request.setAttribute("lista", lista);
+				request.getRequestDispatcher("voo_cadastrar.jsp").forward(request, response);
+			}
+			//Para cadastrar de vez
+			if(subOperacao.equals("cadastra")){
+				//Cria objeto TO de Voo
+				VooTO vooTO = new VooTO();
+				
+				//Coloca todas as informações no  Objeto TO
+				vooTO.setCodigo(Integer.parseInt(request.getParameter("codigo")));
+				vooTO.setOrigem((String) request.getParameter("origem"));
+				vooTO.setDestino((String) request.getParameter("destino"));
+				vooTO.setData((String) request.getParameter("data"));
+				vooTO.setHora((String) request.getParameter("hora"));
+				vooTO.setSituacao(request.getParameter("status"));
+				vooTO.setEscala1(request.getParameter("escala1"));
+				vooTO.setEscala2(request.getParameter("escala2"));
+				vooTO.setAeronave(request.getParameter("aeronave"));
+				
+				//Iniciando os dados da TO na classe de Negócio
+				Voo voo = new Voo(vooTO);
+				
+				//Inicia processo de cadastrar
+				try {
+					voo.cadastrar();
+				} catch (VooException e) {
+					e.printStackTrace();
+				}
+				
+				//Aciona mensagem de que cadastro foi concluido
+				request.setAttribute("mensagem", "sucesso");
+				
+				//Redireciona para pagina de cadastro
+				request.getRequestDispatcher("voo_cadastrar.jsp").forward(request, response);
+				
+				//Fim de cadastro
+			}
 		}
 		
 		if(operacao.equals("consultar")){

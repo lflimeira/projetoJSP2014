@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `data`, `nivelAcesso`) VALUES
 	(1, 'Luiz Felipe', 'luiz', '202cb962ac59075b964b07152d234b70', NULL, 1),
-	(2, 'Maicon Gouveia', 'maicon', '202cb962ac59075b964b07152d234b70', NULL, 1);
+	(2, 'Maicon Gouveia', 'maicon', '202cb962ac59075b964b07152d234b70', NULL, 1),
 	(3, 'Jefferson Alves', 'Jefferson', '202cb962ac59075b964b07152d234b70', NULL, 1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

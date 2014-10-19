@@ -26,6 +26,7 @@ public class UsuarioMysqlDaoImpl implements UsuarioDAO{
 
 		try {
 			AcessoBanco bd = new AcessoBanco();
+			bd.setSenha(login);
 			conn = bd.obtemConexao();
 
 			stm = conn.prepareStatement(sqlSelect);

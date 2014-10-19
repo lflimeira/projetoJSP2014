@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class AcessoBanco {
+	
+	private String senha;
 
 	static {
 		try {
@@ -15,7 +17,25 @@ public class AcessoBanco {
 	}
 
 	public Connection obtemConexao() throws SQLException{
-		return DriverManager.getConnection("jdbc:mysql://localhost/aeroporto","root", "");
+		String senhaUsu = getSenha();
+		
+		return DriverManager.getConnection("jdbc:mysql://localhost/aeroporto","root", senhaUsu);
+	}
+	
+	public String getSenha(){
+		return this.senha;
+	}
+	
+	public void setSenha(String usuario){
+		if(usuario.equals("jefferson")){
+			this.senha = "root";
+		}
+		
+		if(usuario.equals("maicon"))
+			this.senha = "";
+		
+		if(usuario.equals("luiz"))
+			this.senha = "123";
 	}
 
 }

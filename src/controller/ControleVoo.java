@@ -29,6 +29,7 @@ public class ControleVoo extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		executa(request, response);
 	}
+	
 	protected void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		//Ve qual operação o usuario solicitou
@@ -61,10 +62,9 @@ public class ControleVoo extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			
 			//Aciona mensagem de que cadastro foi concluido
 			request.setAttribute("mensagem", "sucesso");
-				
+			
 			//Redireciona para pagina de cadastro
 			request.getRequestDispatcher("voo_cadastrar.jsp").forward(request, response);
 			

@@ -119,7 +119,7 @@
 		
 		mensagem = (mensagem != null ? mensagem : ""); 
 		if(mensagem.equals("sucesso")){
-			out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto; width: 350px; height: 30px; text-align: center;  border-radius: 10px;'>"
+			out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto;margin-top: 50px;width: 350px; height: 30px; text-align: center;  border-radius: 10px;'>"
 						+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
 						+"Cadastro de Voo realizado com Sucesso"
 						+"</p>"

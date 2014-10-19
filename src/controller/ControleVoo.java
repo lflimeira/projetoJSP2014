@@ -83,9 +83,22 @@ public class ControleVoo extends HttpServlet {
 					e.printStackTrace();
 				}
 				
+				//Inicia o processo de listagem de aeronave
+				AeronaveTO aeronaveTO = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(aeronaveTO);
+				List<AeronaveTO> lista = new ArrayList<AeronaveTO>();
+				try {
+					lista = aeronave.consultar();
+				} catch (AeronaveException e) {
+					e.printStackTrace();
+				}
+				
+				
 				//Aciona mensagem de que cadastro foi concluido
 				request.setAttribute("mensagem", "sucesso");
 				
+				//Lista as Aeronave denovo
+				request.setAttribute("lista", lista);
 				//Redireciona para pagina de cadastro
 				request.getRequestDispatcher("voo_cadastrar.jsp").forward(request, response);
 				

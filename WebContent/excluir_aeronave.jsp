@@ -20,7 +20,7 @@
 				HttpSession sessao = request.getSession();
 			
 				//Pega AeronaveTO
-					AeronaveTO aeronaveTO = (AeronaveTO) sessao.getAttribute("aeronaveTO");
+				AeronaveTO aeronaveTO = (AeronaveTO) sessao.getAttribute("aeronaveTO");
 			
 			%>
 

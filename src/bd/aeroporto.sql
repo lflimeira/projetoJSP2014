@@ -1,6 +1,6 @@
-﻿-- --------------------------------------------------------
+-- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           5.6.20 - MySQL Community Server (GPL)
+-- Versão do servidor:           5.6.16 - MySQL Community Server (GPL)
 -- OS do Servidor:               Win32
 -- HeidiSQL Versão:              8.3.0.4694
 -- --------------------------------------------------------
@@ -25,13 +25,16 @@ CREATE TABLE IF NOT EXISTS `aeronave` (
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela aeroporto.aeronave: ~4 rows (aproximadamente)
+-- Copiando dados para a tabela aeroporto.aeronave: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `aeronave` DISABLE KEYS */;
 INSERT INTO `aeronave` (`codigo`, `nomeAeronave`, `tipoAeronave`, `colunas`, `fileiras`) VALUES
-	(1, 'Maicon', 'Jet', 2, 2),
-	(2, 'Luiz', 'BigNose', 1, 3),
-	(3, 'Juliana', 'Luxo', 1, 1),
-	(5, 'Franciele', 'Irmã franci', 3, 4);
+	(2, 'jkljklpj', 'iopjhiopj', 3, 3),
+	(3, 'jklp', 'jhp', 3, 1),
+	(5, 'dfasfas frqfqfd', 'dfad gqre a', 3, 5),
+	(6, 'sadeqwtq ', 'ddaf q', 5, 5),
+	(7, 'Luiz', 'Aviao BigNose', 3, 3),
+	(8, 'Juliana', 'Avião de Luxo', 2, 2),
+	(9, 'Jefferson', 'Jatinho ', 1, 1);
 /*!40000 ALTER TABLE `aeronave` ENABLE KEYS */;
 
 
@@ -52,6 +55,27 @@ INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `data`, `nivelAcesso`) VA
 	(1, 'Luiz Felipe', 'luiz', '202cb962ac59075b964b07152d234b70', NULL, 1),
 	(2, 'Maicon Gouveia', 'maicon', '202cb962ac59075b964b07152d234b70', NULL, 1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+
+
+-- Copiando estrutura para tabela aeroporto.voo
+CREATE TABLE IF NOT EXISTS `voo` (
+  `codigo` int(11) NOT NULL,
+  `origem` varchar(45) NOT NULL,
+  `destino` varchar(45) NOT NULL,
+  `dia` date NOT NULL,
+  `hora` time NOT NULL,
+  `situacao` varchar(15) DEFAULT NULL,
+  `pri_escala` varchar(45) DEFAULT NULL,
+  `seg_escala` varchar(45) DEFAULT NULL,
+  `cod_aeronave` int(11) NOT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela aeroporto.voo: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `voo` DISABLE KEYS */;
+INSERT INTO `voo` (`codigo`, `origem`, `destino`, `dia`, `hora`, `situacao`, `pri_escala`, `seg_escala`, `cod_aeronave`) VALUES
+	(1, 'Santa Catarina', 'Sergipe', '2015-10-23', '10:00:00', 'Confirmado', 'Amazonas', 'Alagoas', 2);
+/*!40000 ALTER TABLE `voo` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

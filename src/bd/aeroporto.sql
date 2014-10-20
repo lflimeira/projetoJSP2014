@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `aeronave` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 create table voo(
-	codigo       smallint primary key not null,
+	codigo       int primary key not null,
     origem       varchar(45) not null,
     destino      varchar(45) not null,
     dia          date not null,
@@ -34,7 +34,7 @@ create table voo(
     situacao     varchar(15),
     pri_escala   varchar(45),
     seg_escala   varchar(45),
-    cod_aeronave smallint not null
+    cod_aeronave int not null
 )Engine=InnoDB;
 
 -- Copiando dados para a tabela aeroporto.aeronave: ~4 rows (aproximadamente)

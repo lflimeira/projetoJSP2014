@@ -55,14 +55,12 @@
 					<tr>
 						<td style='text-align: right;'>Data</td>
 						<td>:</td>
-						<td><input class="data" type='date' size='30' maxlength="30"
-							name='destino' id='destino' /></td>
+						<td><input class="data" type='date' size='30' maxlength="30" name='data' id='data' /></td>
 					</tr>
 					<tr>
 						<td style='text-align: right;'>Hora</td>
 						<td>:</td>
-						<td><input class="hora" type='time' size='30' maxlength="30"
-							name='destino' id='destino' /></td>
+						<td><input class="hora" type='time' size='30' maxlength="30" name='hora' id='hora' /></td>
 					</tr>
 
 					<tr>					
@@ -99,7 +97,7 @@
 							<%
 	  							ArrayList<AeronaveTO> lista = (ArrayList<AeronaveTO>) request.getAttribute("lista");
 								for(AeronaveTO aeronaveTO : lista){ 
-									out.print("\n	<option id='"+aeronaveTO.getCodigo()+"'>"+aeronaveTO.getNomeAeronave()+"</option>");
+									out.print("\n	<option value='"+aeronaveTO.getCodigo()+"'>"+aeronaveTO.getNomeAeronave()+"</option>");
 								}
 							%>
 							</select>

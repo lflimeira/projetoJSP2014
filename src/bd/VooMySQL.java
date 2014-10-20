@@ -34,7 +34,7 @@ public class VooMySQL implements VooDAO {
 			stm.setString(6, vooTO.getSituacao());
 			stm.setString(7, vooTO.getEscala1());
 			stm.setString(8, vooTO.getEscala2());
-			stm.setString(9, vooTO.getAeronave());
+			stm.setInt(9, vooTO.getAeronave());
 
 			stm.execute();
 
@@ -146,7 +146,7 @@ public class VooMySQL implements VooDAO {
 				vooTO.setSituacao(rs.getString(6));
 				vooTO.setEscala1(rs.getString(7));
 				vooTO.setEscala2(rs.getString(8));
-				vooTO.setAeronave(rs.getString(9));
+				vooTO.setAeronave(rs.getInt(9));
 				
 			}
 			return vooTO;
@@ -198,7 +198,7 @@ public class VooMySQL implements VooDAO {
 			stm.setString(6, vooTO.getSituacao());
 			stm.setString(7, vooTO.getEscala1());
 			stm.setString(8, vooTO.getEscala2());
-			stm.setString(9, vooTO.getAeronave());
+			stm.setInt(9, vooTO.getAeronave());
 
 			stm.execute();
 

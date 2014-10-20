@@ -10,7 +10,7 @@ public class VooTO {
 	private String situacao;
 	private String data;
 	private String hora;
-	private String aeronave;
+	private int aeronave;
 	
 	public int getCodigo() {
 		return codigo;
@@ -60,10 +60,10 @@ public class VooTO {
 	public void setHora(String hora) {
 		this.hora = hora;
 	}
-	public String getAeronave() {
+	public int getAeronave() {
 		return aeronave;
 	}
-	public void setAeronave(String aeronave) {
+	public void setAeronave(int aeronave) {
 		this.aeronave = aeronave;
 	}
 }

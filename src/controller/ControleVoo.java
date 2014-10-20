@@ -71,7 +71,7 @@ public class ControleVoo extends HttpServlet {
 				vooTO.setSituacao(request.getParameter("status"));
 				vooTO.setEscala1(request.getParameter("escala1"));
 				vooTO.setEscala2(request.getParameter("escala2"));
-				vooTO.setAeronave(request.getParameter("aeronave"));
+				vooTO.setAeronave(Integer.parseInt(request.getParameter("aeronave")));
 				
 				//Iniciando os dados da TO na classe de Negócio
 				Voo voo = new Voo(vooTO);
@@ -83,9 +83,22 @@ public class ControleVoo extends HttpServlet {
 					e.printStackTrace();
 				}
 				
+				//Inicia o processo de listagem de aeronave
+				AeronaveTO aeronaveTO = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(aeronaveTO);
+				List<AeronaveTO> lista = new ArrayList<AeronaveTO>();
+				try {
+					lista = aeronave.consultar();
+				} catch (AeronaveException e) {
+					e.printStackTrace();
+				}
+				
+				
 				//Aciona mensagem de que cadastro foi concluido
 				request.setAttribute("mensagem", "sucesso");
 				
+				//Lista as Aeronave denovo
+				request.setAttribute("lista", lista);
 				//Redireciona para pagina de cadastro
 				request.getRequestDispatcher("voo_cadastrar.jsp").forward(request, response);
 				
@@ -145,7 +158,7 @@ public class ControleVoo extends HttpServlet {
 				vooTO.setSituacao((String) request.getParameter("situacao"));
 				vooTO.setEscala1((String) request.getParameter("escala1"));
 				vooTO.setEscala2((String) request.getParameter("escala2"));
-				vooTO.setAeronave((String) request.getParameter("aeronave"));
+				vooTO.setAeronave(Integer.parseInt(request.getParameter("aeronave")));
 				
 				
 				//Iniciando os dados da TO na classe de Negócio

@@ -13,7 +13,7 @@
 		<div style="margin: auto; width: 940px; height: 350px; display: table;">
 			<jsp:include page="header.jsp"></jsp:include>
 			
-			<fieldset style="border: 1px solid black; border-radius: 10px; width: 900px; min-height: 150px; margin: auto; margin-top: 100px;">
+			<fieldset style="border: 1px solid black; border-radius: 10px; width: 600px; min-height: 150px; margin: auto; margin-top: 100px;">
 				<legend style="color: red;">Consulta de Voos</legend>
 				<div id='mensagem'>
 						<%
@@ -44,17 +44,12 @@
 						ArrayList<VooTO> lista = (ArrayList<VooTO>) request.getAttribute("lista");
 						
 						//Formata todas as informações da lista item por item
-						out.print("<table style='margin-left: auto;margin-right: auto; width: 800px; border: 1px solid black;'>");
+						out.print("<table style='margin-left: auto;margin-right: auto; width: 580px; border: 1px solid black;'>");
 						out.print("<tr style='font-weight: bold;background-color: #000000; color: white; text-align: center;'>"
 								  +"\n	<td>Código</td>"
 								  +"\n	<td>Origem</td>"
 								  +"\n	<td>Destino</td>"
-								  +"\n	<td>Data</td>"
-								  +"\n	<td>Hora</td>"
 								  +"\n	<td>Situação</td>"
-								  +"\n	<td>Escala 1</td>"
-								  +"\n	<td>Escala 2</td>"
-								  +"\n	<td colspan='2'>Alterar/Excluir</td>"
 								  +"\n</tr>");
 						
 						//Variavel de Cor
@@ -82,25 +77,7 @@
 									+"\n		" + vooTO.getDestino()
 									+"\n	</td>"
 									+"\n	<td style='text-align: center;'>"
-									+"\n		" + vooTO.getData()
-									+"\n	</td>"
-									+"\n	<td style='text-align: center;'>"
-									+"\n		" + vooTO.getHora()
-									+"\n	</td>"
-									+"\n	<td style='text-align: center;'>"
 									+"\n		" + vooTO.getSituacao()
-									+"\n	</td>"
-									+"\n	<td style='text-align: center;'>"
-									+"\n		" + vooTO.getEscala1()
-									+"\n	</td>"
-									+"\n	<td style='text-align: center;'>"
-									+"\n		" + vooTO.getEscala2()
-									+"\n	</td>"
-									+"\n	<td style='text-align: center;background-color: #98FB98;'>"
-									+"\n		<a href='ControleVoo?operacao=alterar&codigo="+vooTO.getCodigo()+"&subOperacao=form'><img src='imagens/editar.png' width='20px' height='20px'></a>" 
-									+"\n	</td>"
-									+"\n	<td style='text-align: center;background-color: #FFA07A;'>"
-									+"\n		<a href='ControleVoo?operacao=excluir&subOperacao=form&codigo="+vooTO.getCodigo()+"'><img src='imagens/excluir.png' width='20px' height='20px'></a>" 
 									+"\n	</td>"
 									+"\n</tr>"									
 									);

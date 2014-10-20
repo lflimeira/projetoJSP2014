@@ -15,7 +15,8 @@
 		<li><a href="#">Vôo</a>
 			<ul class="sub_menu">
 				<li><a href="ControleVoo?operacao=cadastrar&subOperacao=form">Cadastrar</a></li>
-				<li><a href="ControleVoo?operacao=consultar">Alterar/Excluir</a></li>
+				<li><a href="ControleVoo?operacao=consultar&subOperacao=consulta">Alterar/Excluir</a></li>
+				<li><a href='ControleVoo?operacao=consultar&subOperacao=status'>Status de Vôo</a></li>
 			</ul></li>
 		<li><a href="#">Aeronave</a>
 			<ul class="sub_menu">

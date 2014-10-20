@@ -68,10 +68,11 @@ public class ControleVoo extends HttpServlet {
 				vooTO.setDestino((String) request.getParameter("destino"));
 				vooTO.setData((String) request.getParameter("data"));
 				vooTO.setHora((String) request.getParameter("hora"));
-				vooTO.setSituacao(request.getParameter("status"));
+				vooTO.setSituacao(request.getParameter("situacao"));
+				vooTO.setAeronave(Integer.parseInt(request.getParameter("aeronave")));
 				vooTO.setEscala1(request.getParameter("escala1"));
 				vooTO.setEscala2(request.getParameter("escala2"));
-				vooTO.setAeronave(Integer.parseInt(request.getParameter("aeronave")));
+				
 				
 				//Iniciando os dados da TO na classe de Negócio
 				Voo voo = new Voo(vooTO);
@@ -118,7 +119,14 @@ public class ControleVoo extends HttpServlet {
 			}
 			
 			request.setAttribute("lista", lista);
-			request.getRequestDispatcher("voo_consultar.jsp").forward(request, response);
+			String subOperacao = request.getParameter("subOperacao");
+			if(subOperacao.equals("status")){
+				request.getRequestDispatcher("voo_status.jsp").forward(request, response);
+			}
+			if(subOperacao.equals("consulta")){
+				request.getRequestDispatcher("voo_consultar.jsp").forward(request, response);
+			}
+			
 		
 		}
 		

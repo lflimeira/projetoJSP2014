@@ -68,7 +68,7 @@ public class VooMySQL implements VooDAO {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String sql = "SELECT codigo,origem,destino,situacao FROM voo ORDER BY codigo;";
+		String sql = "SELECT * FROM voo ORDER BY codigo;";
 		
 		try {
 			con = obtemConexao();
@@ -84,7 +84,11 @@ public class VooMySQL implements VooDAO {
 				voo.setCodigo(rs.getInt(1));
 				voo.setOrigem(rs.getString(2));
 				voo.setDestino(rs.getString(3));
-				voo.setSituacao(rs.getString(4));
+				voo.setData(rs.getString(4));
+				voo.setHora(rs.getString(5));
+				voo.setSituacao(rs.getString(6));
+				voo.setEscala1(rs.getString(7));
+				voo.setEscala2(rs.getString(8));
 				
 				//Adiciona a Lista
 				resultado.add(voo);

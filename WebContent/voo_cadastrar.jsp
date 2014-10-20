@@ -127,8 +127,8 @@
 							<select id="aeronave" name="aeronave">
 							<%
 	  							ArrayList<AeronaveTO> lista = (ArrayList<AeronaveTO>) request.getAttribute("lista");
-								for(AeronaveTO aeronaveTO : lista){ 
-									out.print("\n	<option value='"+aeronaveTO.getCodigo()+"'>"+aeronaveTO.getNomeAeronave()+"</option>");
+								for(AeronaveTO aeronaveTO : lista){
+									out.print("\n	<option id='"+aeronaveTO.getCodigo()+"'>"+aeronaveTO.getNomeAeronave()+"</option>");
 								}
 							%>
 							</select>
@@ -215,7 +215,6 @@
 		</fieldset>
 		</form>
 	</div>
-	
 	<%
 		String mensagem = (String) request.getAttribute("mensagem");
 		

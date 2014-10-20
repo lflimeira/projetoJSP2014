@@ -98,7 +98,7 @@
 							<select id="aeronave" name="aeronave">
 							<%
 	  							ArrayList<AeronaveTO> lista = (ArrayList<AeronaveTO>) request.getAttribute("lista");
-								for(AeronaveTO aeronaveTO : lista){ 
+								for(AeronaveTO aeronaveTO : lista){
 									out.print("\n	<option id='"+aeronaveTO.getCodigo()+"'>"+aeronaveTO.getNomeAeronave()+"</option>");
 								}
 							%>

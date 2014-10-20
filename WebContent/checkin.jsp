@@ -9,7 +9,7 @@
 <body>
 	<div style="margin: auto; width: 940px; height: 350px; display: table;">
 	<jsp:include page="header.jsp"></jsp:include>
-		<form action="checkin" method="post">
+		<form action="ControleCheckin" method="post">
 			<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
 				<legend style="color: red;">Realizar Checkin</legend>
 				<div style="margin-top: 50px;">
@@ -19,8 +19,33 @@
 				
 					<div>
 						<input type="submit" id="checkin" name="checkin" value="Checkin" style="margin-left: 140px; margin-top:10px;"/>
+					</div>
+					
+					<div>
+						<% 
+						String mensagem = (String) request.getAttribute("mensagem");
+						
+						mensagem = (mensagem != null ? mensagem : ""); 
+						if(mensagem.equals("sucesso"))
+							out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto;margin-top: 50px;width: 350px; height: 30px; text-align: center;  border-radius: 10px;'>"
+										+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
+										+"Passagem validada, deseja realizar checkin?"
+										+"</p>"
+										+"</div>");
+						else if(mensagem.equals("erro"))
+							out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto;margin-top: 50px;width: 350px; height: 30px; text-align: center;  border-radius: 10px;'>"
+										+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
+										+"Passagem não encontrada, verefique os dados e tente novamente"
+										+"</p>"
+										+"</div>");
+						%>						
 					</div>			
-				
+					
+					<div>
+						<% 
+							
+						%>						
+					</div>			
 				</div>			
 			</fieldset>
 		</form>

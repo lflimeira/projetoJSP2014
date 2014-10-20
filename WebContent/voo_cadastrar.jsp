@@ -23,18 +23,18 @@
 					<tr>
 						<td style='text-align: right;'>Código do Voo</td>
 						<td>:</td>
-						<td><input type='text' size='5' maxlength="5" name='codigo'
-							id='codigo' /></td>
+						<td><input type='text' size='5' maxlength="5" name='codigo' id='codigo' /></td>
 					</tr>
 					<tr>					
 						<td style='text-align: right;'>Origem</td>
 							<td>:</td>
 						<td>
 							<select id="origem" name="origem">
-							  <option>São Paulo</option>
-							  <option>Rio de Janeiro</option>
-							  <option>Rio Grande Do Sul</option>
-							  <option>Salvador</option>
+								<option>---------</option>
+							  	<option>São Paulo</option>
+							  	<option>Rio de Janeiro</option>
+							  	<option>Rio Grande Do Sul</option>
+							  	<option>Salvador</option>
 							</select>
 						</td>
 					</tr>
@@ -44,10 +44,11 @@
 							<td>:</td>
 						<td>
 							<select id="destino" name="destino">
-							  <option>São Paulo</option>
-							  <option>Rio de Janeiro</option>
-							  <option>Rio Grande Do Sul</option>
-							  <option>Salvador</option>
+								<option>---------</option>
+								  <option>São Paulo</option>
+								  <option>Rio de Janeiro</option>
+								  <option>Rio Grande Do Sul</option>
+								  <option>Salvador</option>
 							</select>
 						</td>
 					</tr>
@@ -55,40 +56,52 @@
 					<tr>
 						<td style='text-align: right;'>Data</td>
 						<td>:</td>
-						<td><input class="data" type='date' size='30' maxlength="30" name='data' id='data' /></td>
+						<td><input class="data" type='date'name='data' id='data' /></td>
 					</tr>
 					<tr>
 						<td style='text-align: right;'>Hora</td>
 						<td>:</td>
-						<td><input class="hora" type='time' size='30' maxlength="30" name='hora' id='hora' /></td>
+						<td><input class="hora" type='time'name='hora' id='hora' /></td>
 					</tr>
 
-					<tr>					
-						<td style='text-align: right;'>Escala 1</td>
-							<td>:</td>
-						<td>
-							<select id="escala1" name="escala1">
-							  <option>São Paulo</option>
-							  <option>Rio de Janeiro</option>
-							  <option>Rio Grande Do Sul</option>
-							  <option>Salvador</option>
-							</select>
-						</td>
-					</tr>
+<!-- 					<tr>					 -->
+<!-- 						<td style='text-align: right;'>Escala 1</td> -->
+<!-- 							<td>:</td> -->
+<!-- 						<td> -->
+<!-- 							<select id="escala1" name="escala1"> -->
+<!-- 							  <option>São Paulo</option> -->
+<!-- 							  <option>Rio de Janeiro</option> -->
+<!-- 							  <option>Rio Grande Do Sul</option> -->
+<!-- 							  <option>Salvador</option> -->
+<!-- 							</select> -->
+<!-- 						</td> -->
+<!-- 					</tr> -->
 					
-					<tr>					
-						<td style='text-align: right;'>Escala 2</td>
-							<td>:</td>
+<!-- 					<tr>					 -->
+<!-- 						<td style='text-align: right;'>Escala 2</td> -->
+<!-- 							<td>:</td> -->
+<!-- 						<td> -->
+<!-- 							<select id="escala2" name="escala2"> -->
+<!-- 							  <option>São Paulo</option> -->
+<!-- 							  <option>Rio de Janeiro</option> -->
+<!-- 							  <option>Rio Grande Do Sul</option> -->
+<!-- 							  <option>Salvador</option> -->
+<!-- 							</select> -->
+<!-- 						</td> -->
+<!-- 					</tr> -->
+					<tr>
+						<td style='text-align: right;'>Situação</td>
+						<td>:</td>
 						<td>
-							<select id="escala2" name="escala2">
-							  <option>São Paulo</option>
-							  <option>Rio de Janeiro</option>
-							  <option>Rio Grande Do Sul</option>
-							  <option>Salvador</option>
+							<select id="situacao" name="situacao">
+									<option></option>
+									  <option>São Paulo</option>
+									  <option>Rio de Janeiro</option>
+									  <option>Rio Grande Do Sul</option>
+									  <option>Salvador</option>
 							</select>
 						</td>
 					</tr>
-
 					<tr>											
 						<td style='text-align: right;'>Aeronave</td>
 							<td>:</td>

@@ -184,7 +184,7 @@ public class VooMySQL implements VooDAO {
 	}
 	
 	public void alterar(VooTO vooTO)  throws VooException{
-		String sql = "UPDATE voo set codigo = ?, origem =  ?, destino = ?, data = ?, hora = ?, "
+		String sql = "UPDATE voo set codigo = ?, origem =  ?, destino = ?, dia = ?, hora = ?, "
 				+ "situacao = ?, pri_escala = ?, seg_escala = ?,cod_aeronave =?  WHERE codigo = " + vooTO.getCodigo();
 		
 		Connection conn = null;

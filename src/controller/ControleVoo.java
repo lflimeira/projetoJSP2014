@@ -149,8 +149,20 @@ public class ControleVoo extends HttpServlet {
 					e.printStackTrace();
 				}
 				
+				//Inicia o processo de listagem de aeronave
+				AeronaveTO aeronaveTO = new AeronaveTO();
+				Aeronave aeronave = new Aeronave(aeronaveTO);
+				List<AeronaveTO> lista = new ArrayList<AeronaveTO>();
+				try {
+					lista = aeronave.consultar();
+				} catch (AeronaveException e) {
+					e.printStackTrace();
+				}				
+				
 				HttpSession session = request.getSession();
 				session.setAttribute("vooTO", vooTO);
+				//Lista as Aeronave denovo
+				session.setAttribute("lista", lista);				
 				response.sendRedirect("voo_alterar.jsp");
 				
 			}
@@ -167,7 +179,6 @@ public class ControleVoo extends HttpServlet {
 				vooTO.setEscala1((String) request.getParameter("escala1"));
 				vooTO.setEscala2((String) request.getParameter("escala2"));
 				vooTO.setAeronave(Integer.parseInt(request.getParameter("aeronave")));
-				
 				
 				//Iniciando os dados da TO na classe de Negócio
 				Voo voo = new Voo(vooTO);
@@ -255,7 +266,7 @@ public class ControleVoo extends HttpServlet {
 				
 				request.setAttribute("lista", lista);//Envia lista para pagina de consulta
 				request.setAttribute("mensagem", "excluido");//Liga a mensagem de exclusao efetuada com sucesso
-				request.getRequestDispatcher("voo_consulta.jsp").forward(request, response);
+				request.getRequestDispatcher("ControleVoo?operacao=consultar&subOperacao=consulta").forward(request, response);
 				
 			}	
 		}

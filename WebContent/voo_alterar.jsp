@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"
 	import="to.*"
+	import='java.util.*'
+	
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -21,7 +23,7 @@
 			
 				//Pega VooTO
 				VooTO vooTO = (VooTO) sessao.getAttribute("vooTO");
-			
+				
 			%>
 
 				<table>
@@ -124,7 +126,23 @@
 							</select>
 						</td>
 					</tr>
-
+					<tr>											
+						<td style='text-align: right;'>Aeronave</td>
+							<td>:</td>
+						<td>
+							<select id="aeronave" name="aeronave">
+							<%
+	  							ArrayList<AeronaveTO> lista = (ArrayList<AeronaveTO>) session.getAttribute("lista");
+	  							
+								for(AeronaveTO aeronaveTO : lista){
+									out.print("\n	<option value='"+aeronaveTO.getCodigo()+"'");
+									if(vooTO.getAeronave() == aeronaveTO.getCodigo()){out.print("selected='selected'");}
+									out.print(">"+aeronaveTO.getNomeAeronave()+"</option>");
+								}
+							%>
+							</select>
+						</td>
+					</tr>
 					<tr>					
 						<td style='text-align: right;'>Escala 1</td>
 							<td>:</td>

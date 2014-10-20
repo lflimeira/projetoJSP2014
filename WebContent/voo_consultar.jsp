@@ -13,7 +13,7 @@
 		<div style="margin: auto; width: 940px; height: 350px; display: table;">
 			<jsp:include page="header.jsp"></jsp:include>
 			
-			<fieldset style="border: 1px solid black; border-radius: 10px; width: 900px; min-height: 150px; margin: auto; margin-top: 100px;">
+			<fieldset style="border: 1px solid black; border-radius: 10px; width: 950px; min-height: 150px; margin: auto; margin-top: 100px;">
 				<legend style="color: red;">Consulta de Voos</legend>
 				<div id='mensagem'>
 						<%
@@ -23,14 +23,14 @@
 							if(mensagem.equals("alterado")){
 								out.print(	"<div style='background-color: #93DB70;margin-top:20px; margin-left:auto; margin-right: auto; width: 390px; height: 30px; text-align: center;  border-radius: 10px;'>"
 											+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
-											+"Dados da Aeronave alterados com Sucesso"
+											+"Dados do Vôo alterados com Sucesso"
 											+"</p>"
 											+"</div>");
 							}
 							if(mensagem.equals("excluido")){
 								out.print(	"<div style='background-color: #93DB70;margin-top:20px; margin-left:auto; margin-right: auto; width: 390px; height: 30px; text-align: center;  border-radius: 10px;'>"
 											+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
-											+"Aeronave Excluida com Sucesso"
+											+"Vôo Excluido com Sucesso"
 											+"</p>"
 											+"</div>");
 							}	
@@ -44,7 +44,7 @@
 						ArrayList<VooTO> lista = (ArrayList<VooTO>) request.getAttribute("lista");
 						
 						//Formata todas as informações da lista item por item
-						out.print("<table style='margin-left: auto;margin-right: auto; width: 800px; border: 1px solid black;'>");
+						out.print("<table style='margin-left: auto;margin-right: auto; width: 900px; border: 1px solid black;'>");
 						out.print("<tr style='font-weight: bold;background-color: #000000; color: white; text-align: center;'>"
 								  +"\n	<td>Código</td>"
 								  +"\n	<td>Origem</td>"

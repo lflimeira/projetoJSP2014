@@ -128,7 +128,7 @@
 							<%
 	  							ArrayList<AeronaveTO> lista = (ArrayList<AeronaveTO>) request.getAttribute("lista");
 								for(AeronaveTO aeronaveTO : lista){
-									out.print("\n	<option id='"+aeronaveTO.getCodigo()+"'>"+aeronaveTO.getNomeAeronave()+"</option>");
+									out.print("\n	<option value='"+aeronaveTO.getCodigo()+"'>"+aeronaveTO.getNomeAeronave()+"</option>");
 								}
 							%>
 							</select>

@@ -18,17 +18,17 @@
 					<tr>
 						<td style='text-align: right;'>Adultos</td>
 						<td>:</td>
-						<td><input type="number" name="colunas" min="0" max="20" value='0'></td>
+						<td><input type="number" name="adultos" min="0" max="20" value='0'></td>
 					</tr>
 					<tr>
 						<td style='text-align: right;'>Crianças</td>
 						<td>:</td>
-						<td><input type="number" name="colunas" min="0" max="20" value='0'></td>
+						<td><input type="number" name="criancas" min="0" max="20" value='0'></td>
 					</tr>
 					<tr>
 						<td style='text-align: right;'>Bebês</td>
 						<td>:</td>
-						<td><input type="number" name="colunas" min="0" max="20" value='0'></td>
+						<td><input type="number" name="bebes" min="0" max="20" value='0'></td>
 					</tr>
 					<tr>
 						<td colspan='3'><input type='submit' value='Escolher Vôo' style="margin-left: 40px; margin-top: 10px;" /></td>

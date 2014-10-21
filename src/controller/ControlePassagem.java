@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Voo;
 import model.VooException;
@@ -42,10 +43,25 @@ public class ControlePassagem extends HttpServlet {
 				e.printStackTrace();
 			}
 			
-			request.setAttribute("lista", lista);
-			request.getRequestDispatcher("passagem_voo.jsp").forward(request, response);
+			HttpSession session = request.getSession();
+			session.setAttribute("lista", lista);
+			session.setAttribute("adultos", (String) request.getParameter("adultos"));
+			System.out.print(session.getAttribute("adultos"));
+			session.setAttribute("criancas", request.getParameter("criancas"));
+			session.setAttribute("bebes", request.getParameter("bebes"));
+			
+			response.sendRedirect("passagem_voo.jsp");
 						
 			
+		}
+		if(operacao.equals("cadastroPassageiro")){
+			
+			HttpSession session = request.getSession();
+			String adultos = (String) session.getAttribute("adultos");
+			String criancas = (String) session.getAttribute("criancas");
+			String bebes = (String) session.getAttribute("bebes");
+			session.setAttribute("codigoVoo", request.getParameter("codigoVoo"));
+			String codigoVoo = (String) session.getAttribute("codigoVoo");
 		}
 	}
 

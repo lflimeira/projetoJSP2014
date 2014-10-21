@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
 -- Servidor:                     127.0.0.1
--- Versão do servidor:           5.6.16 - MySQL Community Server (GPL)
+-- Versão do servidor:           5.6.20 - MySQL Community Server (GPL)
 -- OS do Servidor:               Win32
 -- HeidiSQL Versão:              8.3.0.4694
 -- --------------------------------------------------------
@@ -28,12 +28,13 @@ CREATE TABLE IF NOT EXISTS `aeronave` (
 -- Copiando dados para a tabela aeroporto.aeronave: ~7 rows (aproximadamente)
 /*!40000 ALTER TABLE `aeronave` DISABLE KEYS */;
 INSERT INTO `aeronave` (`codigo`, `nomeAeronave`, `tipoAeronave`, `colunas`, `fileiras`) VALUES
+	(1, 'Maicon', 'Jet', 3, 3),
 	(2, 'jkljklpj', 'iopjhiopj', 3, 3),
 	(3, 'jklp', 'jhp', 3, 1),
 	(5, 'dfasfas frqfqfd', 'dfad gqre a', 3, 5),
 	(6, 'sadeqwtq ', 'ddaf q', 5, 5),
 	(7, 'Luiz', 'Aviao BigNose', 3, 3),
-	(8, 'Juliana', 'Avião de Luxo', 2, 2),
+	(8, 'Juliana', 'AviÃ£o de Luxo', 2, 2),
 	(9, 'Jefferson', 'Jatinho ', 1, 1);
 /*!40000 ALTER TABLE `aeronave` ENABLE KEYS */;
 
@@ -65,16 +66,18 @@ CREATE TABLE IF NOT EXISTS `voo` (
   `dia` date NOT NULL,
   `hora` time NOT NULL,
   `situacao` varchar(15) DEFAULT NULL,
+  `valor` double DEFAULT NULL,
   `pri_escala` varchar(45) DEFAULT NULL,
   `seg_escala` varchar(45) DEFAULT NULL,
   `cod_aeronave` int(11) NOT NULL,
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela aeroporto.voo: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela aeroporto.voo: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `voo` DISABLE KEYS */;
-INSERT INTO `voo` (`codigo`, `origem`, `destino`, `dia`, `hora`, `situacao`, `pri_escala`, `seg_escala`, `cod_aeronave`) VALUES
-	(1, 'Santa Catarina', 'Sergipe', '2015-10-23', '10:00:00', 'Confirmado', 'Amazonas', 'Alagoas', 2);
+INSERT INTO `voo` (`codigo`, `origem`, `destino`, `dia`, `hora`, `situacao`, `valor`, `pri_escala`, `seg_escala`, `cod_aeronave`) VALUES
+	(1, 'Santa Catarina', 'São Paulo', '2014-01-20', '15:00:00', 'Em espera', 150, '', '', 9),
+	(2, 'São Paulo', 'Rio de Janeiro', '2014-12-30', '13:00:00', 'Em espera', 500, '', '', 1);
 /*!40000 ALTER TABLE `voo` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

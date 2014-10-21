@@ -161,7 +161,7 @@ public class ControleVoo extends HttpServlet {
 				}				
 				
 				HttpSession session = request.getSession();
-				session.setAttribute("vooTO"+1, vooTO);
+				session.setAttribute("vooTO", vooTO);
 				//Lista as Aeronave denovo
 				session.setAttribute("lista", lista);				
 				response.sendRedirect("voo_alterar.jsp");

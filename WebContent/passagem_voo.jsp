@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
 	import='to.*'
-	import="java.util.ArrayList"    
+	import="java.util.ArrayList"
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -10,7 +10,6 @@
 		<title>Escolha de Vôo</title>
 </head>
 <body>
-	<% if(request.getParameter("subOperacao").equals("primeira")){response.sendRedirect("ControlePassagem?operacao=escolheVoo");} %>
 		<div style="margin: auto; width: 940px; height: 350px; display: table;">
 			<jsp:include page="header.jsp"></jsp:include>
 			
@@ -19,8 +18,11 @@
 				
 				<div id="resultadoPesquisa" style='margin-top: 10px;'>
 					<%
+						//Pega a Sessão
+						HttpSession sessao = request.getSession();
+						
 						//Pega o ArrayList que foi passado pelo controle
-						ArrayList<VooTO> lista = (ArrayList<VooTO>) request.getAttribute("lista");
+						ArrayList<VooTO> lista = (ArrayList<VooTO>) sessao.getAttribute("lista");
 						
 						//Formata todas as informações da lista item por item
 						out.print("<table style='margin-left: auto;margin-right: auto; width: 580px; border: 1px solid black;'>");
@@ -28,7 +30,10 @@
 								  +"\n	<td>Código</td>"
 								  +"\n	<td>Origem</td>"
 								  +"\n	<td>Destino</td>"
-								  +"\n	<td>Situação</td>"
+								  +"\n	<td>Data</td>"
+								  +"\n	<td>Hora</td>"
+								  +"\n  <td>Valor</td>"
+								  +"\n	<td>Compra</td>"
 								  +"\n</tr>");
 						
 						//Variavel de Cor
@@ -56,7 +61,16 @@
 									+"\n		" + vooTO.getDestino()
 									+"\n	</td>"
 									+"\n	<td style='text-align: center;'>"
-									+"\n		" + vooTO.getSituacao()
+									+"\n		" + vooTO.getData()
+									+"\n	</td>"
+									+"\n	<td style='text-align: center;'>"
+									+"\n		" + vooTO.getHora()
+									+"\n	</td>"
+									+"\n	<td style='text-align: center;'>"
+									+"\n		R$ " + vooTO.getValor()
+									+"\n	</td>"
+									+"\n	<td style='text-align: center;'>"
+									+"\n		<a href='ControlePassagem?operacao=cadastroPassageiro&codigoVoo="+vooTO.getCodigo()+"'>Comprar</a>"
 									+"\n	</td>"
 									+"\n</tr>"									
 									);

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+import="java.util.ResourceBundle"
 	pageEncoding="ISO-8859-1"
-	import="java.util.ResourceBundle"	
 %>
 <% ResourceBundle bundle = (ResourceBundle)session.getAttribute("linguagem");%>	
 

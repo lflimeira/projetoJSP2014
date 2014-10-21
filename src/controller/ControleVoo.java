@@ -70,6 +70,7 @@ public class ControleVoo extends HttpServlet {
 				vooTO.setHora((String) request.getParameter("hora"));
 				vooTO.setSituacao(request.getParameter("situacao"));
 				vooTO.setAeronave(Integer.parseInt(request.getParameter("aeronave")));
+				vooTO.setValor(Double.parseDouble(request.getParameter("valor")));
 				vooTO.setEscala1(request.getParameter("escala1"));
 				vooTO.setEscala2(request.getParameter("escala2"));
 				
@@ -179,6 +180,7 @@ public class ControleVoo extends HttpServlet {
 				vooTO.setEscala1((String) request.getParameter("escala1"));
 				vooTO.setEscala2((String) request.getParameter("escala2"));
 				vooTO.setAeronave(Integer.parseInt(request.getParameter("aeronave")));
+				vooTO.setValor(Double.parseDouble(request.getParameter("valor")));
 				
 				//Iniciando os dados da TO na classe de Negócio
 				Voo voo = new Voo(vooTO);

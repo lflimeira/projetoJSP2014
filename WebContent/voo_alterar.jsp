@@ -122,9 +122,18 @@
 							<select id="situacao" name="situacao">
 								  <option <%if(vooTO.getSituacao().equals("Em espera")){out.print("selected='selected'");} %>>Em espera</option>
 								  <option <%if(vooTO.getSituacao().equals("Confirmado")){out.print("selected='selected'");} %>>Confirmado</option>
+								  <option <%if(vooTO.getSituacao().equals("Cancelado")){out.print("selected='selected'");} %>>Cancelado</option>
+								  <option <%if(vooTO.getSituacao().equals("Atrasado")){out.print("selected='selected'");} %>>Atrasado</option>
+								  <option <%if(vooTO.getSituacao().equals("Embarque")){out.print("selected='selected'");} %>>Embarque</option>
+								  <option <%if(vooTO.getSituacao().equals("Finalizado")){out.print("selected='selected'");} %>>Finalizado</option>
 								  <option <%if(vooTO.getSituacao().equals("Encerrado")){out.print("selected='selected'");} %>>Encerrado</option>
 							</select>
 						</td>
+					</tr>
+					<tr>
+						<td style='text-align: right;'>Valor</td>
+						<td>:</td>
+						<td>R$<input id='valor' name='valor' size='5' value='<% out.print(vooTO.getValor()); %>'/></td>
 					</tr>
 					<tr>											
 						<td style='text-align: right;'>Aeronave</td>

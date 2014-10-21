@@ -116,6 +116,10 @@
 							<select id="situacao" name="situacao">
 								  <option>Em espera</option>
 								  <option>Confirmado</option>
+								  <option>Cancelado</option>
+								  <option>Atrasado</option>
+								  <option>Embarque</option>
+								  <option>Finalizado</option>
 								  <option>Encerrado</option>
 							</select>
 						</td>
@@ -133,6 +137,11 @@
 							%>
 							</select>
 						</td>
+					</tr>
+					<tr>
+						<td style='text-align: right;'>Valor</td>
+						<td>:</td>
+						<td>R$<input id='valor' name='valor' size='5' value='0,00'/></td>
 					</tr>
 					<tr>					
 						<td style='text-align: right;'>Escala 1</td>

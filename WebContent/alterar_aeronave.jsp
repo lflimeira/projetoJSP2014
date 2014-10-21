@@ -46,9 +46,9 @@
 						</tr>
 						<tr>
 							<td>Colunas:</td>
-							<td><input type="number" name="colunas" min="1" max="5" value='<% out.print(aeronaveTO.getColunas()); %>'></td>
+							<td><input type="number" name="colunas" min="1" max="10" value='<% out.print(aeronaveTO.getColunas()); %>'></td>
 							<td>Fileiras:</td>
-							<td><input type="number" name="fileiras" min="1" max="5" value='<% out.print(aeronaveTO.getFileiras()); %>'></td>
+							<td><input type="number" name="fileiras" min="1" max="40" value='<% out.print(aeronaveTO.getFileiras()); %>'></td>
 						</tr>
 					</table>
 					<input type="hidden" name='operacao' value="alterar" >

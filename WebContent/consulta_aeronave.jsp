@@ -4,19 +4,21 @@
  	import='dao.*'
  	import='to.*'
  	import="java.util.ArrayList"
+ 	import="java.util.ResourceBundle"
  %>
+ <% ResourceBundle bundle = (ResourceBundle)session.getAttribute("linguagem");%>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Consulta - Aeronave</title>
+		<title><%=bundle.getString("tela.consultaAeronave.consultaAeronave")%></title>
 	</head>
 	<body>
 		<div style="margin: auto; width: 940px; height: 350px; display: table;">
 			<jsp:include page="header.jsp"></jsp:include>
 			
 			<fieldset style="border: 1px solid black; border-radius: 10px; width: 600px; min-height: 150px; margin: auto; margin-top: 100px;">
-				<legend style="color: red;">Consulta de Aeronaves</legend>
+				<legend style="color: red;"><%=bundle.getString("tela.consultaAeronave.consultaAeronave")%></legend>
 			
 			<!--
 				<div id="fomularioPesquisa" style='position: relative; width: 590px; margin:auto;'>
@@ -25,7 +27,7 @@
 					<table> 
 						<tr>
 							<td>
-								Código:
+								CÃ³digo:
 								<input type='text' name='codigo' size='3' maxlength="4">
 								Nome da Aeronave:
 								<input type='text' name='nomeAeronave' size='30' maxlength="50">
@@ -59,14 +61,14 @@
 							if(mensagem.equals("alterado")){
 								out.print(	"<div style='background-color: #93DB70;margin-top:20px; margin-left:auto; margin-right: auto; width: 390px; height: 30px; text-align: center;  border-radius: 10px;'>"
 											+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
-											+"Dados da Aeronave alterados com Sucesso"
+											+bundle.getString("tela.consultaAeronave.aeroAltComSucesso")
 											+"</p>"
 											+"</div>");
 							}
 							if(mensagem.equals("excluido")){
 								out.print(	"<div style='background-color: #93DB70;margin-top:20px; margin-left:auto; margin-right: auto; width: 390px; height: 30px; text-align: center;  border-radius: 10px;'>"
 											+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
-											+"Aeronave Excluida com Sucesso"
+											+bundle.getString("tela.consultaAeronave.aeroExcComSucesso")
 											+"</p>"
 											+"</div>");
 							}	
@@ -79,12 +81,12 @@
 						//Pega o ArrayList que foi passado pelo controle
 						ArrayList<AeronaveTO> lista = (ArrayList<AeronaveTO>) request.getAttribute("lista");
 						
-						//Formata todas as informações da lista item por item
+						//Formata todas as informaÃ§Ãµes da lista item por item
 						out.print("<table style='margin-left: auto;margin-right: auto; width: 580px; border: 1px solid black;'>");
 						out.print("<tr style='font-weight: bold;background-color: #000000; color: white; text-align: center;'>"
-								  +"\n	<td>Código</td>"
-								  +"\n	<td>Nome da Aeronave</td>"
-								  +"\n	<td>Tipo da Aeronave</td>"
+								  +"\n	<td>"+bundle.getString("tela.cadastraraeronave.lblCodigo")+"</td>"
+								  +"\n	<td>"+bundle.getString("tela.alterarAeronave.nomeDaAeronave")+"</td>"
+								  +"\n	<td>"+bundle.getString("tela.alterarAeronave.tipoDeAeronave")+"</td>"
 								  +"\n	<td>Colunas</td>"
 								  +"\n	<td>Fileiras</td>"
 								  +"\n	<td colspan='2'>Alterar/Excluir</td>"

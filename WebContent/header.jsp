@@ -25,7 +25,7 @@
 			</ul></li>
 		<li><a href="#">Passagem</a>
 			<ul class="sub_menu">
-				<li><a href="#">Comprar</a></li>
+				<li><a href="">Comprar</a></li>
 				<li><a href="#">Cancelar</a></li>
 				<li><a href="#">Transferir</a></li>
 			</ul></li>

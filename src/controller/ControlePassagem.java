@@ -45,8 +45,7 @@ public class ControlePassagem extends HttpServlet {
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("lista", lista);
-			session.setAttribute("adultos", (String) request.getParameter("adultos"));
-			System.out.print(session.getAttribute("adultos"));
+			session.setAttribute("adultos", request.getParameter("adultos"));
 			session.setAttribute("criancas", request.getParameter("criancas"));
 			session.setAttribute("bebes", request.getParameter("bebes"));
 			

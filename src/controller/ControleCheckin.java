@@ -25,10 +25,10 @@ public class ControleCheckin extends HttpServlet {
 //		int numero = Integer.parseInt(request.getParameter("numero"));
 			
 			request.setAttribute("mensagem", "sucesso");
-			request.getRequestDispatcher("checkin.jsp").forward(request, response);
+			request.getRequestDispatcher("checkin_passagem.jsp").forward(request, response);
 		}catch(Exception e){
 			request.setAttribute("mensagem", "erro");
-			request.getRequestDispatcher("checkin.jsp").forward(request, response);
+			request.getRequestDispatcher("checkin_passagem.jsp").forward(request, response);
 		}
 		
 		

@@ -68,6 +68,7 @@ public class ControlePassagem extends HttpServlet {
 		if(operacao.equals("cadastroPassageiro")){
 			HttpSession session = request.getSession();
 			session.setAttribute("codigoVooVolta", request.getParameter("codigoVoo"));
+			response.sendRedirect("cad_cliente.jsp");
 			
 		}
 	}

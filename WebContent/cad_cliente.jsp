@@ -17,9 +17,10 @@
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
 			<legend style="color: red;">Cadastro de Clientes</legend>
 			<%
-			int qtd_adultos = 2;
-			int qtd_criancas = 2;
-			int qtd_bebes = 2;
+			
+			int qtd_adultos = Integer.parseInt(session.getAttribute("adultos").toString());
+			int qtd_criancas = Integer.parseInt(session.getAttribute("criancas").toString());
+			int qtd_bebes = Integer.parseInt(session.getAttribute("bebes").toString());
 			
 			int contCli = 1;
 			

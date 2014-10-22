@@ -14,13 +14,27 @@
 			<jsp:include page="header.jsp"></jsp:include>
 			
 			<fieldset style="border: 1px solid black; border-radius: 10px; width: 600px; min-height: 150px; margin: auto; margin-top: 100px;">
-				<legend style="color: red;">Consulta de Voos</legend>
+				<legend style="color: red;">Consulta de Vôos</legend>
 				
 				<div id="resultadoPesquisa" style='margin-top: 10px;'>
+				
+				
 					<%
 						//Pega a Sessão
 						HttpSession sessao = request.getSession();
 						
+						//Trabalha no Titulo da Pagina
+						if(sessao.getAttribute("opcao").equals("ida")){
+							out.print("<h3>Escolha o Vôo</h3>");
+						}
+						else if(sessao.getAttribute("opcao").equals("idaVolta")){
+							if(sessao.getAttribute("voo").equals("ida")){
+								out.print("<h3>Escolha o Vôo - Ida</h3>");
+							}
+							else if(sessao.getAttribute("voo").equals("volta")){
+								out.print("<h3>Escolha o Vôo - Volta</h3>");
+							}
+						}
 						//Pega o ArrayList que foi passado pelo controle
 						ArrayList<VooTO> lista = (ArrayList<VooTO>) sessao.getAttribute("lista");
 						
@@ -41,7 +55,15 @@
 						
 						for(VooTO vooTO : lista){
 							
-							out.print("\n<tr style='background-color: ");
+							if(sessao.getAttribute("voo").equals("volta")){
+								
+								String codigoVooIda = sessao.getAttribute("codigoVooIda").toString();
+								
+								if(vooTO.getCodigo() == Integer.parseInt(codigoVooIda)){
+									
+								}
+								else{
+									out.print("\n<tr style='background-color: ");
 									if(g==1){
 										out.print("#A9A9A9;");
 										g=0;
@@ -50,7 +72,7 @@
 										out.print("#D3D3D3;");
 										g=1;
 									}
-									out.print("'>"
+						   			out.print("'>"
 									+"\n	<td style='text-align: center;'>"
 									+"\n		" + vooTO.getCodigo()
 									+"\n	</td>"
@@ -70,10 +92,75 @@
 									+"\n		R$ " + vooTO.getValor()
 									+"\n	</td>"
 									+"\n	<td style='text-align: center;'>"
-									+"\n		<a href='ControlePassagem?operacao=cadastroPassageiro&codigoVoo="+vooTO.getCodigo()+"'>Comprar</a>"
+									+"\n		<a href='ControlePassagem?");
+									if(sessao.getAttribute("opcao").equals("ida")){
+										out.print("operacao=cadastroPassageiro");
+									}
+									else{
+										if(sessao.getAttribute("voo").equals("ida")){
+											out.print("operacao=escolhaVolta");
+										}
+										else if(sessao.getAttribute("voo").equals("volta")){
+											out.print("operacao=cadastroPassageiro");
+										}
+									}
+									
+									out.print("&codigoVoo="+vooTO.getCodigo()+"'>Comprar</a>"
 									+"\n	</td>"
 									+"\n</tr>"									
 									);
+								}
+								
+							}
+							else{
+								out.print("\n<tr style='background-color: ");
+								if(g==1){
+									out.print("#A9A9A9;");
+									g=0;
+								}
+								else{
+									out.print("#D3D3D3;");
+									g=1;
+								}
+					   	out.print("'>"
+								+"\n	<td style='text-align: center;'>"
+								+"\n		" + vooTO.getCodigo()
+								+"\n	</td>"
+								+"\n	<td style='padding-left: 5px;text-align: center;'>"
+								+"\n		"+ vooTO.getOrigem()
+								+"\n	</td>"
+								+"\n	<td style='padding-left: 5px;text-align: center;'>"
+								+"\n		" + vooTO.getDestino()
+								+"\n	</td>"
+								+"\n	<td style='text-align: center;'>"
+								+"\n		" + vooTO.getData()
+								+"\n	</td>"
+								+"\n	<td style='text-align: center;'>"
+								+"\n		" + vooTO.getHora()
+								+"\n	</td>"
+								+"\n	<td style='text-align: center;'>"
+								+"\n		R$ " + vooTO.getValor()
+								+"\n	</td>"
+								+"\n	<td style='text-align: center;'>"
+								+"\n		<a href='ControlePassagem?");
+								if(sessao.getAttribute("opcao").equals("ida")){
+									out.print("operacao=cadastroPassageiro");
+								}
+								else{
+									if(sessao.getAttribute("voo").equals("ida")){
+										out.print("operacao=escolhaVolta");
+									}
+									else if(sessao.getAttribute("voo").equals("volta")){
+										out.print("operacao=cadastroPassageiro");
+									}
+								}
+								
+						out.print("&codigoVoo="+vooTO.getCodigo()+"'>Comprar</a>"
+								+"\n	</td>"
+								+"\n</tr>"									
+								);
+							}
+							
 						}
 					
 						out.print("\n</table>");

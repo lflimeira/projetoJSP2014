@@ -44,23 +44,31 @@ public class ControlePassagem extends HttpServlet {
 			}
 			
 			HttpSession session = request.getSession();
+			
 			session.setAttribute("lista", lista);
 			session.setAttribute("adultos", request.getParameter("adultos"));
 			session.setAttribute("criancas", request.getParameter("criancas"));
 			session.setAttribute("bebes", request.getParameter("bebes"));
-			
+			session.setAttribute("opcao", request.getParameter("opcao"));
+			if(session.getAttribute("opcao").equals("idaVolta")){
+				session.setAttribute("voo", "ida");
+			}
 			response.sendRedirect("passagem_voo.jsp");
 						
 			
 		}
-		if(operacao.equals("cadastroPassageiro")){
+		if(operacao.equals("escolhaVolta")){
 			
 			HttpSession session = request.getSession();
-			String adultos = (String) session.getAttribute("adultos");
-			String criancas = (String) session.getAttribute("criancas");
-			String bebes = (String) session.getAttribute("bebes");
-			session.setAttribute("codigoVoo", request.getParameter("codigoVoo"));
-			String codigoVoo = (String) session.getAttribute("codigoVoo");
+			session.setAttribute("codigoVooIda", request.getParameter("codigoVoo"));
+			session.setAttribute("voo", "volta");
+			response.sendRedirect("passagem_voo.jsp");
+			
+		}
+		if(operacao.equals("cadastroPassageiro")){
+			HttpSession session = request.getSession();
+			session.setAttribute("codigoVooVolta", request.getParameter("codigoVoo"));
+			
 		}
 	}
 

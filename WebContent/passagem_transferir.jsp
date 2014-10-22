@@ -12,8 +12,9 @@
 		<form action="ControlePassagem" method="post">
 			<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
 				<legend style="color: red;">Transferencia de Passagem</legend>
-				<div style="margin-top: 50px;">
+
 				
+				<div style="margin-top: 50px;">
 					<label>Numero da Passagem:</label>
 					<input id="numero" name="numero" size="30" type="text"></input>
 				
@@ -47,6 +48,7 @@
 						%>						
 					</div>			
 				</div>			
+
 			</fieldset>
 		</form>
 	</div>

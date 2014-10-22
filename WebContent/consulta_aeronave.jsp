@@ -87,9 +87,9 @@
 								  +"\n	<td>"+bundle.getString("tela.cadastraraeronave.lblCodigo")+"</td>"
 								  +"\n	<td>"+bundle.getString("tela.alterarAeronave.nomeDaAeronave")+"</td>"
 								  +"\n	<td>"+bundle.getString("tela.alterarAeronave.tipoDeAeronave")+"</td>"
-								  +"\n	<td>Colunas</td>"
-								  +"\n	<td>Fileiras</td>"
-								  +"\n	<td colspan='2'>Alterar/Excluir</td>"
+								  +"\n	<td>"+bundle.getString("tela.alterarAeronave.colunas")+"</td>"
+								  +"\n	<td>"+bundle.getString("tela.alterarAeronave.fileiras")+"</td>"
+								  +"\n	<td colspan='2'>"+bundle.getString("tela.header.alterarExcluir")+"</td>"
 								  +"\n</tr>");
 						
 						//Variavel de Cor

@@ -61,6 +61,8 @@ public class ControlePassagem extends HttpServlet {
 			String bebes = (String) session.getAttribute("bebes");
 			session.setAttribute("codigoVoo", request.getParameter("codigoVoo"));
 			String codigoVoo = (String) session.getAttribute("codigoVoo");
+			
+			response.sendRedirect("cad_cliente.jsp");
 		}
 	}
 

@@ -25,4 +25,7 @@ public class DAOFactory {
 	public UsuarioDAO getUsuarioDAO() {
 		return new UsuarioMysqlDaoImpl();
 	}
+	public ClienteDAO getClienteDAO() {
+		return new ClienteMysqlDaoImpl();
+	}
 }

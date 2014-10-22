@@ -13,15 +13,18 @@ import javax.servlet.http.HttpSession;
 
 import model.Aeronave;
 import model.AeronaveException;
+import model.Cliente;
+import model.ClienteException;
 import model.Voo;
 import model.VooException;
 import to.AeronaveTO;
+import to.ClienteTO;
 import to.VooTO;
 
 /**
  * Servlet implementation class ControllerCliente
  */
-@WebServlet("/ControllerCliente")
+@WebServlet("/controllerCliente")
 public class ControllerCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -53,59 +56,81 @@ public class ControllerCliente extends HttpServlet {
 		String operacao = (String) request.getParameter("operacao"); 
 		
 		//Se vier da pagina de cadastro
-		if(operacao.equals("cadastrar")){
+		if(operacao.equals("cadastrar_cliente")){
 			
-			String subOperacao = request.getParameter("subOperacao");
+			int qtd_adultos = 2;
+			int qtd_criancas = 2;
+			int qtd_bebes = 2;
 			
+			ArrayList<ClienteTO> clientes = new ArrayList<ClienteTO>();
 			
-			//Para cadastrar de vez
-			if(subOperacao.equals("cadastra")){
-				//Cria objeto TO de Voo
-				VooTO vooTO = new VooTO();
+			for(int i = 1; i <= qtd_adultos; i++){
 				
-				//Coloca todas as informações no  Objeto TO
-				vooTO.setCodigo(Integer.parseInt(request.getParameter("codigo")));
-				vooTO.setOrigem((String) request.getParameter("origem"));
-				vooTO.setDestino((String) request.getParameter("destino"));
-				vooTO.setData((String) request.getParameter("data"));
-				vooTO.setHora((String) request.getParameter("hora"));
-				vooTO.setSituacao(request.getParameter("situacao"));
-				vooTO.setAeronave(Integer.parseInt(request.getParameter("aeronave")));
-				vooTO.setEscala1(request.getParameter("escala1"));
-				vooTO.setEscala2(request.getParameter("escala2"));
+				ClienteTO clienteTO = new ClienteTO();
 				
+				clienteTO.setTipo(request.getParameter("tipo"+i));
+				clienteTO.setTratamento(request.getParameter("form_tratamento"+i));
+				clienteTO.setNome(request.getParameter("nome"+i));
+				clienteTO.setSobrenome(request.getParameter("sobrenome"+i));
+				clienteTO.setDataNascimento(request.getParameter("data_nasci"+i));
+				
+				clientes.add(clienteTO);
+				
+			}
+			
+			for(int i = 1; i <= qtd_criancas; i++){
+				
+				ClienteTO clienteTO = new ClienteTO();
+				
+				clienteTO.setTipo(request.getParameter("tipo_cri"+i));
+				clienteTO.setTratamento(request.getParameter("form_tratamento_cri"+i));
+				clienteTO.setNome(request.getParameter("nome_cri"+i));
+				clienteTO.setSobrenome(request.getParameter("sobrenome_cri"+i));
+				clienteTO.setDataNascimento(request.getParameter("data_nasci_cri"+i));
+				
+				clientes.add(clienteTO);
+				
+			}
+			
+			for(int i = 1; i <= qtd_bebes; i++){
+				
+				ClienteTO clienteTO = new ClienteTO();
+				
+				clienteTO.setTipo(request.getParameter("tipo_be"+i));
+				clienteTO.setTratamento(request.getParameter("form_tratamento_be"+i));
+				clienteTO.setNome(request.getParameter("nome_be"+i));
+				clienteTO.setSobrenome(request.getParameter("sobrenome_be"+i));
+				clienteTO.setDataNascimento(request.getParameter("data_nasci_be"+i));
+				
+				clientes.add(clienteTO);
+				
+			}
+			
+			
+			for(ClienteTO clienteTO : clientes){
 				
 				//Iniciando os dados da TO na classe de Negócio
-				Voo voo = new Voo(vooTO);
+				Cliente cliente = new Cliente(clienteTO);
 				
 				//Inicia processo de cadastrar
 				try {
-					voo.cadastrar();
-				} catch (VooException e) {
+					clienteTO.setIdCliente(cliente.cadastrar());
+				} catch (ClienteException e) {
 					e.printStackTrace();
 				}
-				
-				//Inicia o processo de listagem de aeronave
-				AeronaveTO aeronaveTO = new AeronaveTO();
-				Aeronave aeronave = new Aeronave(aeronaveTO);
-				List<AeronaveTO> lista = new ArrayList<AeronaveTO>();
-				try {
-					lista = aeronave.consultar();
-				} catch (AeronaveException e) {
-					e.printStackTrace();
-				}
-				
-				
-				//Aciona mensagem de que cadastro foi concluido
-				request.setAttribute("mensagem", "sucesso");
-				
-				//Lista as Aeronave denovo
-				request.setAttribute("lista", lista);
-				//Redireciona para pagina de cadastro
-				request.getRequestDispatcher("voo_cadastrar.jsp").forward(request, response);
-				
-				//Fim de cadastro
+			
 			}
+			
+			//Aciona mensagem de que cadastro foi concluido
+			request.setAttribute("mensagem", "Clientes cadastrados com sucesso, "
+								+ "cadastre um responsável para continuar.");
+			
+			HttpSession session = request.getSession();
+			session.setAttribute("clientes", clientes);
+			//Redireciona para pagina de cadastro
+			request.getRequestDispatcher("responsavel.jsp").forward(request, response);
+			
+			//Fim de cadastro
 		}
 		
 	}

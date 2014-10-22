@@ -186,7 +186,71 @@ public class VooMySQL implements VooDAO {
 			}			
 		}
 	}
+public List<VooTO> consultaVooVolta(String ida, String volta) throws VooException{
+		
+	ArrayList<VooTO> resultado = new ArrayList<VooTO>();
 	
+	Connection con = null;
+	PreparedStatement stmt = null;
+	ResultSet rs = null;
+	
+	String sql = "SELECT * FROM voo WHERE origem = '"+ volta + "' AND destino = '" + ida + "' ORDER BY codigo;";
+	try {
+		con = obtemConexao();
+		stmt = con.prepareStatement(sql);
+		
+		rs = stmt.executeQuery();
+		
+		while (rs.next()) {
+			
+			VooTO voo = new VooTO();
+			
+			//Insere dados do Banco
+			voo.setCodigo(rs.getInt(1));
+			voo.setOrigem(rs.getString(2));
+			voo.setDestino(rs.getString(3));
+			voo.setData(rs.getString(4));
+			voo.setHora(rs.getString(5));
+			voo.setSituacao(rs.getString(6));
+			voo.setValor(rs.getDouble(7));
+			voo.setEscala1(rs.getString(8));
+			voo.setEscala2(rs.getString(9));
+			voo.setAeronave(rs.getInt(10));
+			
+			//Adiciona a Lista
+			resultado.add(voo);
+		}
+
+		return resultado;
+		
+	} catch (SQLException e) {
+		throw new VooException(e);
+
+	} finally {
+		if (rs != null) {
+			try {
+				rs.close();
+			}catch(SQLException sqle){
+				//
+			}
+		}
+		if (stmt != null) {
+			try {
+				stmt.close();
+			}catch(SQLException sqle){
+				//
+			}
+		}
+		if (con != null) {
+			try {
+				con.close();
+			}catch(SQLException sqle){
+				//
+			}
+		}			
+	}
+
+	}
 	public void alterar(VooTO vooTO)  throws VooException{
 		String sql = "UPDATE voo set codigo = ?, origem =  ?, destino = ?, dia = ?, hora = ?, "
 				+ "situacao = ?, valor = ?, pri_escala = ?, seg_escala = ?,cod_aeronave =?  WHERE codigo = " + vooTO.getCodigo();

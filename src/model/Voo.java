@@ -31,6 +31,11 @@ public class Voo {
 		VooDAO dao = factory.getVooDAO();
 		return dao.consultaUnica(codigo);
 	}
+	public List<VooTO> consultaVooVolta(String ida, String volta) throws VooException{
+		DAOFactory factory = DAOFactory.getInstance();
+		VooDAO dao = factory.getVooDAO();
+		return dao.consultaVooVolta(ida,volta);
+	}
 	
 	public void alterar(VooTO vooTO) throws VooException{
 		DAOFactory factory = DAOFactory.getInstance();

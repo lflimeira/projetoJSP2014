@@ -13,6 +13,8 @@ public interface VooDAO {
 	
 	public VooTO consultaUnica(int codigo) throws VooException;
 	
+	public List<VooTO> consultaVooVolta(String ida, String volta) throws VooException;
+	
 	public void alterar(VooTO aeronaveTO) throws VooException;
 
 	public void excluir(int codigo) throws VooException;

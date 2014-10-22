@@ -62,6 +62,27 @@ public class ControlePassagem extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("codigoVooIda", request.getParameter("codigoVoo"));
 			session.setAttribute("voo", "volta");
+			
+			String codigoVooIda = session.getAttribute("codigoVooIda").toString();
+			int codigo = Integer.parseInt(codigoVooIda);
+			
+			VooTO vooTO = null;
+			VooTO a = new VooTO();
+			Voo voo = new Voo(a);
+			try{
+				vooTO = voo.consultaUnica(codigo);
+			}catch(VooException e){
+				e.printStackTrace();
+			}		
+			VooTO vooTO2 = new VooTO();
+			Voo voo2 = new Voo(vooTO2);
+			List<VooTO> lista = new ArrayList<VooTO>();
+			try {
+				lista = voo2.consultaVooVolta(vooTO.getOrigem(),vooTO.getDestino());
+			} catch (VooException e) {
+				e.printStackTrace();
+			}
+			session.setAttribute("lista", lista);
 			response.sendRedirect("passagem_voo.jsp");
 			
 		}

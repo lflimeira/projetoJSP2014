@@ -10,15 +10,15 @@
 	<div style="margin: auto; width: 940px; height: 350px; display: table;">
 	<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControleCheckin" method="post">
-			<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
+			<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 250px; min-height: 150px; margin: auto; margin-top: 100px;">
 				<legend style="color: red;">Realizar Checkin</legend>
 				<div style="margin-top: 50px;">
 				
 					<label>Numero da Passagem:</label>
-					<input id="numero" name="numero" size="30" type="text"></input>
-				
+					<input id="numero" name="numero" size="4" type="text"></input>
+					<input type='hidden' name='operacao' id='operacao' value='mostraPassageiro' />
 					<div>
-						<input type="submit" id="checkin" name="checkin" value="Checkin" style="margin-left: 140px; margin-top:10px;"/>
+						<input type="submit" id="checkin" name="checkin" value="Checkin" style="margin-left: 100px; margin-top:10px;"/>
 					</div>
 					
 					<div>
@@ -27,13 +27,13 @@
 						
 						mensagem = (mensagem != null ? mensagem : ""); 
 						if(mensagem.equals("sucesso"))
-							out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto;margin-top: 50px;width: 350px; height: 30px; text-align: center;  border-radius: 10px;'>"
+							out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto;margin-top: 50px; width: 250px; height: 30px; text-align: center;  border-radius: 10px;'>"
 										+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
-										+"Passagem validada, deseja realizar checkin?"
+										+"Check-in realizado com Sucesso"
 										+"</p>"
 										+"</div>");
 						else if(mensagem.equals("erro"))
-							out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto;margin-top: 50px;width: 350px; height: 30px; text-align: center;  border-radius: 10px;'>"
+							out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto;margin-top: 50px; width: 250px; height: 30px; text-align: center;  border-radius: 10px;'>"
 										+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
 										+"Passagem não encontrada, verefique os dados e tente novamente"
 										+"</p>"

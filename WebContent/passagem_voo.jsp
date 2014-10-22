@@ -35,6 +35,7 @@
 								out.print("<h3>Escolha o Vôo - Volta</h3>");
 							}
 						}
+						
 						//Pega o ArrayList que foi passado pelo controle
 						ArrayList<VooTO> lista = (ArrayList<VooTO>) sessao.getAttribute("lista");
 						
@@ -112,7 +113,7 @@
 								}
 								
 							}
-							else{
+							else if (sessao.getAttribute("opcao").equals("ida")){
 								out.print("\n<tr style='background-color: ");
 								if(g==1){
 									out.print("#A9A9A9;");

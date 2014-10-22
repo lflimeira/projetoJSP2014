@@ -17,20 +17,28 @@ public class ControleCheckin extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		executa(request,response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		try{
-//		int numero = Integer.parseInt(request.getParameter("numero"));
+		executa(request,response);		
+	}
+	protected void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String operacao = request.getParameter("operacao");
+		
+		if(operacao.equals("mostraPassageiro")){
 			
+			
+			
+			
+		}
+		try{
 			request.setAttribute("mensagem", "sucesso");
 			request.getRequestDispatcher("checkin_passagem.jsp").forward(request, response);
 		}catch(Exception e){
 			request.setAttribute("mensagem", "erro");
 			request.getRequestDispatcher("checkin_passagem.jsp").forward(request, response);
 		}
-		
 		
 	}
 }

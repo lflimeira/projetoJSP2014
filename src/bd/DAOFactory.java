@@ -18,6 +18,9 @@ public class DAOFactory {
 	public AeronaveDAO getAeronaveDAO() {
 		return new AeronaveMySQL();
 	}
+	public VooDAO getVooDAO() {
+		return new VooMySQL(); 
+	}
 	
 	public UsuarioDAO getUsuarioDAO() {
 		return new UsuarioMysqlDaoImpl();

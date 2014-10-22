@@ -1,16 +1,12 @@
 package model;
 
-import java.io.*;  
 import java.math.BigInteger;
 
-import javax.crypto.*;  
-import javax.crypto.spec.*;  
 
 import bd.DAOFactory;
 import dao.UsuarioDAO;
 
 import java.security.*;  
-import java.security.cert.*; 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

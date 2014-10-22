@@ -123,7 +123,7 @@ public class ControllerCliente extends HttpServlet {
 			
 			//Aciona mensagem de que cadastro foi concluido
 			request.setAttribute("mensagem", "Clientes cadastrados com sucesso, "
-								+ "cadastre um responsável para continuar.");
+								+ "informe os dados para concluir a compra.");
 			
 			HttpSession session = request.getSession();
 			session.setAttribute("clientes", clientes);

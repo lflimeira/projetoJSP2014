@@ -30,8 +30,9 @@ import="java.util.ResourceBundle"
 			<ul class="sub_menu">
 				<li><a href="passagem_qtd.jsp"><%=bundle.getString("tela.header.comprar")%></a></li>
 				<li><a href="#"><%=bundle.getString("tela.header.cancelar")%></a></li>
-				<li><a href="passagem_transferir.jsp"><%=bundle.getString("tela.header.transferir")%></a></li>
+				<li><a href="#"><%=bundle.getString("tela.header.transferir")%></a></li>
 			</ul></li>
+<<<<<<< HEAD
 		
 		<li><a href="checkin_passagem.jsp"><%=bundle.getString("tela.header.checkin")%></a></li>
 		
@@ -41,6 +42,10 @@ import="java.util.ResourceBundle"
 			</ul>	
 		</li>
 		
+=======
+		<li><a href="checkin.jsp"><%=bundle.getString("tela.header.checkin")%></a></li>
+		<li><a href="#"><%=bundle.getString("tela.header.trocarDeUsuario")%></a></li>
+>>>>>>> parent of d99eab9... Transferencia de passagem
 		<li><a href="#"><%=bundle.getString("tela.header.sairDoSistema")%></a></li>
 	</ul>
 </div>

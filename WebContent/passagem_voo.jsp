@@ -113,7 +113,7 @@
 								}
 								
 							}
-							else if (sessao.getAttribute("opcao").equals("ida")){
+							else{
 								out.print("\n<tr style='background-color: ");
 								if(g==1){
 									out.print("#A9A9A9;");

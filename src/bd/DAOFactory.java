@@ -28,4 +28,8 @@ public class DAOFactory {
 	public ClienteDAO getClienteDAO() {
 		return new ClienteMysqlDaoImpl();
 	}
+	
+	public ResponsavelCompraDAO getResponsavelCompraDAO() {
+		return new ResponsavelCompraMysqlDaoImpl();
+	}
 }

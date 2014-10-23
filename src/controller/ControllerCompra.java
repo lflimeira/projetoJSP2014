@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import model.Cliente;
 import model.ClienteException;
 import to.ClienteTO;
-import to.ResponsavelTO;
+import to.ResponsavelCompraTO;
 
 /**
  * Servlet implementation class ControllerResponsavel

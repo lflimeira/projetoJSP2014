@@ -29,7 +29,7 @@ public class ResponsavelCompraMysqlDaoImpl implements ResponsavelCompraDAO {
 			conn = obtemConexao();
 			stm = conn.prepareStatement(sql);
 
-			stm.setString(   1, clienteTO.getTipo());
+			stm.setString(1, clienteTO.getTipo());
 			stm.setString(2, clienteTO.getTratamento());
 			stm.setString(3, clienteTO.getNome());
 			stm.setString(4, clienteTO.getSobrenome());

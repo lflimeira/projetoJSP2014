@@ -21,8 +21,7 @@
 					<tr>
 						<td style='text-align: right;'><%=bundle.getString("tela.cadAeronave.codigoDaAeronave")%></td>
 						<td>:</td>
-						<td><input type='text' size='5' maxlength="5" name='codigo'
-							id='codigo' /></td>
+						<td><input type='text' size='4' maxlength="4" name='codigo'	id='codigo' /></td>
 					</tr>
 					<tr>
 						<td style='text-align: right;'><%=bundle.getString("tela.cadAeronave.nomeDaAeronave")%></td>
@@ -38,7 +37,7 @@
 					</tr>
 					<table style='margin-left: 70px; margin-top: 10px; border: 1px solid black; border-radius: 10px;'>
 						<tr>
-							<td style='text-align: center;' colspan='4'><%=bundle.getString("tela.cadAeronave.localDeAssentos")%></td>
+							<td style='text-align: center;' colspan='4'><%=bundle.getString("tela.alterarAeronave.localizacaoAssentos")%></td>
 						</tr>
 						<tr>
 							<td><%=bundle.getString("tela.alterarAeronave.colunas")%>:</td>

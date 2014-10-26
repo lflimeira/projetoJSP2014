@@ -1,32 +1,22 @@
--- MySQL Administrator dump 1.4
---
--- ------------------------------------------------------
--- Server version	5.1.40-community
-
+-- --------------------------------------------------------
+-- Servidor:                     127.0.0.1
+-- Versão do servidor:           5.6.16 - MySQL Community Server (GPL)
+-- OS do Servidor:               Win32
+-- HeidiSQL Versão:              8.3.0.4694
+-- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+-- Copiando estrutura do banco de dados para aeroporto
+CREATE DATABASE IF NOT EXISTS `aeroporto` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `aeroporto`;
 
---
--- Create schema aeroporto
---
 
-CREATE DATABASE IF NOT EXISTS aeroporto;
-USE aeroporto;
-
---
--- Definition of table `aeronave`
---
-
-DROP TABLE IF EXISTS `aeronave`;
-CREATE TABLE `aeronave` (
+-- Copiando estrutura para tabela aeroporto.aeronave
+CREATE TABLE IF NOT EXISTS `aeronave` (
   `codigo` int(4) NOT NULL,
   `nomeAeronave` varchar(50) NOT NULL,
   `tipoAeronave` varchar(50) NOT NULL,
@@ -35,103 +25,93 @@ CREATE TABLE `aeronave` (
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `aeronave`
---
-
+-- Copiando dados para a tabela aeroporto.aeronave: ~8 rows (aproximadamente)
 /*!40000 ALTER TABLE `aeronave` DISABLE KEYS */;
-INSERT INTO `aeronave` (`codigo`,`nomeAeronave`,`tipoAeronave`,`colunas`,`fileiras`) VALUES 
- (1,'Maicon','Jet',2,2),
- (2,'Luiz','BigNose',1,3),
- (3,'Juliana','Luxo',1,1),
- (5,'Franciele','Irmã franci',3,4);
+INSERT INTO `aeronave` (`codigo`, `nomeAeronave`, `tipoAeronave`, `colunas`, `fileiras`) VALUES
+	(2, 'jkljklpj', 'iopjhiopj', 3, 3),
+	(3, 'jklp', 'jhp', 3, 1),
+	(5, 'dfasfas frqfqfd', 'dfad gqre a', 3, 5),
+	(6, 'sadeqwtq ', 'ddaf q', 5, 5),
+	(7, 'Luiz', 'Aviao BigNose', 3, 3),
+	(8, 'Juliana', 'Avião de Luxo', 2, 2),
+	(9, 'Jefferson', 'Jatinho ', 1, 1);
 /*!40000 ALTER TABLE `aeronave` ENABLE KEYS */;
 
 
---
--- Definition of table `cliente`
---
+-- Copiando estrutura para tabela aeroporto.cliente
+CREATE TABLE IF NOT EXISTS `cliente` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(50) NOT NULL DEFAULT '0',
+  `formaTratamento` varchar(50) NOT NULL DEFAULT '0',
+  `nome` varchar(50) NOT NULL DEFAULT '0',
+  `sobrenome` varchar(50) NOT NULL DEFAULT '0',
+  `dataNascimento` date NOT NULL DEFAULT '0000-00-00',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `cliente`;
-CREATE TABLE `cliente` (
-  `idCliente` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `tipo` varchar(10) NOT NULL,
-  `tratamento` varchar(10) NOT NULL,
-  `nome` varchar(60) NOT NULL,
-  `sobrenome` varchar(80) NOT NULL,
-  `dataNascimento` varchar(10) NOT NULL,
-  PRIMARY KEY (`idCliente`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `cliente`
---
-
+-- Copiando dados para a tabela aeroporto.cliente: ~1 rows (aproximadamente)
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-INSERT INTO `cliente` (`idCliente`,`tipo`,`tratamento`,`nome`,`sobrenome`,`dataNascimento`) VALUES 
- (1,'Adulto','Sr.','Luiz','Felipe','1993-02-02'),
- (2,'Adulto','Sra.','Juliana','Alves','1991-05-09'),
- (3,'Criança','Sr.','Maicon','Gouveia','2004-09-09'),
- (4,'Criança','Sr.','Jefferson','Não Lembro','2006-07-13'),
- (5,'Bebê','Sra.','Bebezita','Chiquita','2013-02-03'),
- (6,'Bebê','Sr.','Joaquinzinho','Bebezinho','2014-05-06'),
- (7,'Adulto','Sr.','Luiz','Felipe','1993-02-02'),
- (8,'Adulto','Sra.','Juliana','Alves','1991-05-09'),
- (9,'Criança','Sr.','Maicon','Gouveia','2004-09-09'),
- (10,'Criança','Sr.','Jefferson','Não Lembro','2006-07-13'),
- (11,'Bebê','Sra.','Bebezita','Chiquita','2013-02-03'),
- (12,'Bebê','Sr.','Joaquinzinho','Bebezinho','2014-05-06'),
- (13,'Adulto','Sr.','Luiz','Felipe','1993-02-02'),
- (14,'Adulto','Sra.','Juliana','Alves','1991-05-09'),
- (15,'Criança','Sr.','Maicon','Gouveia','2004-09-09'),
- (16,'Criança','Sr.','Jefferson','Não Lembro','2006-07-13'),
- (17,'Bebê','Sra.','Bebezita','Chiquita','2013-02-03'),
- (18,'Bebê','Sr.','Joaquinzinho','Bebezinho','2014-05-06'),
- (19,'Adulto','Sr.','Luiz','Felipe','1993-02-02'),
- (20,'Adulto','Sra.','Juliana','Alves','1991-05-09'),
- (21,'Criança','Sr.','Maicon','Gouveia','2004-09-09'),
- (22,'Criança','Sr.','Jefferson','Não Lembro','2006-07-13'),
- (23,'Bebê','Sra.','Bebezita','Chiquita','2013-02-03'),
- (24,'Bebê','Sr.','Joaquinzinho','Bebezinho','2014-05-06'),
- (25,'Adulto','Sr.','Luiz','Felipe','1975-05-04'),
- (26,'Adulto','Sra.','Juliana','Alves','1972-05-05'),
- (27,'Criança','Sr.','Jefferson','Não Lembro','2005-02-04'),
- (28,'Criança','Srta.','Maica','Gouveia','2008-05-02');
+INSERT INTO `cliente` (`id`, `tipo`, `formaTratamento`, `nome`, `sobrenome`, `dataNascimento`) VALUES
+	(1, 'Adulto', 'Sr', 'Maicon', 'Gouveia', '1994-06-23');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 
 
---
--- Definition of table `usuario`
---
+-- Copiando estrutura para tabela aeroporto.passagem
+CREATE TABLE IF NOT EXISTS `passagem` (
+  `id` int(4) NOT NULL AUTO_INCREMENT,
+  `idCliente` int(4) NOT NULL DEFAULT '0',
+  `idVoo` int(4) NOT NULL DEFAULT '0',
+  `idResponsavel` int(4) NOT NULL DEFAULT '0',
+  `coluna` int(4) DEFAULT '0',
+  `fileira` int(4) DEFAULT '0',
+  `status` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`,`idCliente`,`idVoo`,`idResponsavel`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE `usuario` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+-- Copiando dados para a tabela aeroporto.passagem: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `passagem` DISABLE KEYS */;
+INSERT INTO `passagem` (`id`, `idCliente`, `idVoo`, `idResponsavel`, `coluna`, `fileira`, `status`) VALUES
+	(1, 1, 1, 1, 0, 0, '0');
+/*!40000 ALTER TABLE `passagem` ENABLE KEYS */;
+
+
+-- Copiando estrutura para tabela aeroporto.responsavel
+CREATE TABLE IF NOT EXISTS `responsavel` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(50) NOT NULL DEFAULT '0',
+  `telefone` varchar(50) NOT NULL DEFAULT '0',
+  `email` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- Copiando dados para a tabela aeroporto.responsavel: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `responsavel` DISABLE KEYS */;
+INSERT INTO `responsavel` (`id`, `nome`, `telefone`, `email`) VALUES
+	(1, 'Maicon Soares Gouveia', '(11)97243-1309', 'gouveia.maicon@gmail.com');
+/*!40000 ALTER TABLE `responsavel` ENABLE KEYS */;
+
+
+-- Copiando estrutura para tabela aeroporto.usuario
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `id` int(11) NOT NULL,
   `nome` varchar(60) NOT NULL,
   `login` varchar(40) NOT NULL,
   `senha` varchar(100) NOT NULL,
   `data` varchar(10) DEFAULT NULL,
-  `nivelAcesso` int(1) unsigned NOT NULL,
+  `nivelAcesso` int(1) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `usuario`
---
-
+-- Copiando dados para a tabela aeroporto.usuario: ~2 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-INSERT INTO `usuario` (`id`,`nome`,`login`,`senha`,`data`,`nivelAcesso`) VALUES 
- (1,'Luiz Felipe','luiz','202cb962ac59075b964b07152d234b70',NULL,1),
- (2,'Maicon Gouveia','maicon','202cb962ac59075b964b07152d234b70',NULL,1);
+INSERT INTO `usuario` (`id`, `nome`, `login`, `senha`, `data`, `nivelAcesso`) VALUES
+	(1, 'Luiz Felipe', 'luiz', '202cb962ac59075b964b07152d234b70', NULL, 1),
+	(2, 'Maicon Gouveia', 'maicon', '202cb962ac59075b964b07152d234b70', NULL, 1);
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 
 
---
--- Definition of table `voo`
---
-
-DROP TABLE IF EXISTS `voo`;
-CREATE TABLE `voo` (
+-- Copiando estrutura para tabela aeroporto.voo
+CREATE TABLE IF NOT EXISTS `voo` (
   `codigo` int(11) NOT NULL,
   `origem` varchar(45) NOT NULL,
   `destino` varchar(45) NOT NULL,
@@ -145,23 +125,13 @@ CREATE TABLE `voo` (
   PRIMARY KEY (`codigo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `voo`
---
-
+-- Copiando dados para a tabela aeroporto.voo: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `voo` DISABLE KEYS */;
-INSERT INTO `voo` (`codigo`,`origem`,`destino`,`dia`,`hora`,`situacao`,`valor`,`pri_escala`,`seg_escala`,`cod_aeronave`) VALUES 
- (1,'Santa Catarina','São Paulo','2014-01-20','15:00:00','Em espera',150,'','',9),
- (2,'São Paulo','Rio de Janeiro','2014-12-30','13:00:00','Em espera',500,'','',1);
+INSERT INTO `voo` (`codigo`, `origem`, `destino`, `dia`, `hora`, `situacao`, `valor`, `pri_escala`, `seg_escala`, `cod_aeronave`) VALUES
+	(1, 'Santa Catarina', 'São Paulo', '2014-01-20', '15:00:00', 'Em espera', 150, '', '', 9),
+	(18511, 'Acre', 'Alagoas', '2012-10-31', '21:59:00', 'Cancelado', 0, '', '', 3),
+	(43214, 'Mato Grosso', 'Bahia', '2014-10-22', '01:59:00', 'Em espera', 10, '', '', 9);
 /*!40000 ALTER TABLE `voo` ENABLE KEYS */;
-
-
-
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

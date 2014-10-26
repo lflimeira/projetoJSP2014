@@ -32,13 +32,14 @@ public class ControleCheckin extends HttpServlet {
 			
 			
 		}
-		try{
-			request.setAttribute("mensagem", "sucesso");
-			request.getRequestDispatcher("checkin_passagem.jsp").forward(request, response);
-		}catch(Exception e){
-			request.setAttribute("mensagem", "erro");
-			request.getRequestDispatcher("checkin_passagem.jsp").forward(request, response);
+		if(operacao.equals("finalizando")){
+			try{
+				request.setAttribute("mensagem", "sucesso");
+				request.getRequestDispatcher("checkin_passagem.jsp").forward(request, response);
+			}catch(Exception e){
+				request.setAttribute("mensagem", "erro");
+				request.getRequestDispatcher("checkin_passagem.jsp").forward(request, response);
+			}
 		}
-		
 	}
 }

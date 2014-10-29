@@ -1,10 +1,10 @@
 package dao;
 
 import model.CheckinException;
-import java.util.List;
+import to.CheckinTO;
 
 public interface CheckinDAO {
 
-	public void efetuarCheckin(int codigoPassagem) throws CheckinException;
+	public CheckinTO consultaValores(int codigoPassagem) throws CheckinException;
 	
 }

@@ -32,4 +32,8 @@ public class DAOFactory {
 	public ResponsavelCompraDAO getResponsavelCompraDAO() {
 		return new ResponsavelCompraMysqlDaoImpl();
 	}
+	
+	public CheckinDAO getCheckinDAO(){
+		return new CheckinMySQL();
+	}
 }

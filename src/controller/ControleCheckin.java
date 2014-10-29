@@ -26,8 +26,11 @@ public class ControleCheckin extends HttpServlet {
 	protected void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String operacao = request.getParameter("operacao");
 		
-		if(operacao.equals("mostraPassageiro")){
+		if(operacao.equals("mostraInformacoes")){
 			
+			int codigoPassagem = Integer.parseInt(request.getParameter("numero"));
+			
+			C
 			
 			
 			

@@ -17,11 +17,12 @@ import dao.ResponsavelCompraDAO;
 public class ResponsavelCompraMysqlDaoImpl implements ResponsavelCompraDAO {
 
 	@Override
-	public Long cadastrar(ResponsavelCompraTO clienteTO) throws ResponsavelCompraException {
-		String sql = "insert into cliente ("
-				+ "tipo, tratamento, "
-				+ "nome,sobrenome,dataNascimento) "
-				+ "values (?,?,?,?,?)";
+	public Long cadastrar(ResponsavelCompraTO resCompraTO) throws ResponsavelCompraException {
+		String sql = "insert into responsavelcompra ("
+				+ "email, celular, bandeira, nomeTitular "
+				+ ",cpf,numCartao,dataValidade,codigoSeguranca"
+				+ ",banco,agencia,conta) "
+				+ "values (?,?,?,?,?,?,?,?,?,?,?)";
 
 		Connection conn = null;
 		PreparedStatement stm = null;
@@ -29,16 +30,22 @@ public class ResponsavelCompraMysqlDaoImpl implements ResponsavelCompraDAO {
 			conn = obtemConexao();
 			stm = conn.prepareStatement(sql);
 
-			stm.setString(1, clienteTO.getTipo());
-			stm.setString(2, clienteTO.getTratamento());
-			stm.setString(3, clienteTO.getNome());
-			stm.setString(4, clienteTO.getSobrenome());
-			stm.setString(5, clienteTO.getDataNascimento());
+			stm.setString(1, resCompraTO.getEmail());
+			stm.setString(2, resCompraTO.getCelular());
+			stm.setString(3, resCompraTO.getBandeira());
+			stm.setString(4, resCompraTO.getNomeTitular());
+			stm.setString(5, resCompraTO.getCpf());
+			stm.setString(6, resCompraTO.getNumCartao());
+			stm.setString(7, resCompraTO.getDataValidade());
+			stm.setString(8, resCompraTO.getCodigoSeguranca());
+			stm.setString(9, resCompraTO.getBanco());
+			stm.setString(10, resCompraTO.getAgencia());
+			stm.setString(11, resCompraTO.getConta());
 
 			stm.execute();
 
 		} catch (SQLException e) {
-			throw new ClienteException(e);
+			throw new ResponsavelCompraException(e);
 
 		} finally {
 			if (stm != null) {

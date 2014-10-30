@@ -16,7 +16,7 @@
 				
 					<label>Numero da Passagem:</label>
 					<input id="numero" name="numero" size="4" type="text"></input>
-					<input type='hidden' name='operacao' id='operacao' value='mostraPassageiro' />
+					<input type='hidden' name='operacao' id='operacao' value='mostraInformacoes' />
 					<div>
 						<input type="submit" id="checkin" name="checkin" value="Checkin" style="margin-left: 100px; margin-top:10px;"/>
 					</div>

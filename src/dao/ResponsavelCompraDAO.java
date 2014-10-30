@@ -1,14 +1,14 @@
 package dao;
 
 import model.ResponsavelCompraException;
-import to.ResponsavelCompraTO;
+import to.ResponsavelTO;
 
 
 public interface ResponsavelCompraDAO {
 	
-	public Long cadastrar(ResponsavelCompraTO respCompTO) throws ResponsavelCompraException;
+	public Long cadastrar(ResponsavelTO respCompTO) throws ResponsavelCompraException;
 	
-	public ResponsavelCompraTO consultaUnica(int codigo) throws ResponsavelCompraException;
+	public ResponsavelTO consultaUnica(int codigo) throws ResponsavelCompraException;
 	
 
 }

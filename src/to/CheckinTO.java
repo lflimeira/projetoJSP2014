@@ -6,13 +6,13 @@ public class CheckinTO {
 	private int codigo;
 	private ClienteTO clienteTO;
 	private VooTO vooTO;
-	private ResponsavelCompraTO responsavelTO;
+	private ResponsavelTO responsavelTO;
 	private int coluna;
 	private int fileira;
 	private String status;
 	
 	
-	public CheckinTO(int codigo, ClienteTO clienteTO, ResponsavelCompraTO responsavelTO, int coluna, int fileira, String status){
+	public CheckinTO(int codigo, ClienteTO clienteTO, ResponsavelTO responsavelTO, int coluna, int fileira, String status){
 		
 		this.codigo = codigo;
 		this.clienteTO = clienteTO;
@@ -21,6 +21,9 @@ public class CheckinTO {
 		this.fileira = fileira;
 		this.status = status;
 			
+	}
+	public CheckinTO(){
+		
 	}
 
 	public int getCodigo() {
@@ -53,12 +56,12 @@ public class CheckinTO {
 	}
 
 
-	public ResponsavelCompraTO getResponsavelTO() {
+	public ResponsavelTO getResponsavelTO() {
 		return responsavelTO;
 	}
 
 
-	public void setResponsavelTO(ResponsavelCompraTO responsavelTO) {
+	public void setResponsavelTO(ResponsavelTO responsavelTO) {
 		this.responsavelTO = responsavelTO;
 	}
 

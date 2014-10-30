@@ -1,6 +1,6 @@
 package to;
 
-public class ResponsavelCompraTO {
+public class ResponsavelTO {
 	
 	private int    idCompra;
 	private String email;
@@ -15,7 +15,7 @@ public class ResponsavelCompraTO {
 	private String agencia;
 	private String conta;
 	
-	public ResponsavelCompraTO( String email, String celular,
+	public ResponsavelTO( String email, String celular,
 			String bandeira, String nomeTitular, String cpf, String numCartao,
 			String dataValidade, String codigoSeguranca) {
 		this.email = email;
@@ -29,7 +29,7 @@ public class ResponsavelCompraTO {
 		
 	}
 	
-	public ResponsavelCompraTO( String email, String celular,
+	public ResponsavelTO( String email, String celular,
 			 String nomeTitular, String cpf, String banco,
 			String agencia, String conta) {
 		this.email = email;

@@ -11,7 +11,7 @@ import to.ClienteTO;
 import to.VooTO;
 import dao.ClienteDAO;
 
-public class ClienteMysqlDaoImpl implements ClienteDAO {
+public class ClienteMySQL implements ClienteDAO {
 
 	@Override
 	public Long cadastrar(ClienteTO clienteTO) throws ClienteException {
@@ -109,11 +109,6 @@ public class ClienteMysqlDaoImpl implements ClienteDAO {
 		return 0;
 	}
 
-	@Override
-	public ClienteTO consultaUnica(int codigo) throws ClienteException {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	private Connection obtemConexao() throws SQLException {
 		AcessoBanco acesso = new AcessoBanco();

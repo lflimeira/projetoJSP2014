@@ -17,12 +17,7 @@ public class Cliente {
 		ClienteDAO dao = factory.getClienteDAO();
 		return Integer.parseInt(dao.cadastrar(clienteTO).toString());
 	}
-	
-	public ClienteTO consultaUnica(int codigo) throws ClienteException{
-		DAOFactory factory = DAOFactory.getInstance();
-		ClienteDAO dao = factory.getClienteDAO();
-		return dao.consultaUnica(codigo);
-	}
+
 	
 
 }

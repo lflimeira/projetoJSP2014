@@ -30,7 +30,8 @@ public class ControleCheckin extends HttpServlet {
 			
 			int codigoPassagem = Integer.parseInt(request.getParameter("numero"));
 			
-			C
+			
+			
 			
 			
 			

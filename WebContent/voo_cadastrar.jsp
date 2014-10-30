@@ -141,7 +141,7 @@
 					<tr>
 						<td style='text-align: right;'>Valor</td>
 						<td>:</td>
-						<td>R$<input id='valor' name='valor' size='5' value='0,00'/></td>
+						<td>R$<input id='valor' name='valor' size='5' value='0.00'/></td>
 					</tr>
 					<tr>					
 						<td style='text-align: right;'>Escala 1</td>

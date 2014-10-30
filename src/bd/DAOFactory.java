@@ -26,12 +26,9 @@ public class DAOFactory {
 		return new UsuarioMysqlDaoImpl();
 	}
 	public ClienteDAO getClienteDAO() {
-		return new ClienteMysqlDaoImpl();
+		return new ClienteMySQL();
 	}
-	
-	public ResponsavelCompraDAO getResponsavelCompraDAO() {
-		return new ResponsavelCompraMysqlDaoImpl();
-	}
+
 	
 	public CheckinDAO getCheckinDAO(){
 		return new CheckinMySQL();

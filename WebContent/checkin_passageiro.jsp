@@ -16,7 +16,7 @@
 					//Pega a Sessão
 					HttpSession sessao = request.getSession();
 				
-					
+					ClienteTO clienteTO = (ClienteTO) sessao.getAttribute("cliente");
 					
 					
 					%>

@@ -6,23 +6,12 @@ import to.*;
 
 public class ResponsavelCompra {
 	
-	ResponsavelCompraTO repCompraTO = null;
+	ResponsavelTO repCompraTO = null;
 	
-	public ResponsavelCompra(ResponsavelCompraTO repCompraTO){
+	public ResponsavelCompra(ResponsavelTO repCompraTO){
 		this.repCompraTO = repCompraTO;
 	}
-	
-	public int cadastrar() throws ResponsavelCompraException{
-		DAOFactory factory = DAOFactory.getInstance();
-		ResponsavelCompraDAO dao = factory.getResponsavelCompraDAO();
-		return Integer.parseInt(dao.cadastrar(repCompraTO).toString());
-	}
-	
-	public ResponsavelCompraTO consultaUnica(int codigo) throws ResponsavelCompraException{
-		DAOFactory factory = DAOFactory.getInstance();
-		ResponsavelCompraDAO dao = factory.getResponsavelCompraDAO();
-		return dao.consultaUnica(codigo);
-	}
+
 	
 
 }

@@ -222,7 +222,7 @@
 					<input type="hidden" name='operacao' value="cadastrar" >
 					<input type="hidden" name='subOperacao' value="cadastra" >
 				</table>
-					<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;">
+					<input type='submit' value=<%out.print(bundle.getString("cadastrar"));%> style="margin-left: 150px; margin-top: 10px;">
 		</fieldset>
 		</form>
 	</div>

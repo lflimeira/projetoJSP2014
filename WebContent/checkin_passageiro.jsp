@@ -9,7 +9,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Dados do Passageiro</title>
+	<title><%out.print(bundle.getString("lblDadosPassagem"));%></title>
 </head>
 
 <body>
@@ -34,28 +34,28 @@
 <div style="margin: auto; width: 940px; height: 350px; display: table;">
 	<jsp:include page="header.jsp"></jsp:include>
 	<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 300px; min-height: 150px; margin: auto; margin-top: 100px;">
-				<legend style="color: red;">Dados da Passagem</legend>
+				<legend style="color: red;"><%out.print(bundle.getString("lblDadosPassagem"));%></legend>
 				
 				<fieldset style='border: 1px solid black; border-radius: 10px; width: 300px; margin: auto;'>
-				<legend>Cliente</legend>
+				<legend><%=bundle.getString("tela.cadDCliente.cliente")%></legend>
 				
 					<table style='margin: auto;'>
 					<tr>					
-						<td style='text-align: right;'>Tipo</td>
+						<td style='text-align: right;'><%=bundle.getString("tela.cadDCliente.tipo")%></td>
 							<td>:</td>
 						<td>
 							<% out.print(clienteTO.getTipo());%>
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Nome</td>
+						<td style='text-align: right;'><%=bundle.getString("tela.cadDCliente.nome")%></td>
 							<td>:</td>
 						<td>
 							<% out.print(clienteTO.getTratamento());%> <% out.print(clienteTO.getNome());%> <% out.print(clienteTO.getSobrenome());%>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Data de Nasc.</td>
+						<td style='text-align: right;'><%=bundle.getString("tela.cadDCliente.dataDeNascimento")%></td>
 						<td>:</td>
 						<td>
 							<% out.print(clienteTO.getDataNascimento());%>
@@ -64,11 +64,11 @@
 				</table>
 				</fieldset>
 				<fieldset style='border: 1px solid black; border-radius: 10px; width: 250px;margin: auto;'>
-				<legend>Voo</legend>
+				<legend><%out.print(bundle.getString("tela.header.voo"));%></legend>
 				
 					<table style='margin: auto;'>
 					<tr>					
-						<td style='text-align: right;'>Origem</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblorigem"));%></td>
 							<td>:</td>
 						<td>
 							<% out.print(vooTO.getOrigem());%>
@@ -76,21 +76,21 @@
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Destino</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lbldestino"));%></td>
 							<td>:</td>
 						<td>
 							<% out.print(vooTO.getDestino());%>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Data</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lbldata"));%> - <%out.print(bundle.getString("voo.lblhora"));%></td>
 						<td>:</td>
 						<td>
 							<% out.print(vooTO.getData() + " - " + vooTO.getHora());%>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Situação</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblstatus"));%></td>
 						<td>:</td>
 						<td>
 							<% out.print(vooTO.getSituacao());%>							
@@ -98,7 +98,7 @@
 					</tr>
 					<%if(!(vooTO.getEscala1().equals(""))){%>
 					<tr>
-						<td style='text-align: right;'>Primeira Escala</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblescalas1"));%></td>
 						<td>:</td>
 						<td>
 							<% out.print(vooTO.getEscala1());%>							
@@ -107,7 +107,7 @@
 					<%} %>
 					<%if(!(vooTO.getEscala2().equals(""))){%>
 					<tr>
-						<td style='text-align: right;'>Segunda Escala</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblescalas2"));%></td>
 						<td>:</td>
 						<td>
 							<% out.print(vooTO.getEscala2());%>							
@@ -117,25 +117,25 @@
 				</table>
 				</fieldset>
 				<fieldset style='border: 1px solid black; border-radius: 10px; width: 300px; margin: auto;'>
-				<legend>Responsavel da Compra</legend>
+				<legend><%=bundle.getString("lblResponsavelCompra")%></legend>
 				
 					<table style='margin: auto;'>
 					<tr>					
-						<td style='text-align: right;'>Nome</td>
+						<td style='text-align: right;'><%=bundle.getString("tela.cadDCliente.nome")%></td>
 							<td>:</td>
 						<td>
 							<% out.print(responsavelTO.getNome()); %>
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Telefone</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.telefone")%></td>
 							<td>:</td>
 						<td>
 							<% out.print(responsavelTO.getTelefone()); %>
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>E-mail</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.email")%></td>
 							<td>:</td>
 						<td>
 							<% out.print(responsavelTO.getEmail()); %>
@@ -146,8 +146,8 @@
 				<table>
 				
 					<tr>
-						<td><a href='checkin_passagem.jsp' style='text-align: left;'>Voltar</a></td>
-						<td><a href='checkin_escolherLugar.jsp' style='margin-left: 230px;'>Proximo</a></td>
+						<td><a href='checkin_passagem.jsp' style='text-align: left;'><%=bundle.getString("lblVoltar")%></a></td>
+						<td><a href='checkin_escolherLugar.jsp' style='margin-left: 230px;'><%=bundle.getString("lblProximo")%></a></td>
 					</tr>
 				
 				</table>	

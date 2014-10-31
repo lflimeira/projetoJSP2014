@@ -34,11 +34,11 @@
 						<td><input type="number" name="bebes" min="0" max="20" value='0'></td>
 					</tr>
 					<tr>
-						<td><input type='radio' name='opcao' value='ida' > Ida</td>
-						<td colspan='2'><input type='radio' name='opcao' value='idaVolta' > Ida e Volta</td>
+						<td><input type='radio' name='opcao' value='ida' ><%out.print(bundle.getString("lblIda"));%></td>
+						<td colspan='2'><input type='radio' name='opcao' value='idaVolta' ><%out.print(bundle.getString("lblIda.volta"));%></td>
 					</tr>
 					<tr>
-						<td colspan='3'><input type='submit' value='Escolher Vôo' style="margin-left: 40px; margin-top: 10px;" /></td>
+						<td colspan='3'><input type='submit' value=<%out.print(bundle.getString("lblEscolheVoo"));%> style="margin-left: 40px; margin-top: 10px;" /></td>
 					</tr>
 				</table>
 				<input type='hidden' name='operacao' id='operacao' value='escolheVoo' />

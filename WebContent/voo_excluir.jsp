@@ -76,7 +76,7 @@
 					<input type="hidden" name='subOperacao' value="excluir" >
 					<input type='hidden' name='codigo' value='<% out.print(vooTO.getCodigo()); %>'>
 					<tr>
-						<td><input type='submit' value='Excluir'></td>
+						<td><input type='submit' value=<%=bundle.getString("excluir")%>></td>
 					</tr>
 				</table>
 		</fieldset>

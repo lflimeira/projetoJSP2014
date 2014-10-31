@@ -4,12 +4,14 @@
 	pageEncoding="ISO-8859-1"
 	import='to.*'
 	import='java.util.*'
+	import="java.util.ResourceBundle"
 	%>
+<% ResourceBundle bundle = (ResourceBundle)session.getAttribute("linguagem");%>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Cadastro de Voos</title>
+	<title><%out.print(bundle.getString("tela.menu.voo.cadastrar"));%></title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 <body>
@@ -17,7 +19,7 @@
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControleVoo" method="post">
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
-			<legend style="color: red;">Cadastro de Voos</legend>
+			<legend style="color: red;"><%out.print(bundle.getString("tela.menu.voo.cadastrar"));%></legend>
 
 				<table>
 					<tr>
@@ -26,7 +28,7 @@
 						<td><input type='text' size='5' maxlength="5" name='codigo' id='codigo' /></td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Origem</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lblorigem"));%></td>
 							<td>:</td>
 						<td>
 							<select id="origem" name="origem">
@@ -63,7 +65,7 @@
 					</tr>
 					
 					<tr>					
-						<td style='text-align: right;'>Destino</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lbldestino"));%></td>
 							<td>:</td>
 						<td>
 							<select id="destino" name="destino">
@@ -100,7 +102,7 @@
 					</tr>
 					
 					<tr>
-						<td style='text-align: right;'>Data</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lbldata"));%></td>
 						<td>:</td>
 						<td><input class="data" type='date'name='data' id='data' /></td>
 					</tr>
@@ -125,7 +127,7 @@
 						</td>
 					</tr>
 					<tr>											
-						<td style='text-align: right;'>Aeronave</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lblaeronave"));%></td>
 							<td>:</td>
 						<td>
 							<select id="aeronave" name="aeronave">
@@ -139,7 +141,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Valor</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lblvalor"));%></td>
 						<td>:</td>
 						<td>R$<input id='valor' name='valor' size='5' value='0.00'/></td>
 					</tr>

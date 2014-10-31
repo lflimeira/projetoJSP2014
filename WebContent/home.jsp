@@ -22,10 +22,10 @@
 					</br>
 					</br>
 					<div style="width: 320px;text-align: left;margin: auto;">
-						Nome: <%= user.getNome()%> </br>
-						Tipo de Usuario: <% if(user.getNivelAcesso() == 1){ 
+						<%out.print(bundle.getString("tela.inicio.labelnome"));%>: <%= user.getNome()%> </br>
+						<%out.print(bundle.getString("tela.inicio.labelperfil"));%>: <% if(user.getNivelAcesso() == 1){ 
 							out.print(bundle.getString("tela.home.supervisor"));}else{out.print(bundle.getString("tela.home.atendente"));}%> </br>
-						Login: <%=user.getLogin() %> </br>
+						<%out.print(bundle.getString("tela.inicio.labelUsuario"));%>: <%=user.getLogin() %> </br>
 						</br>
 					</div>
 			</div>

@@ -58,14 +58,14 @@ $(document).ready(function(){
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>E-mail</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.email")%></td>
 							<td>:</td>
 						<td>
 							<input class="email" type='text'name='email' id='email' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Celular</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.telefone")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='celular' id='celular' />
@@ -140,7 +140,7 @@ $(document).ready(function(){
 				</table>
 				
 				<input type="hidden" name='operacao' value="cadastrar_resposavel" >
-				<input type='submit' value='cadastrar' style="margin-left: 150px; margin-top: 10px;">
+				<input type='submit' value=<%out.print(bundle.getString("cadastrar"));%> style="margin-left: 150px; margin-top: 10px;">
 		</fieldset>
 		</form>
 	</div>

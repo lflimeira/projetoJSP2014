@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Escolha de Vôo</title>
+		<title><%out.print(bundle.getString("lblEscolheVoo"));%></title>
 </head>
 <body>
 		<div style="margin: auto; width: 940px; height: 350px; display: table;">
@@ -44,13 +44,13 @@
 						//Formata todas as informações da lista item por item
 						out.print("<table style='margin-left: auto;margin-right: auto; width: 580px; border: 1px solid black;'>");
 						out.print("<tr style='font-weight: bold;background-color: #000000; color: white; text-align: center;'>"
-								  +"\n	<td>Código</td>"
-								  +"\n	<td>Origem</td>"
-								  +"\n	<td>Destino</td>"
-								  +"\n	<td>Data</td>"
-								  +"\n	<td>Hora</td>"
-								  +"\n  <td>Valor</td>"
-								  +"\n	<td>Compra</td>"
+								  +"\n	<td>" + (bundle.getString("lblCodigo")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lblorigem")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lbldestino")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lbldata")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lblhora")) + "</td>"
+								  +"\n  <td>" + (bundle.getString("voo.lblvalor")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("tela.header.comprar")) + "</td>"
 								  +"\n</tr>");
 						
 						//Variavel de Cor

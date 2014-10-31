@@ -56,7 +56,7 @@
 					<input type="hidden" name='operacao' value="excluir" >
 					<input type="hidden" name='subOperacao' value="excluir" >
 					<input type='hidden' name='codigo' value='<% out.print(aeronaveTO.getCodigo()); %>'>
-					<input type='submit' value='Excluir' style="margin-left: 150px; margin-top: 10px;">
+					<input type='submit' value=<%=bundle.getString("excluir")%> style="margin-left: 150px; margin-top: 10px;">
 				</table>
 		</fieldset>
 		</form>

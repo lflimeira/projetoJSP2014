@@ -10,6 +10,7 @@ import model.AeronaveException;
 import model.CheckinException;
 import to.CheckinTO;
 import to.ClienteTO;
+import to.ResponsavelTO;
 import to.VooTO;
 
 public class CheckinMySQL implements CheckinDAO{
@@ -23,9 +24,9 @@ public class CheckinMySQL implements CheckinDAO{
 		int idCliente = 0;
 		int idVoo = 0;
 		int idResponsavel = 0;
-		String status;
+		String status = "nada";
 		
-		String sql = "SELECT * FROM passagem WHERE codigo = " + codigoPassagem;
+		String sql = "SELECT * FROM passagem WHERE id = " + codigoPassagem;
 		
 		try {
 			con = obtemConexao();
@@ -69,7 +70,7 @@ public class CheckinMySQL implements CheckinDAO{
 			}	
 		}
 		
-		String sqlCliente = "SELECT * FROM cliente WHERE codigo = "+ idCliente;
+		String sqlCliente = "SELECT * FROM cliente WHERE id = "+ idCliente;
 		
 		ClienteTO clienteTO = new ClienteTO();
 		
@@ -164,7 +165,51 @@ public class CheckinMySQL implements CheckinDAO{
 			}	
 		}
 		
-		CheckinTO checkinTO = null;
+		String sqlResponsavel = "SELECT * FROM responsavel WHERE id = "+ idResponsavel;
+		
+		ResponsavelTO responsavelTO = new ResponsavelTO();
+		
+	
+		try {
+			con = obtemConexao();
+			stmt = con.prepareStatement(sqlResponsavel);
+			rs = stmt.executeQuery();
+			
+			while(rs.next()){
+				responsavelTO.setId(rs.getInt(1));
+				responsavelTO.setNome(rs.getString(2));
+				responsavelTO.setTelefone(rs.getString(3));
+				responsavelTO.setEmail(rs.getString(4));
+			}
+			
+		} catch (SQLException e) {
+			throw new CheckinException(e);
+	
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				}catch(SQLException sqle){
+					//
+				}
+			}
+			if (stmt != null) {
+				try {
+					stmt.close();
+				}catch(SQLException sqle){
+					//
+				}
+			}
+			if (con != null) {
+				try {
+					con.close();
+				}catch(SQLException sqle){
+					//
+				}
+			}	
+		}
+		
+		CheckinTO checkinTO = new CheckinTO(codigoPassagem, clienteTO, vooTO, responsavelTO, status);
 		
 		return checkinTO;
 	}

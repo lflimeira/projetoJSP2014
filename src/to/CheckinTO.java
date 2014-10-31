@@ -12,13 +12,23 @@ public class CheckinTO {
 	private String status;
 	
 	
-	public CheckinTO(int codigo, ClienteTO clienteTO, ResponsavelTO responsavelTO, int coluna, int fileira, String status){
+	public CheckinTO(int codigo, ClienteTO clienteTO, VooTO vooTO, ResponsavelTO responsavelTO, int coluna, int fileira, String status){
 		
 		this.codigo = codigo;
 		this.clienteTO = clienteTO;
+		this.vooTO = vooTO;
 		this.responsavelTO = responsavelTO;
 		this.coluna = coluna;
 		this.fileira = fileira;
+		this.status = status;
+			
+	}
+	public CheckinTO(int codigo, ClienteTO clienteTO, VooTO vooTO, ResponsavelTO responsavelTO, String status){
+		
+		this.codigo = codigo;
+		this.clienteTO = clienteTO;
+		this.vooTO = vooTO;
+		this.responsavelTO = responsavelTO;
 		this.status = status;
 			
 	}

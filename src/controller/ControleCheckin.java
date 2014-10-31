@@ -1,11 +1,18 @@
 package controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import model.AeronaveException;
+import model.Checkin;
+import model.CheckinException;
+import to.CheckinTO;
 
 //importante nao alterar webservlet
 @WebServlet("/ControleCheckin") 
@@ -30,7 +37,18 @@ public class ControleCheckin extends HttpServlet {
 			
 			int codigoPassagem = Integer.parseInt(request.getParameter("numero"));
 			
+			CheckinTO c = new CheckinTO();
+			Checkin checkin = new Checkin(c);
+			CheckinTO checkinTO = null;
+			try{
+				checkinTO = checkin.consultaValores(codigoPassagem);
+			}catch(CheckinException e) {
+				e.printStackTrace();
+			}
 			
+			HttpSession session = request.getSession();
+			session.setAttribute("checkinTO", checkinTO);
+			response.sendRedirect("checkin_passageiro.jsp");
 			
 			
 			

@@ -18,8 +18,12 @@
 					//Pega a Sessão
 					HttpSession sessao = request.getSession();
 				
-					ClienteTO clienteTO = (ClienteTO) sessao.getAttribute("cliente");
-					
+					CheckinTO checkinTO = (CheckinTO) sessao.getAttribute("checkinTO");
+					int codigoPassagem = checkinTO.getCodigo();
+					ClienteTO clienteTO = checkinTO.getClienteTO();
+					VooTO vooTO = checkinTO.getVooTO();
+					ResponsavelTO responsavelTO = checkinTO.getResponsavelTO();
+					String status = checkinTO.getStatus();				
 					
 					%>
 

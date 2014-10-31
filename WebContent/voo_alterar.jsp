@@ -121,13 +121,13 @@
 						<td>:</td>
 						<td>
 							<select id="situacao" name="situacao">
-								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.espera"))){out.print("selected='selected'");} %>>Em espera</option>
-								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.confirmado"))){out.print("selected='selected'");} %>>Confirmado</option>
-								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.cancelado"))){out.print("selected='selected'");} %>>Cancelado</option>
-								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.atrasado"))){out.print("selected='selected'");} %>>Atrasado</option>
-								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.embarque"))){out.print("selected='selected'");} %>>Embarque</option>
-								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.finalizado"))){out.print("selected='selected'");} %>>Finalizado</option>
-								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.encerrado"))){out.print("selected='selected'");} %>>Encerrado</option>
+								  <option <%if(vooTO.getSituacao().equals("")){out.print("selected='selected'");} %>><% out.print(bundle.getString("voo.cbstatus.espera")); %></option>
+								  <option <%if(vooTO.getSituacao().equals("")){out.print("selected='selected'");} %>><% out.print(bundle.getString("voo.cbstatus.confirmado")); %></option>
+								  <option <%if(vooTO.getSituacao().equals("")){out.print("selected='selected'");} %>><% out.print(bundle.getString("voo.cbstatus.cancelado")); %></option>
+								  <option <%if(vooTO.getSituacao().equals("")){out.print("selected='selected'");} %>><% out.print(bundle.getString("voo.cbstatus.atrasado")); %></option>
+								  <option <%if(vooTO.getSituacao().equals("")){out.print("selected='selected'");} %>><% out.print(bundle.getString("voo.cbstatus.embarque")); %></option>
+								  <option <%if(vooTO.getSituacao().equals("")){out.print("selected='selected'");} %>><% out.print(bundle.getString("voo.cbstatus.finalizado"));%></option>
+								  <option <%if(vooTO.getSituacao().equals("")){out.print("selected='selected'");} %>><% out.print(bundle.getString("voo.cbstatus.encerrado")); %></option>
 							</select>
 						</td>
 					</tr>

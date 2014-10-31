@@ -213,6 +213,46 @@ public class CheckinMySQL implements CheckinDAO{
 		
 		return checkinTO;
 	}
+	
+	public void efetuaCheckin(int codigoPassagem, int fileira, int coluna) throws CheckinException{
+		
+		Connection conn = null;
+		PreparedStatement stm = null;
+		
+		String sql = "UPDATE passagem SET coluna = ?, fileira = ?, status = ? WHERE id = "+ codigoPassagem;
+		
+		try {
+			conn = obtemConexao();
+			stm = conn.prepareStatement(sql);
+			
+			stm.setInt(1, coluna);
+			stm.setInt(2, fileira);
+			stm.setString(3, "Checado");
+			
+			stm.execute();
+		} catch (SQLException e) {
+			throw new CheckinException(e);
+	
+		} finally {
+			if (stm != null) {
+				try {
+					stm.close();
+				} catch (SQLException e) {
+					//
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					//
+				}
+			}
+		}
+
+		
+	}
+	
 	private Connection obtemConexao() throws SQLException {
 		AcessoBanco acesso = new AcessoBanco();
 		return acesso.obtemConexao();

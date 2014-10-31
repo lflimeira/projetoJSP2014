@@ -18,4 +18,10 @@ public class Checkin {
 		return dao.consultaValores(codigo);
 	}
 	
+	public void efetuaCheckin(int codigoPassagem, int coluna, int fileira) throws CheckinException{
+		DAOFactory factory = DAOFactory.getInstance();
+		CheckinDAO dao = factory.getCheckinDAO();
+		dao.efetuaCheckin(codigoPassagem, fileira, coluna);
+	}
+	
 }

@@ -16,6 +16,7 @@ import model.CheckinException;
 import to.AeronaveTO;
 import to.CheckinTO;
 import to.VooTO;
+import dao.CheckinDAO;
 
 //importante nao alterar webservlet
 @WebServlet("/ControleCheckin") 
@@ -65,8 +66,25 @@ public class ControleCheckin extends HttpServlet {
 			session.setAttribute("aeronaveTO", aeronaveTO);		
 			session.setAttribute("checkinTO", checkinTO);
 			response.sendRedirect("checkin_passageiro.jsp");
+				
+		}
+		if(operacao.equals("escolherLugar")){
+			String poltrona = request.getParameter("poltrona").toString();
+			int fileira = Integer.parseInt(poltrona.substring(0, 1));
+			int coluna =  Integer.parseInt(poltrona.substring(2, 3));
 			
+			HttpSession session = request.getSession();
+			CheckinTO checkinTO = (CheckinTO) session.getAttribute("checkinTO");
+			Checkin checkin = new Checkin(checkinTO);
 			
+			try{
+				checkin.efetuaCheckin(checkinTO.getCodigo(), coluna, fileira);
+			}catch(CheckinException e){
+				e.printStackTrace();
+			}
+			
+			request.setAttribute("mensagem", "sucesso");
+			request.getRequestDispatcher("checkin_passagem.jsp").forward(request, response);
 			
 			
 		}

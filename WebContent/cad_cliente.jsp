@@ -7,7 +7,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title><%=bundle.getString("tela.cadDCliente.cadastroDeCliente")%></title>
+	<title><%=bundle.getString("cadastrar")%></title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
 		<form action="controllerCliente" method="post">
 		
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
-			<legend style="color: red;"><%=bundle.getString("tela.cadDCliente.cadastroDeCliente")%></legend>
+			<legend style="color: red;"><%=bundle.getString("cadastrar")%></legend>
 			<%
 			
 			int qtd_adultos = Integer.parseInt(session.getAttribute("adultos").toString());
@@ -147,7 +147,7 @@
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Forma de tratamento</td>
+						<td style='text-align: right;'><%=bundle.getString("tela.cadDCliente.formaDeTratamento")%></td>
 							<td>:</td>
 						<td>
 							<select id="form_tratamento" name="form_tratamento_be<%= i%>"> 
@@ -158,21 +158,21 @@
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Nome</td>
+						<td style='text-align: right;'><%=bundle.getString("tela.cadDCliente.nome")%></td>
 							<td>:</td>
 						<td>
 							<input class="nome" type='text'name='nome_be<%= i%>' id='nome' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Sobrenome</td>
+						<td style='text-align: right;'><%=bundle.getString("tela.cadDCliente.sobrenome")%></td>
 							<td>:</td>
 						<td>
 							<input class="nome" type='text'name='sobrenome_be<%= i%>' id='nome' />
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Data de nascimento</td>
+						<td style='text-align: right;'><%=bundle.getString("tela.cadDCliente.dataDeNascimento")%></td>
 						<td>:</td>
 						<td><input class="data" type='date'name='data_nasci_be<%= i%>' id='data' /></td>
 					</tr>

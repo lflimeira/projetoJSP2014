@@ -14,7 +14,7 @@
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControlePassagem" method="post">
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 180px; min-height: 150px; margin: auto; margin-top: 100px;">
-			<legend style="color: red;"></legend>
+			<legend style="color: red;"><%out.print(bundle.getString("tela.cadDCliente.qntClientes"));%></legend>
 			
 
 				<table>

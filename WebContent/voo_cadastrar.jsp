@@ -11,7 +11,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title><%out.print(bundle.getString("tela.menu.voo.cadastrar"));%></title>
+	<title><%out.print(bundle.getString("cadastrar"));%></title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControleVoo" method="post">
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
-			<legend style="color: red;"><%out.print(bundle.getString("voo.titulobox"));%></legend>
+			<legend style="color: red;"><%out.print(bundle.getString("cadastrar"));%></legend>
 
 				<table>
 					<tr>

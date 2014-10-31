@@ -9,14 +9,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Alterar Dados do Voo</title>
+<title><%out.print(bundle.getString("alterar"));%></title>
 </head>
 <body>
 	<div style="margin: auto; width: 940px; height: 350px; display: table;">
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControleVoo" method="post">
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
-			<legend style="color: red;">Alterar Dados da Voo</legend>
+			<legend style="color: red;"><%out.print(bundle.getString("alterar"));%></legend>
 			<%
 			
 				//Pega a Sessão

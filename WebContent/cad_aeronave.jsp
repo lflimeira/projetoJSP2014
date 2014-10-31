@@ -7,19 +7,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><%=bundle.getString("tela.cadAeronave.cadastroDeAeronave")%></title>
+<title><%=bundle.getString("cadastrar")%></title>
 </head>
 <body>
 	<div style="margin: auto; width: 940px; height: 350px; display: table;">
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControleAeronave" method="post">
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
-			<legend style="color: red;"><%=bundle.getString("tela.cadAeronave.cadastroDeAeronave")%></legend>
+			<legend style="color: red;"><%=bundle.getString("cadastrar")%></legend>
 			
 
 				<table>
 					<tr>
-						<td style='text-align: right;'><%=bundle.getString("tela.cadAeronave.codigoDaAeronave")%></td>
+						<td style='text-align: right;'><%=bundle.getString("lblCodigo")%></td>
 						<td>:</td>
 						<td><input type='text' size='4' maxlength="4" name='codigo'	id='codigo' /></td>
 					</tr>

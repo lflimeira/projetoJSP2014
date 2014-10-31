@@ -9,14 +9,14 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="texxt/html; charset=ISO-8859-1">
-		<title>Consulta - Aeronave</title>
+		<title><%=bundle.getString("consultar")%></title>
 	</head>
 	<body>
 		<div style="margin: auto; width: 940px; height: 350px; display: table;">
 			<jsp:include page="header.jsp"></jsp:include>
 			
 			<fieldset style="border: 1px solid black; border-radius: 10px; width: 950px; min-height: 150px; margin: auto; margin-top: 100px;">
-				<legend style="color: red;">Consulta de Voos</legend>
+				<legend style="color: red;"><%=bundle.getString("consultar")%></legend>
 				<div id='mensagem'>
 						<%
 							String mensagem = (String) request.getAttribute("mensagem");
@@ -56,7 +56,7 @@
 								  +"\n	<td>" + (bundle.getString("voo.lblstatus")) + "</td>"
 								  +"\n	<td>" + (bundle.getString("voo.lblescalas1")) + "</td>"
 								  +"\n	<td>" + (bundle.getString("voo.lblescalas2")) + "</td>"
-								  +"\n	<td colspan='2'>Alterar/Excluir</td>"
+								  +"\n	<td colspan='2'>" + (bundle.getString("tela.header.alterarExcluir")) + "</td>"
 								  +"\n</tr>");
 						
 						//Variavel de Cor

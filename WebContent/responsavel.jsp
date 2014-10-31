@@ -2,11 +2,12 @@
 	pageEncoding="ISO-8859-1"
 	import="java.util.ResourceBundle"
 	%>
+<% ResourceBundle bundle = (ResourceBundle)session.getAttribute("linguagem");%>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-	<title>Concluir Compra</title>
+	<title><%=bundle.getString("comprarPassagem.titulo")%></title>
 	<link rel="stylesheet" type="text/css" href="css/estilo.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
@@ -34,19 +35,19 @@ $(document).ready(function(){
 		<form action="fecharCompra" method="post">
 		
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
-			<legend style="color: red;">Concluir Compra</legend>
+			<legend style="color: red;"><%=bundle.getString("comprarPassagem.titulo")%></legend>
 			
 				<table>
 					<tr>					
 						<td style='text-align: center;' colspan="3"><%=request.getAttribute("mensagem") %></td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Forma de Pagamento</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.forma.pag")%></td>
 							<td>:</td>
 						<td>
-							<input class="email" type="radio" name='tipoPagamento' value="carCredito" id='tipoPagamento' /> Cartão de Crédito
+							<input class="email" type="radio" name='tipoPagamento' value="carCredito" id='tipoPagamento' /> <%=bundle.getString("forma.pagamento.cartao")%>
 							&nbsp;&nbsp;&nbsp;
-							<input class="email" type="radio" name='tipoPagamento' value="cheque" id='tipoPagamento' /> Cheque
+							<input class="email" type="radio" name='tipoPagamento' value="cheque" id='tipoPagamento' /><%=bundle.getString("forma.pagamento.cheque")%>
 						</td>
 					</tr>
 					<tr>					
@@ -71,63 +72,63 @@ $(document).ready(function(){
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Bandeira</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.tipo.cartao")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='bandeira' id='bandeira' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Nome do Titular</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.nome.titular")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='nomeTitular' id='nomeTitular' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>CPF</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.cpf")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='cpf' id='cpf' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Numero do Cartão</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.numero.cartao")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='numCartao' id='numCartao' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Data de Validade</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.data.validade")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='dataValidade' id='dataValidade' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Codigo de Segurança</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.cod.seguranca")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='codigoSeguranca' id='codigoSeguranca' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Banco</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.banco")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='banco' id='banco' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Agencia</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.agencia")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='agencia' id='agencia' />
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Conta</td>
+						<td style='text-align: right;'><%=bundle.getString("rotulo.conta")%></td>
 							<td>:</td>
 						<td>
 							<input class="celular" type='text'name='conta' id='conta' />

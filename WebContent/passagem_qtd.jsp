@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"
+ 	import="java.util.ResourceBundle"
+%>
+<% ResourceBundle bundle = (ResourceBundle)session.getAttribute("linguagem");%>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,17 +19,17 @@
 
 				<table>
 					<tr>
-						<td style='text-align: right;'>Adultos</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadDCliente.adulto"));%></td>
 						<td>:</td>
 						<td><input type="number" name="adultos" min="0" max="20" value='0'></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Crianças</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadDCliente.crianca"));%></td>
 						<td>:</td>
 						<td><input type="number" name="criancas" min="0" max="20" value='0'></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Bebês</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadDCliente.bebe"));%></td>
 						<td>:</td>
 						<td><input type="number" name="bebes" min="0" max="20" value='0'></td>
 					</tr>

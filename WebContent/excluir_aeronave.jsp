@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"
  	import='to.*'
+ 	import="java.util.ResourceBundle"
 %>
+<% ResourceBundle bundle = (ResourceBundle)session.getAttribute("linguagem");%>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,28 +28,28 @@
 
 				<table>
 					<tr>
-						<td style='text-align: right;font-weight: bold;'>Código da Aeronave</td>
+						<td style='text-align: right;font-weight: bold;'><%=bundle.getString("tela.cadAeronave.codigoDaAeronave")%></td>
 						<td>:</td>
 						<td><% out.print(aeronaveTO.getCodigo()); %></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;font-weight: bold;'>Nome da Aeronave</td>
+						<td style='text-align: right;font-weight: bold;'><%=bundle.getString("tela.cadAeronave.nomeDaAeronave")%></td>
 						<td>:</td>
 						<td><% out.print(aeronaveTO.getNomeAeronave()); %></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;font-weight: bold;'>Tipo de Aeronave</td>
+						<td style='text-align: right;font-weight: bold;'><%=bundle.getString("tela.cadAeronave.tipoDeAeronave")%></td>
 						<td>:</td>
 						<td><% out.print(aeronaveTO.getTipoAeronave()); %></td>
 					</tr>
 					<table style='margin-left: 70px; margin-top: 10px; border: 1px solid black; border-radius: 10px;'>
 						<tr>
-							<td style='text-align: center;font-weight: bold;' colspan='4'>Localização de Assentos</td>
+							<td style='text-align: center;font-weight: bold;' colspan='4'><%=bundle.getString("tela.alterarAeronave.localizacaoAssentos")%></td>
 						</tr>
 						<tr>
-							<td style='font-weight: bold;'>Colunas:</td>
+							<td style='font-weight: bold;'><%=bundle.getString("tela.alterarAeronave.colunas")%>:</td>
 							<td><% out.print(aeronaveTO.getColunas()); %></td>
-							<td style='font-weight: bold;'>Fileiras:</td>
+							<td style='font-weight: bold;'><%=bundle.getString("tela.alterarAeronave.fileiras")%>:</td>
 							<td><% out.print(aeronaveTO.getFileiras());%></td>
 						</tr>
 					</table>

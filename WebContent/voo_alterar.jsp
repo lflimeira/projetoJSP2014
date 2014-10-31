@@ -29,12 +29,12 @@
 
 				<table>
 					<tr>
-						<td style='text-align: right;'>Código do Voo</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("lblCodigo"));%></td>
 						<td>:</td>
 						<td><input type='text' size='5' maxlength="5" name='codigo' id='codigo' value='<%out.print(vooTO.getCodigo()); %>' /></td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Origem</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblorigem"));%></td>
 							<td>:</td>
 						<td>
 							<select id="origem" name="origem">
@@ -70,7 +70,7 @@
 					</tr>
 					
 					<tr>					
-						<td style='text-align: right;'>Destino</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lbldestino"));%></td>
 							<td>:</td>
 						<td>
 							<select id="destino" name="destino">
@@ -107,37 +107,37 @@
 					</tr>
 					
 					<tr>
-						<td style='text-align: right;'>Data</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lbldata"));%></td>
 						<td>:</td>
 						<td><input class="data" type='date' name='data' id='data' value='<%out.print(vooTO.getData());%>'/> </td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Hora</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblhora"));%></td>
 						<td>:</td>
 						<td><input class="hora" type='time'name='hora' id='hora'value='<%out.print(vooTO.getHora());%>' /></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Situação</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblstatus"));%></td>
 						<td>:</td>
 						<td>
 							<select id="situacao" name="situacao">
-								  <option <%if(vooTO.getSituacao().equals("Em espera")){out.print("selected='selected'");} %>>Em espera</option>
-								  <option <%if(vooTO.getSituacao().equals("Confirmado")){out.print("selected='selected'");} %>>Confirmado</option>
-								  <option <%if(vooTO.getSituacao().equals("Cancelado")){out.print("selected='selected'");} %>>Cancelado</option>
-								  <option <%if(vooTO.getSituacao().equals("Atrasado")){out.print("selected='selected'");} %>>Atrasado</option>
-								  <option <%if(vooTO.getSituacao().equals("Embarque")){out.print("selected='selected'");} %>>Embarque</option>
-								  <option <%if(vooTO.getSituacao().equals("Finalizado")){out.print("selected='selected'");} %>>Finalizado</option>
-								  <option <%if(vooTO.getSituacao().equals("Encerrado")){out.print("selected='selected'");} %>>Encerrado</option>
+								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.espera"))){out.print("selected='selected'");} %>>Em espera</option>
+								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.confirmado"))){out.print("selected='selected'");} %>>Confirmado</option>
+								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.cancelado"))){out.print("selected='selected'");} %>>Cancelado</option>
+								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.atrasado"))){out.print("selected='selected'");} %>>Atrasado</option>
+								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.embarque"))){out.print("selected='selected'");} %>>Embarque</option>
+								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.finalizado"))){out.print("selected='selected'");} %>>Finalizado</option>
+								  <option <%if(vooTO.getSituacao().equals(bundle.getString("voo.cbstatus.encerrado"))){out.print("selected='selected'");} %>>Encerrado</option>
 							</select>
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Valor</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblvalor"));%></td>
 						<td>:</td>
 						<td>R$<input id='valor' name='valor' size='5' value='<% out.print(vooTO.getValor()); %>'/></td>
 					</tr>
 					<tr>											
-						<td style='text-align: right;'>Aeronave</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblaeronave"));%></td>
 							<td>:</td>
 						<td>
 							<select id="aeronave" name="aeronave">
@@ -154,7 +154,7 @@
 						</td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Escala 1</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblescalas1"));%></td>
 							<td>:</td>
 						<td>
 							<select id="escala1" name="escala1">
@@ -191,7 +191,7 @@
 					</tr>
 					
 					<tr>					
-						<td style='text-align: right;'>Escala 2</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblescalas2"));%></td>
 							<td>:</td>
 						<td>
 							<select id="escala2" name="escala2">

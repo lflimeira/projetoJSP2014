@@ -84,7 +84,7 @@
 						//Formata todas as informações da lista item por item
 						out.print("<table style='margin-left: auto;margin-right: auto; width: 580px; border: 1px solid black;'>");
 						out.print("<tr style='font-weight: bold;background-color: #000000; color: white; text-align: center;'>"
-								  +"\n	<td>"+bundle.getString("tela.cadastraraeronave.lblCodigo")+"</td>"
+								  +"\n	<td>"+bundle.getString("lblCodigo")+"</td>"
 								  +"\n	<td>"+bundle.getString("tela.alterarAeronave.nomeDaAeronave")+"</td>"
 								  +"\n	<td>"+bundle.getString("tela.alterarAeronave.tipoDeAeronave")+"</td>"
 								  +"\n	<td>"+bundle.getString("tela.alterarAeronave.colunas")+"</td>"

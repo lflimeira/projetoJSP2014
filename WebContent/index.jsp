@@ -28,7 +28,7 @@ $(document).ready(function(){
 
 <div style="margin: auto; width: 940px; min-height: 500px;display: table; ">
 	<div style="text-align: center;margin-top: 50px">
-		<h1>Sistema de Passagens A&eacute;reas</h1>
+		<h1>Sistema de Passagens Aéreas</h1>
 	</div>
 	<fieldset style="border: 1px;border-color: gray;border-style: solid;width: 500px;height:300px;margin: auto;margin-top: 50px;">
 		<legend style="color:red;">Idioma / Language</legend>

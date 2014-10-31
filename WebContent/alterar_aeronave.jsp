@@ -45,7 +45,7 @@
 					</tr>
 					<table style='margin-left: 70px; margin-top: 10px; border: 1px solid black; border-radius: 10px;'>
 						<tr>
-							<td style='text-align: center;' colspan='4'><%=bundle.getString("tela.alterarAeronave.localizaçãoDeAssentos")%></td>
+							<td style='text-align: center;' colspan='4'><%=bundle.getString("tela.alterarAeronave.localizacaoAssentos")%></td>
 						</tr>
 						<tr>
 							<td><%=bundle.getString("tela.alterarAeronave.colunas")%>:</td>

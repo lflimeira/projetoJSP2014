@@ -38,7 +38,7 @@ public class LoginControler extends HttpServlet {
 			request.setAttribute("msg", "");
 			request.getRequestDispatcher("home.jsp").forward(request, response);
 		}else{
-			request.setAttribute("msg", "Usuário ou Senha invalidos!");
+			request.setAttribute("msg", "tela.login.mensagem.invalidos!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 			

@@ -19,16 +19,16 @@
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControleVoo" method="post">
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
-			<legend style="color: red;"><%out.print(bundle.getString("tela.menu.voo.cadastrar"));%></legend>
+			<legend style="color: red;"><%out.print(bundle.getString("voo.titulobox"));%></legend>
 
 				<table>
 					<tr>
-						<td style='text-align: right;'>Código do Voo</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("lblCodigo"));%></td>
 						<td>:</td>
 						<td><input type='text' size='5' maxlength="5" name='codigo' id='codigo' /></td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lblorigem"));%></td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblorigem"));%></td>
 							<td>:</td>
 						<td>
 							<select id="origem" name="origem">
@@ -65,7 +65,7 @@
 					</tr>
 					
 					<tr>					
-						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lbldestino"));%></td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lbldestino"));%></td>
 							<td>:</td>
 						<td>
 							<select id="destino" name="destino">
@@ -102,32 +102,32 @@
 					</tr>
 					
 					<tr>
-						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lbldata"));%></td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lbldata"));%></td>
 						<td>:</td>
 						<td><input class="data" type='date'name='data' id='data' /></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Hora</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblhora"));%></td>
 						<td>:</td>
 						<td><input class="hora" type='time'name='hora' id='hora' /></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'>Situação</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblstatus"));%></td>
 						<td>:</td>
 						<td>
 							<select id="situacao" name="situacao">
-								  <option>Em espera</option>
-								  <option>Confirmado</option>
-								  <option>Cancelado</option>
-								  <option>Atrasado</option>
-								  <option>Embarque</option>
-								  <option>Finalizado</option>
-								  <option>Encerrado</option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.espera"));%>Em espera</option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.confirmado"));%>Confirmado</option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.cancelado"));%>Cancelado</option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.atrasado"));%>Atrasado</option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.embarque"));%>Embarque</option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.finalizado"));%>Finalizado</option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.encerrado"));%>Encerrado</option>
 							</select>
 						</td>
 					</tr>
 					<tr>											
-						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lblaeronave"));%></td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblaeronave"));%></td>
 							<td>:</td>
 						<td>
 							<select id="aeronave" name="aeronave">
@@ -141,12 +141,12 @@
 						</td>
 					</tr>
 					<tr>
-						<td style='text-align: right;'><%out.print(bundle.getString("tela.cadastrovoo.lblvalor"));%></td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblvalor"));%></td>
 						<td>:</td>
 						<td>R$<input id='valor' name='valor' size='5' value='0.00'/></td>
 					</tr>
 					<tr>					
-						<td style='text-align: right;'>Escala 1</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblescalas1"));%></td>
 							<td>:</td>
 						<td>
 							<select id="escala1" name="escala1">
@@ -183,7 +183,7 @@
 					</tr>
 					
 					<tr>					
-						<td style='text-align: right;'>Escala 2</td>
+						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblescalas2"));%></td>
 							<td>:</td>
 						<td>
 							<select id="escala2" name="escala2">
@@ -233,7 +233,7 @@
 		if(mensagem.equals("sucesso")){
 			out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto;margin-top: 50px;width: 350px; height: 30px; text-align: center;  border-radius: 10px;'>"
 						+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
-						+"Cadastro de Voo realizado com Sucesso"
+						+ (bundle.getString("mensagem.cadastrar.exito"))
 						+"</p>"
 						+"</div>");
 		}

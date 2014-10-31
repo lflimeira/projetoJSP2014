@@ -25,14 +25,14 @@
 							if(mensagem.equals("alterado")){
 								out.print(	"<div style='background-color: #93DB70;margin-top:20px; margin-left:auto; margin-right: auto; width: 390px; height: 30px; text-align: center;  border-radius: 10px;'>"
 											+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
-											+"Dados da Aeronave alterados com Sucesso"
+											+"(bundle.getString('mensagem.alterar.exito')"
 											+"</p>"
 											+"</div>");
 							}
 							if(mensagem.equals("excluido")){
 								out.print(	"<div style='background-color: #93DB70;margin-top:20px; margin-left:auto; margin-right: auto; width: 390px; height: 30px; text-align: center;  border-radius: 10px;'>"
 											+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
-											+"Aeronave Excluida com Sucesso"
+											+"(bundle.getString('mensagem.excluir.exito')"
 											+"</p>"
 											+"</div>");
 							}	
@@ -48,10 +48,10 @@
 						//Formata todas as informações da lista item por item
 						out.print("<table style='margin-left: auto;margin-right: auto; width: 580px; border: 1px solid black;'>");
 						out.print("<tr style='font-weight: bold;background-color: #000000; color: white; text-align: center;'>"
-								  +"\n	<td>Código</td>"
-								  +"\n	<td>Origem</td>"
-								  +"\n	<td>Destino</td>"
-								  +"\n	<td>Situação</td>"
+								  +"\n	<td>" + (bundle.getString("lblCodigo")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lblorigem")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lbldestino")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lblstatus")) + "</td>"
 								  +"\n</tr>");
 						
 						//Variavel de Cor

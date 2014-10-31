@@ -27,32 +27,32 @@
 
 				<table>
 					<tr>
-						<td style='text-align: right;font-weight: bold;'>Código</td>
+						<td style='text-align: right;font-weight: bold;'><%out.print(bundle.getString("lblCodigo"));%></td>
 						<td>:</td>
 						<td><% out.print(vooTO.getCodigo()); %></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;font-weight: bold;'>Origem</td>
+						<td style='text-align: right;font-weight: bold;'><%out.print(bundle.getString("voo.lblorigem"));%></td>
 						<td>:</td>
 						<td><% out.print(vooTO.getOrigem()); %></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;font-weight: bold;'>Destino</td>
+						<td style='text-align: right;font-weight: bold;'><%out.print(bundle.getString("voo.lbldestino"));%></td>
 						<td>:</td>
 						<td><% out.print(vooTO.getDestino()); %></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;font-weight: bold;'>Data</td>
+						<td style='text-align: right;font-weight: bold;'><%out.print(bundle.getString("voo.lbldata"));%></td>
 						<td>:</td>
 						<td><% out.print(vooTO.getData()); %></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;font-weight: bold;'>Hora</td>
+						<td style='text-align: right;font-weight: bold;'><%out.print(bundle.getString("voo.lblhora"));%></td>
 						<td>:</td>
 						<td><% out.print(vooTO.getHora()); %></td>
 					</tr>
 					<tr>
-						<td style='text-align: right;font-weight: bold;'>Situação</td>
+						<td style='text-align: right;font-weight: bold;'><%out.print(bundle.getString("voo.lblstatus"));%></td>
 						<td>:</td>
 						<td><% out.print(vooTO.getSituacao()); %></td>
 					</tr>

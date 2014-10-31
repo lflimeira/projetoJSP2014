@@ -15,7 +15,9 @@ public class AcessoBanco {
 	}
 
 	public Connection obtemConexao() throws SQLException{
-		return DriverManager.getConnection("jdbc:mysql://localhost/aeroporto","root", "");
+		//return DriverManager.getConnection("jdbc:mysql://localhost/aeroporto","root", "");
+		
+		return DriverManager.getConnection("jdbc:mysql://localhost/aeroporto","root", "490779");
 	}
 }
 

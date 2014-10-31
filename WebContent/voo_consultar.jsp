@@ -48,14 +48,14 @@
 						//Formata todas as informações da lista item por item
 						out.print("<table style='margin-left: auto;margin-right: auto; width: 900px; border: 1px solid black;'>");
 						out.print("<tr style='font-weight: bold;background-color: #000000; color: white; text-align: center;'>"
-								  +"\n	<td>Código</td>"
-								  +"\n	<td>Origem</td>"
-								  +"\n	<td>Destino</td>"
-								  +"\n	<td>Data</td>"
-								  +"\n	<td>Hora</td>"
-								  +"\n	<td>Situação</td>"
-								  +"\n	<td>Escala 1</td>"
-								  +"\n	<td>Escala 2</td>"
+								  +"\n	<td>" + (bundle.getString("lblCodigo")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lblorigem")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lbldestino")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lbldata")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lblhora")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lblstatus")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lblescalas1")) + "</td>"
+								  +"\n	<td>" + (bundle.getString("voo.lblescalas2")) + "</td>"
 								  +"\n	<td colspan='2'>Alterar/Excluir</td>"
 								  +"\n</tr>");
 						

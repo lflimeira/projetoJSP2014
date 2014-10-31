@@ -33,7 +33,7 @@ import="java.util.ResourceBundle"
 				<li><a href="#"><%=bundle.getString("tela.header.transferir")%></a></li>
 			</ul></li>
 		<li><a href="checkin_passagem.jsp"><%=bundle.getString("tela.header.checkin")%></a></li>
-		<li><a href="#"><%=bundle.getString("tela.header.trocarDeUsuario")%></a></li>
-		<li><a href="#"><%=bundle.getString("tela.header.sairDoSistema")%></a></li>
+		<li><a href="login.jsp"><%=bundle.getString("tela.header.trocarDeUsuario")%></a></li>
+		<li><a href="index.jsp"><%=bundle.getString("tela.header.sairDoSistema")%></a></li>
 	</ul>
 </div>

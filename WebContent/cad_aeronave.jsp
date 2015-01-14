@@ -4,12 +4,22 @@
 <% ResourceBundle bundle = (ResourceBundle)session.getAttribute("linguagem");%>	
 	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><%=bundle.getString("cadastrar")%></title>
-</head>
-<body>
+
+	<head>
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		
+		<title><%=bundle.getString("cadastrar")%></title>
+	
+		<script type="text/javascript">
+			function goFocus(elementID){
+				document.getElementById(elementID).focus();
+			}
+		</script>
+	</head>
+<body onload="goFocus('nomeAeronave')">
 	<div style="margin: auto; width: 940px; height: 350px; display: table;">
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControleAeronave" method="post">
@@ -18,11 +28,6 @@
 			
 
 				<table>
-					<tr>
-						<td style='text-align: right;'><%=bundle.getString("lblCodigo")%></td>
-						<td>:</td>
-						<td><input type='text' size='4' maxlength="4" name='codigo'	id='codigo' /></td>
-					</tr>
 					<tr>
 						<td style='text-align: right;'><%=bundle.getString("tela.cadAeronave.nomeDaAeronave")%></td>
 						<td>:</td>

@@ -41,7 +41,6 @@ public class ControleAeronave extends HttpServlet {
 			AeronaveTO aeronaveTO = new AeronaveTO();
 			
 			//Coloca todas as informações no  Objeto TO
-			aeronaveTO.setCodigo(Integer.parseInt(request.getParameter("codigo")));
 			aeronaveTO.setNomeAeronave((String) request.getParameter("nomeAeronave"));
 			aeronaveTO.setTipoAeronave((String) request.getParameter("tipoAeronave"));
 			aeronaveTO.setFileiras(Integer.parseInt(request.getParameter("fileiras")));

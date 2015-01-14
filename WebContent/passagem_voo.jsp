@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title><%out.print(bundle.getString("lblEscolheVoo"));%></title>
+		<title><%out.print(bundle.getString("btn.escolheVoo"));%></title>
 </head>
 <body>
 		<div style="margin: auto; width: 940px; height: 350px; display: table;">
@@ -28,6 +28,7 @@
 						//Trabalha no Titulo da Pagina
 						if(sessao.getAttribute("opcao").equals("ida")){
 							out.print("<h3>Escolha o Vôo</h3>");
+							
 						}
 						else if(sessao.getAttribute("opcao").equals("idaVolta")){
 							if(sessao.getAttribute("voo").equals("ida")){

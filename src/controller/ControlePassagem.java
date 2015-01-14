@@ -54,7 +54,9 @@ public class ControlePassagem extends HttpServlet {
 			if(session.getAttribute("opcao").equals("idaVolta")){
 				session.setAttribute("voo", "ida");
 			}
-			
+			else if(session.getAttribute("opcao").equals("ida")){
+				session.setAttribute("voo", "unico");
+			}
 			response.sendRedirect("passagem_voo.jsp");
 						
 			

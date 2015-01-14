@@ -18,7 +18,7 @@
 	<div style="margin: auto; width: 940px; height: 350px; display: table;">
 		<jsp:include page="header.jsp"></jsp:include>
 		<form action="ControleVoo" method="post">
-		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 400px; min-height: 150px; margin: auto; margin-top: 100px;">
+		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 200px; min-height: 150px; margin: auto; margin-top: 100px;">
 			<legend style="color: red;"><%out.print(bundle.getString("cadastrar"));%></legend>
 
 				<table>
@@ -116,13 +116,13 @@
 						<td>:</td>
 						<td>
 							<select id="situacao" name="situacao">
-								  <option><%out.print(bundle.getString("voo.cbstatus.espera"));%>Em espera</option>
-								  <option><%out.print(bundle.getString("voo.cbstatus.confirmado"));%>Confirmado</option>
-								  <option><%out.print(bundle.getString("voo.cbstatus.cancelado"));%>Cancelado</option>
-								  <option><%out.print(bundle.getString("voo.cbstatus.atrasado"));%>Atrasado</option>
-								  <option><%out.print(bundle.getString("voo.cbstatus.embarque"));%>Embarque</option>
-								  <option><%out.print(bundle.getString("voo.cbstatus.finalizado"));%>Finalizado</option>
-								  <option><%out.print(bundle.getString("voo.cbstatus.encerrado"));%>Encerrado</option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.espera"));%></option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.confirmado"));%></option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.cancelado"));%></option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.atrasado"));%></option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.embarque"));%></option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.finalizado"));%></option>
+								  <option><%out.print(bundle.getString("voo.cbstatus.encerrado"));%></option>
 							</select>
 						</td>
 					</tr>
@@ -222,7 +222,7 @@
 					<input type="hidden" name='operacao' value="cadastrar" >
 					<input type="hidden" name='subOperacao' value="cadastra" >
 				</table>
-					<input type='submit' value=<%out.print(bundle.getString("cadastrar"));%> style="margin-left: 150px; margin-top: 10px;">
+					<input type='submit' value=<%out.print(bundle.getString("cadastrar"));%> style="margin-left: 80px; margin-top: 10px;">
 		</fieldset>
 		</form>
 	</div>

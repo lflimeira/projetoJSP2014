@@ -15,8 +15,8 @@ public class AeronaveMySQL implements AeronaveDAO {
 
 	public Long cadastrar(AeronaveTO aeronaveTO) throws AeronaveException{
 		String sql = "INSERT INTO aeronave("
-					+ "codigo, nomeAeronave, tipoAeronave, colunas, fileiras)"
-					+ "VALUES (?,?,?,?,?)";
+					+ "nomeAeronave, tipoAeronave, colunas, fileiras)"
+					+ "VALUES (?,?,?,?)";
 
 		Connection conn = null;
 		PreparedStatement stm = null;
@@ -24,11 +24,10 @@ public class AeronaveMySQL implements AeronaveDAO {
 			conn = obtemConexao();
 			stm = conn.prepareStatement(sql);
 
-			stm.setInt(1, aeronaveTO.getCodigo());
-			stm.setString(2, aeronaveTO.getNomeAeronave());
-			stm.setString(3, aeronaveTO.getTipoAeronave());
-			stm.setInt(4, aeronaveTO.getColunas());
-			stm.setInt(5, aeronaveTO.getFileiras());
+			stm.setString(1, aeronaveTO.getNomeAeronave());
+			stm.setString(2, aeronaveTO.getTipoAeronave());
+			stm.setInt(3, aeronaveTO.getColunas());
+			stm.setInt(4, aeronaveTO.getFileiras());
 
 			stm.execute();
 

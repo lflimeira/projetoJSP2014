@@ -20,13 +20,13 @@
 		<form action="ControleVoo" method="post">
 		<fieldset style="border: 1px;border-radius: 10px;border-style: solid; width: 200px; min-height: 150px; margin: auto; margin-top: 100px;">
 			<legend style="color: red;"><%out.print(bundle.getString("cadastrar"));%></legend>
-
+			<% 
+				
+				ArrayList<AeronaveTO> lista = (ArrayList<AeronaveTO>) request.getAttribute("lista");
+				if(!lista.isEmpty()){
+			
+			%>
 				<table>
-					<tr>
-						<td style='text-align: right;'><%out.print(bundle.getString("lblCodigo"));%></td>
-						<td>:</td>
-						<td><input type='text' size='5' maxlength="5" name='codigo' id='codigo' /></td>
-					</tr>
 					<tr>					
 						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblorigem"));%></td>
 							<td>:</td>
@@ -132,7 +132,7 @@
 						<td>
 							<select id="aeronave" name="aeronave">
 							<%
-	  							ArrayList<AeronaveTO> lista = (ArrayList<AeronaveTO>) request.getAttribute("lista");
+	  							
 								for(AeronaveTO aeronaveTO : lista){
 									out.print("\n	<option value='"+aeronaveTO.getCodigo()+"'>"+aeronaveTO.getNomeAeronave()+"</option>");
 								}
@@ -145,84 +145,23 @@
 						<td>:</td>
 						<td>R$<input id='valor' name='valor' size='5' value='0.00'/></td>
 					</tr>
-					<tr>					
-						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblescalas1"));%></td>
-							<td>:</td>
-						<td>
-							<select id="escala1" name="escala1">
-								<option value="">-------------</option> 
-								<option value="Acre">Acre</option> 
-								<option value="Alagoas">Alagoas</option> 
-								<option value="Amazonas">Amazonas</option> 
-								<option value="Amapá">Amapá</option> 
-								<option value="Bahia">Bahia</option> 
-								<option value="Ceará">Ceará</option> 
-								<option value="Distrito Federal">Distrito Federal</option> 
-								<option value="Espírito Santo">Espírito Santo</option> 
-								<option value="Goiás">Goiás</option> 
-								<option value="Maranhão">Maranhão</option> 
-								<option value="Mato Grosso">Mato Grosso</option> 
-								<option value="Mato Grosso do Sul">Mato Grosso do Sul</option> 
-								<option value="Minas Gerais">Minas Gerais</option> 
-								<option value="Pará">Pará</option> 
-								<option value="Paraíba">Paraíba</option> 
-								<option value="Paraná">Paraná</option> 
-								<option value="Pernambuco">Pernambuco</option> 
-								<option value="Piauí">Piauí</option> 
-								<option value="Rio de Janeiro">Rio de Janeiro</option> 
-								<option value="Rio Grande do Norte">Rio Grande do Norte</option> 
-								<option value="Rondônia">Rondônia</option> 
-								<option value="Rio Grande do Sul">Rio Grande do Sul</option> 
-								<option value="Roraima">Roraima</option> 
-								<option value="Santa Catarina">Santa Catarina</option> 
-								<option value="Sergipe">Sergipe</option> 
-								<option value="São Paulo">São Paulo</option> 
-								<option value="Tocantins">Tocantins</option> 
-							</select>
-						</td>
-					</tr>
-					
-					<tr>					
-						<td style='text-align: right;'><%out.print(bundle.getString("voo.lblescalas2"));%></td>
-							<td>:</td>
-						<td>
-							<select id="escala2" name="escala2">
-								<option value="">-------------</option> 
-								<option value="Acre">Acre</option> 
-								<option value="Alagoas">Alagoas</option> 
-								<option value="Amazonas">Amazonas</option> 
-								<option value="Amapá">Amapá</option> 
-								<option value="Bahia">Bahia</option> 
-								<option value="Ceará">Ceará</option> 
-								<option value="Distrito Federal">Distrito Federal</option> 
-								<option value="Espírito Santo">Espírito Santo</option> 
-								<option value="Goiás">Goiás</option> 
-								<option value="Maranhão">Maranhão</option> 
-								<option value="Mato Grosso">Mato Grosso</option>  
-								<option value="Mato Grosso do Sul">Mato Grosso do Sul</option> 
-								<option value="Minas Gerais">Minas Gerais</option> 
-								<option value="Pará">Pará</option> 
-								<option value="Paraíba">Paraíba</option> 
-								<option value="Paraná">Paraná</option> 
-								<option value="Pernambuco">Pernambuco</option> 
-								<option value="Piauí">Piauí</option> 
-								<option value="Rio de Janeiro">Rio de Janeiro</option> 
-								<option value="Rio Grande do Norte">Rio Grande do Norte</option> 
-								<option value="Rondônia">Rondônia</option> 
-								<option value="Rio Grande do Sul">Rio Grande do Sul</option> 
-								<option value="Roraima">Roraima</option> 
-								<option value="Santa Catarina">Santa Catarina</option> 
-								<option value="Sergipe">Sergipe</option> 
-								<option value="São Paulo">São Paulo</option> 
-								<option value="Tocantins">Tocantins</option> 
-							</select>
-						</td>
-					</tr>
 
 					<input type="hidden" name='operacao' value="cadastrar" >
 					<input type="hidden" name='subOperacao' value="cadastra" >
 				</table>
 					<input type='submit' value=<%out.print(bundle.getString("cadastrar"));%> style="margin-left: 80px; margin-top: 10px;">
+				<%
+				
+				}
+				else{
+					out.print(	"<div style='background-color: #93DB70; margin-left:auto; margin-right: auto;margin-top: 50px;width: 350px; height: 50px; text-align: center;  border-radius: 10px;'>"
+							+"<p style='font-weight: bold; color: black; margin-top: -20px; padding-top: 5px;'>"
+							+ (bundle.getString("mensagem.cadastrar.aeronave"))
+							+"</p>"
+							+"</div>");
+				}
+				
+				%>
 		</fieldset>
 		</form>
 	</div>

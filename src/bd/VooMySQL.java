@@ -13,12 +13,12 @@ import model.VooException;
 
 public class VooMySQL implements VooDAO {
 
-	public Long cadastrar(VooTO vooTO) throws VooException{
+	public int cadastrar(VooTO vooTO) throws VooException{
 		String sql = "insert into voo ("
-				+ "codigo, origem, destino, "
-				+ "dia,hora,situacao,valor,pri_escala,"
-				+ "seg_escala,cod_aeronave) "
-				+ "values (?,?,?,?,?,?,?,?,?,?)";
+				+ "origem, destino, "
+				+ "dia,hora,situacao,valor,"
+				+ "cod_aeronave) "
+				+ "values (?,?,?,?,?,?,?)";
 
 		Connection conn = null;
 		PreparedStatement stm = null;
@@ -26,16 +26,13 @@ public class VooMySQL implements VooDAO {
 			conn = obtemConexao();
 			stm = conn.prepareStatement(sql);
 
-			stm.setInt(   1, vooTO.getCodigo());
-			stm.setString(2, vooTO.getOrigem());
-			stm.setString(3, vooTO.getDestino());
-			stm.setString(4, vooTO.getData());
-			stm.setString(5, vooTO.getHora());
-			stm.setString(6, vooTO.getSituacao());
-			stm.setDouble(7, vooTO.getValor());
-			stm.setString(8, vooTO.getEscala1());
-			stm.setString(9, vooTO.getEscala2());
-			stm.setInt(10, vooTO.getAeronave());
+			stm.setString(1, vooTO.getOrigem());
+			stm.setString(2, vooTO.getDestino());
+			stm.setString(3, vooTO.getData());
+			stm.setString(4, vooTO.getHora());
+			stm.setString(5, vooTO.getSituacao());
+			stm.setDouble(6, vooTO.getValor());
+			stm.setInt(7, vooTO.getAeronave());
 
 			stm.execute();
 
@@ -59,7 +56,7 @@ public class VooMySQL implements VooDAO {
 			}
 		}
 
-		return null;
+		return 0;
 	}
 	
 	public List<VooTO> consultar() throws VooException{

@@ -31,7 +31,8 @@
 					<tr>
 						<td style='text-align: right;'><%=bundle.getString("tela.alterarAeronave.codDaAeronave")%></td>
 						<td>:</td>
-						<td><input type='text' size='5' maxlength="5" name='codigo'	id='codigo' value='<% out.print(aeronaveTO.getCodigo()); %>' /></td>
+						<td><% out.print(aeronaveTO.getCodigo()); %></td>
+						<input type="hidden" name='codigo' id='codigo' value='<% out.print(aeronaveTO.getCodigo()); %>' />
 					</tr>
 					<tr>
 						<td style='text-align: right;'><%=bundle.getString("tela.alterarAeronave.nomeDaAeronave")%></td>

@@ -7,7 +7,7 @@ import to.VooTO;
 
 public interface VooDAO {
 
-	public Long cadastrar(VooTO aeronaveTO) throws VooException;
+	public int cadastrar(VooTO aeronaveTO) throws VooException;
 	
 	public List<VooTO> consultar() throws VooException;
 	

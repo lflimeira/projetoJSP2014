@@ -63,7 +63,6 @@ public class ControleVoo extends HttpServlet {
 				VooTO vooTO = new VooTO();
 				
 				//Coloca todas as informações no  Objeto TO
-				vooTO.setCodigo(Integer.parseInt(request.getParameter("codigo")));
 				vooTO.setOrigem((String) request.getParameter("origem"));
 				vooTO.setDestino((String) request.getParameter("destino"));
 				vooTO.setData((String) request.getParameter("data"));
@@ -71,9 +70,7 @@ public class ControleVoo extends HttpServlet {
 				vooTO.setSituacao(request.getParameter("situacao"));
 				vooTO.setAeronave(Integer.parseInt(request.getParameter("aeronave")));
 				vooTO.setValor(Double.parseDouble(request.getParameter("valor")));
-				vooTO.setEscala1(request.getParameter("escala1"));
-				vooTO.setEscala2(request.getParameter("escala2"));
-				
+							
 				
 				//Iniciando os dados da TO na classe de Negócio
 				Voo voo = new Voo(vooTO);
@@ -84,6 +81,7 @@ public class ControleVoo extends HttpServlet {
 				} catch (VooException e) {
 					e.printStackTrace();
 				}
+				
 				
 				//Inicia o processo de listagem de aeronave
 				AeronaveTO aeronaveTO = new AeronaveTO();
